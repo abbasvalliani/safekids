@@ -12,15 +12,10 @@ RUN pnpm install --ignore-scripts --frozen-lockfile
 COPY . .
 RUN pnpm run homepage
 
-FROM node:slim AS deployer
-ARG WEB_PORT=3000
-EXPOSE $WEB_PORT
-WORKDIR /app
-COPY --from=builder /app/dist/apps/main-website-react .
-COPY --from=builder /app/package.json  ./package-mono-repo.json
-RUN version=$(grep 'packageManager' package.json | awk -F'"' '{print $4}' | awk -F'@' '{print $2}') && npm install -g "pnpm@$version"
-RUN version=$(grep '"next":' package-mono-repo.json | awk -F'"' '{print $4}') && pnpm install "next@$version"
-EXPOSE $WEB_PORT
+FROM nginx:alpine
 
-#CMD ["tail", "-f", "/dev/null"]
-CMD ["npm", "run", "start"]
+COPY --from=builder /app/dist/apps/main-website-react/out /usr/share/nginx/html/
+COPY --from=builder /app/apps/main-website-react/nginx-config.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

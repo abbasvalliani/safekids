@@ -10,7 +10,7 @@ nx build main-website-react
 ### with cache
 >docker build --progress=plain -t main-website-react -f ./apps/main-website-react/Dockerfile .
 ### running docker for website
->docker run --name main-website-react -p 4200:3000 main-website-react
+>docker run --name main-website-react -p 8080:80 main-website-react
 
 # DEMO APPLICATION
 ## Development commands

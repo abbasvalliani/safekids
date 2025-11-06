@@ -27,12 +27,12 @@ const HowItWorks = () => {
               </div>
               <div className="lg:w-7/12 md:w-6/12 w-full">
                 <img
-                  src="images/how-it-works-privacy/img-how-it-works-privacy-banner.png"
+                  src="/images/how-it-works-privacy/img-how-it-works-privacy-banner.png"
                   className="hidden md:block max-w-[120%]"
                   alt=""
                 />
                 <img
-                  src="images/how-it-works-privacy/mobile/img-how-it-works-privacy-banner-mobile.png"
+                  src="/images/how-it-works-privacy/mobile/img-how-it-works-privacy-banner-mobile.png"
                   className="md:hidden w-full "
                   alt=""
                 />
@@ -47,7 +47,7 @@ const HowItWorks = () => {
               <div className="lg:w-2/12 w-full" />
               <FadeInView className="lg:w-8/12 w-full fade-bottom relative">
                 <img
-                  src="images/how-it-works-privacy/how_it_works_play.png"
+                  src="/images/how-it-works-privacy/how_it_works_play.png"
                   className="md:w-[auto] md:mx-auto w-full hover:cursor-pointer"
                   alt=""
                   onClick={() => setShowModal(true)}
@@ -55,7 +55,7 @@ const HowItWorks = () => {
                 <span className="absolute pulse-button md:top-[37%] md:left-[43%] top-[22%] left-[38%]">
                   <button onClick={() => setShowModal(true)}>
                     <img
-                      src="images/about-us/play.svg"
+                      src="/images/about-us/play.svg"
                       alt=""
                       className="w-[100px] md:w-[auto]"
                     />
@@ -80,7 +80,7 @@ const HowItWorks = () => {
                 <div className=" relative pt-[4.5rem] md:h-full md:px-[1.5rem] px-[2rem] xl:px-[2rem] pb-[2rem] text-center bg-white border border-[#EEEEEE] rounded-[20px] shadow-lg shadow-[0px 24px 27px rgba(0, 0, 0, 0.07)]">
                   <img
                     className="absolute top-[-73px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                    src="images/how-it-works-privacy/icon-1.svg"
+                    src="/images/how-it-works-privacy/icon-1.svg"
                     alt=""
                   />
                   <h6 className="font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[45px] pb-[1rem]">
@@ -97,7 +97,7 @@ const HowItWorks = () => {
                 <div className="relative pt-[4.5rem] md:h-full px-[2rem] md:px-[1.5rem] xl:px-[2rem] pb-[2rem] text-center bg-white border border-[#EEEEEE] rounded-[20px] shadow-lg shadow-[0px 24px 27px rgba(0, 0, 0, 0.07)]">
                   <img
                     className="absolute top-[-73px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                    src="images/how-it-works-privacy/icon-2.svg"
+                    src="/images/how-it-works-privacy/icon-2.svg"
                     alt=""
                   />
                   <h6 className="font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[45px] pb-[1rem]">
@@ -115,7 +115,7 @@ const HowItWorks = () => {
                 <div className="relative pt-[4.5rem] md:h-full px-[2rem] md:px-[1.5rem] xl:px-[2rem] pb-[2rem] text-center bg-white border border-[#EEEEEE] rounded-[20px] shadow-lg shadow-[0px 24px 27px rgba(0, 0, 0, 0.07)]">
                   <img
                     className="absolute top-[-73px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                    src="images/how-it-works-privacy/icon-3.svg"
+                    src="/images/how-it-works-privacy/icon-3.svg"
                     alt=""
                   />
                   <h6 className="font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[45px] pb-[1rem]">
@@ -136,7 +136,7 @@ const HowItWorks = () => {
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12">
                 <img
-                  src="images/how-it-works-privacy/img-how-it-works-privacy.png"
+                  src="/images/how-it-works-privacy/img-how-it-works-privacy.png"
                   className="hidden lg:block max-w-[140%] ml-[-10rem] lg:ml-[-12rem] xl:ml-[-14rem] 2xl:ml-[-18rem]"
                   alt=""
                 />
@@ -146,7 +146,7 @@ const HowItWorks = () => {
                   All data is private <span className="color2">and safe.</span>
                 </h2>
                 <img
-                  src="images/how-it-works-privacy/img-how-it-works-privacy.png"
+                  src="/images/how-it-works-privacy/img-how-it-works-privacy.png"
                   className="lg:hidden sm:ml-[-8rem] w-[105%] ml-[-2rem]"
                   alt=""
                 />
@@ -192,7 +192,7 @@ const HowItWorks = () => {
           <div className="container-custom mx-auto">
             <div className="flex flex-wrap">
               <div className="w-full text-center">
-                <img className="mx-auto" src="images/logo.svg" alt="" />
+                <img className="mx-auto" src="/images/logo.svg" alt="" />
                 <h2 className="font-gallix-extrabold text-[50px] leading-[40px] sm:lg:text-[60px] sm:lg:leading-[50px] sm:pb-[7rem] md:text-[50px] md:leading-[45px] pb-[6rem] xl:text-[48px] xl:leading-[52px] font-extrabold xl:px-[20rem]">
                   Built to catch more, earlier{' '}
                   <span className="color2">
@@ -204,7 +204,7 @@ const HowItWorks = () => {
                 <div className="px-[2rem] pb-[1rem] mb-[5rem] sm:mb-[6rem] lg:mb-[1rem] md:max-lg:min-h-[280px] lg:max-xl:min-h-[340px] xl:pt-[4rem] xl:pr-[4rem] min-[1920px]:pr-[6rem] xl:pb-[3rem] xl:pl-[6rem] min-[1920px]:mx-[4.5rem] 2xl:mx-[4rem] lg:mx-[2rem] text-center lg:text-left bg-white border border-[#EEEEEE] rounded-[20px] shadow-lg shadow-[0px 24px 27px rgba(0, 0, 0, 0.07)]">
                   <img
                     className="relative max-[430px]:w-1/2 max-[480px]:w-[40%] sm:lg:w-[30%] md:w-[20%] md:mt-[-7%] min-[0px]:mt-[-18%] min-[431px]:mt-[-14%] lg:mt-[-12%] max-xl:inline-block xl:absolute xl:mt-[9%] xl:ml-[-10.5rem] xl:w-[23%]"
-                    src="images/how-it-works-privacy/icon-check.svg"
+                    src="/images/how-it-works-privacy/icon-check.svg"
                     alt=""
                   />
                   <h6 className="text-[25px] leading-[26px] sm:text-[35px] sm:leading-[36px] xl:text-[40px] xl:leading-[45px] xl:pb-[1rem] pb-[0.5rem] font-bold">
@@ -220,7 +220,7 @@ const HowItWorks = () => {
                 <div className="px-[2rem] pb-[1rem] mb-[5rem] sm:mb-[6rem] lg:mb-[1rem] md:max-lg:min-h-[280px] lg:max-xl:min-h-[340px] xl:pt-[4rem] xl:pr-[4rem] min-[1920px]:pr-[6rem] xl:pb-[3rem] xl:pl-[6rem] min-[1920px]:mx-[4.5rem] 2xl:mx-[4rem] lg:mx-[2rem] text-center lg:text-left bg-white border border-[#EEEEEE] rounded-[20px] shadow-lg shadow-[0px 24px 27px rgba(0, 0, 0, 0.07)]">
                   <img
                     className="relative max-[430px]:w-1/2 max-[480px]:w-[40%] sm:lg:w-[30%] md:w-[20%] md:mt-[-7%] min-[0px]:mt-[-18%] min-[431px]:mt-[-14%] lg:mt-[-12%] max-xl:inline-block xl:absolute xl:mt-[9%] xl:ml-[-10.5rem] xl:w-[23%]"
-                    src="images/how-it-works-privacy/icon-check.svg"
+                    src="/images/how-it-works-privacy/icon-check.svg"
                     alt=""
                   />
                   <h6 className="text-[25px] leading-[26px] sm:text-[35px] sm:leading-[36px] xl:text-[40px] xl:leading-[45px] xl:pb-[1rem] pb-[0.5rem] font-bold">

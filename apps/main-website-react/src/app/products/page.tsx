@@ -23,7 +23,7 @@ const Products = () => {
               <div className="sm:flex sm:items-center block">
                 <img
                   className="w-[50%] sm:w-[40%] md:w-[28%] xl:w-[auto] mx-auto sm:mx-0"
-                  src="images/products/product-icon1.svg"
+                  src="/images/products/product-icon1.svg"
                   alt=""
                 />
                 <div>
@@ -58,7 +58,7 @@ const Products = () => {
             <div className="sm:flex sm:items-center block">
               <img
                 className="w-[50%] sm:w-[40%] md:w-[28%] xl:w-[auto] mx-auto sm:mx-0"
-                src="images/products/product-icon3.svg"
+                src="/images/products/product-icon3.svg"
                 alt=""
               />
               <div>
@@ -100,7 +100,7 @@ const Products = () => {
               <FadeInView className="mb-[2rem] lg:max-xl:w-1/2 xl:w-[100%] xl:pl-[6rem] px-[2rem] pt-[100px] pb-[3rem] relative bg-white border border-[#EEEEEE] shadow-2xl rounded-[20px] xl:text-left  text-center fade-bottom">
                 <img
                   className="xl:w-[25%] absolute xl:top-[50%] xl:translate-y-[-50%] xl:left-[-72px] max-xl:top-[-100px] max-xl:left-[50%] max-xl:translate-x-[-50%]"
-                  src="images/products/product-icon2.svg"
+                  src="/images/products/product-icon2.svg"
                   alt=""
                 />
                 <p
@@ -115,7 +115,7 @@ const Products = () => {
                     <button className="btn small3">
                       Talk To Us Now{' '}
                       <img
-                        src="images/icon-arrow-btn.svg"
+                        src="/images/icon-arrow-btn.svg"
                         className="bg-icon-btn inline"
                         alt=""
                       />
@@ -126,7 +126,7 @@ const Products = () => {
               <FadeInView className="lg:max-xl:w-1/2 xl:w-[100%] xl:pl-[6rem] px-[2rem] pt-[100px] pb-[3rem] relative bg-white border border-[#EEEEEE] shadow-2xl rounded-[20px] xl:text-left  text-center fade-bottom">
                 <img
                   className="xl:w-[25%] absolute xl:top-[50%] xl:translate-y-[-50%] xl:left-[-72px] max-xl:top-[-100px] max-xl:left-[50%] max-xl:translate-x-[-50%]"
-                  src="images/products/product-icon3.svg"
+                  src="/images/products/product-icon3.svg"
                   alt=""
                 />
                 <p
@@ -143,7 +143,7 @@ const Products = () => {
                     <button className="btn small4">
                       Get It On Chrome Store{' '}
                       <img
-                        src="images/icon-arrow-btn.svg"
+                        src="/images/icon-arrow-btn.svg"
                         className="bg-icon-btn inline"
                         alt=""
                       />
@@ -155,7 +155,7 @@ const Products = () => {
             <div className="lg:max-xl:hidden">
               <img
                 className="mx-auto"
-                src="images/products/img-products3.png"
+                src="/images/products/img-products3.png"
                 alt=""
               />
             </div>

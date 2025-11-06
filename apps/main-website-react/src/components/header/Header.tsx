@@ -34,7 +34,7 @@ const Header = () => {
             <div className="container-custom mx-auto px-4 py-2 flex justify-between items-center">
               <Link href="/">
                 <Image
-                  src="images/logo.svg"
+                  src="/images/logo.svg"
                   alt=""
                   width={0}
                   height={0}
@@ -75,7 +75,7 @@ const Header = () => {
                 title={
                   <div onClick={() => {setOpen(false); router.push('/')}} className='hover:cursor-pointer'>
                     <Image
-                      src="images/logo.svg"
+                      src="/images/logo.svg"
                       alt=""
                       width={0}
                       height={0}

@@ -155,12 +155,12 @@ const About = () => {
             </div>
             <div className="lg:w-7/12 md:w-6/12 w-full">
               <img
-                src="images/about-us/img-about-us-banner.png"
+                src="/images/about-us/img-about-us-banner.png"
                 className="hidden lg:block w-full"
                 alt=""
               />
               <img
-                src="images/about-us/mobile/img-about-us-banner-mobile.png"
+                src="/images/about-us/mobile/img-about-us-banner-mobile.png"
                 className="lg:hidden w-full   "
                 alt=""
               />
@@ -173,7 +173,7 @@ const About = () => {
         <div className="container-custom mx-auto">
           <div className="grid lg:grid-cols-2 gap-4">
             <div className='max-lg:flex max-lg:flex-row max-lg:justify-center'>
-              <img src="images/about-us/im-aahil.png" className="" alt="" />
+              <img src="/images/about-us/im-aahil.png" className="" alt="" />
             </div>
             <FadeInView className="fade-right">
               <h2 className="font-extrabold font-gallix-extrabold text-[50px] leading-[40px] px-[1.5rem] lg:px-0 py-[1.5rem] sm:text-[60px] sm:leading-[50px] xl:text-[80px] xl:leading-[65px] 2xl:text-[80px] 2xl:leading-[65px] min-[1920px]:text-[100px] min-[1920px]:leading-[78px] text-center lg:text-left">
@@ -204,7 +204,7 @@ const About = () => {
         <div className="container-custom mx-auto">
           <div className="lg:w-8/12 w-full mx-auto flex justify-center relative">
             <img
-              src="images/about-us/aahil-founder-play.png"
+              src="/images/about-us/aahil-founder-play.png"
               alt=""
               onClick={() => setShowModals({ ...showModals, videoModal: true })}
               className='hover:cursor-pointer'
@@ -216,7 +216,7 @@ const About = () => {
                 }
               >
                 <img
-                  src="images/about-us/play.svg"
+                  src="/images/about-us/play.svg"
                   alt=""
                   className="w-[100px] h-[100px]"
                 />
@@ -237,7 +237,7 @@ const About = () => {
               <div>
                 <img
                   className="mx-auto"
-                  src="images/about-us/aahil-valliani.png"
+                  src="/images/about-us/aahil-valliani.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -258,7 +258,7 @@ const About = () => {
                     Full Bio{' '}
                     <img
                       className="inline"
-                      src="images/about-us/icon-bio.svg"
+                      src="/images/about-us/icon-bio.svg"
                       alt=""
                     />
                   </button>
@@ -269,7 +269,7 @@ const About = () => {
               <div>
                 <img
                   className="mx-auto"
-                  src="images/about-us/zohran-valliani.png"
+                  src="/images/about-us/zohran-valliani.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -289,7 +289,7 @@ const About = () => {
                     Full Bio{' '}
                     <img
                       className="inline"
-                      src="images/about-us/icon-bio.svg"
+                      src="/images/about-us/icon-bio.svg"
                       alt=""
                     />
                   </button>
@@ -311,7 +311,7 @@ const About = () => {
               <div>
                 <img
                   className="mx-auto w-[221px] h-[221px]"
-                  src="images/about-us/judith-o-rorke-trigiani.png"
+                  src="/images/about-us/judith-o-rorke-trigiani.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -332,7 +332,7 @@ const About = () => {
                     Full Bio{' '}
                     <img
                       className="inline"
-                      src="images/about-us/icon-bio.svg"
+                      src="/images/about-us/icon-bio.svg"
                       alt=""
                     />
                   </button>
@@ -343,7 +343,7 @@ const About = () => {
               <div className="box-user-about-us">
                 <img
                   className="mx-auto w-[221px] h-[221px]"
-                  src="images/about-us/allen-j-klein.png"
+                  src="/images/about-us/allen-j-klein.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -364,7 +364,7 @@ const About = () => {
                     Full Bio{' '}
                     <img
                       className="inline"
-                      src="images/about-us/icon-bio.svg"
+                      src="/images/about-us/icon-bio.svg"
                       alt=""
                     />
                   </button>
@@ -375,7 +375,7 @@ const About = () => {
               <div className="box-user-about-us">
                 <img
                   className="mx-auto w-[221px] h-[221px]"
-                  src="images/about-us/pam-wisniewski.png"
+                  src="/images/about-us/pam-wisniewski.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -397,7 +397,7 @@ const About = () => {
                     Full Bio{' '}
                     <img
                       className="inline"
-                      src="images/about-us/icon-bio.svg"
+                      src="/images/about-us/icon-bio.svg"
                       alt=""
                     />
                   </button>
@@ -408,7 +408,7 @@ const About = () => {
               <div>
                 <img
                   className="mx-auto w-[221px] h-[221px]"
-                  src="images/about-us/annie-khalid.png"
+                  src="/images/about-us/annie-khalid.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -429,7 +429,7 @@ const About = () => {
                     Full Bio{' '}
                     <img
                       className="inline"
-                      src="images/about-us/icon-bio.svg"
+                      src="/images/about-us/icon-bio.svg"
                       alt=""
                     />
                   </button>
@@ -440,7 +440,7 @@ const About = () => {
               <div>
                 <img
                   className="mx-auto w-[221px] h-[221px]"
-                  src="images/about-us/hasnain-aslam.png"
+                  src="/images/about-us/hasnain-aslam.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -461,7 +461,7 @@ const About = () => {
                     Full Bio{' '}
                     <img
                       className="inline"
-                      src="images/about-us/icon-bio.svg"
+                      src="/images/about-us/icon-bio.svg"
                       alt=""
                     />
                   </button>
@@ -472,7 +472,7 @@ const About = () => {
               <div>
                 <img
                   className="mx-auto w-[221px] h-[221px]"
-                  src="images/about-us/abbas-valliani.png"
+                  src="/images/about-us/abbas-valliani.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -493,7 +493,7 @@ const About = () => {
                     Full Bio{' '}
                     <img
                       className="inline"
-                      src="images/about-us/icon-bio.svg"
+                      src="/images/about-us/icon-bio.svg"
                       alt=""
                     />
                   </button>
@@ -533,7 +533,7 @@ const About = () => {
               <div className="text-center">
                 <img
                   className="mx-auto"
-                  src="images/about-us/aahil-valliani.png"
+                  src="/images/about-us/aahil-valliani.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -575,7 +575,7 @@ const About = () => {
               <div className="text-center">
                 <img
                   className="mx-auto"
-                  src="images/about-us/zohran-valliani.png"
+                  src="/images/about-us/zohran-valliani.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -618,7 +618,7 @@ const About = () => {
               <div className="text-center">
                 <img
                   className="mx-auto"
-                  src="images/about-us/judith-o-rorke-trigiani.png"
+                  src="/images/about-us/judith-o-rorke-trigiani.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -669,7 +669,7 @@ const About = () => {
               <div className="text-center">
                 <img
                   className="mx-auto"
-                  src="images/about-us/allen-j-klein.png"
+                  src="/images/about-us/allen-j-klein.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -717,7 +717,7 @@ const About = () => {
               <div className="text-center">
                 <img
                   className="mx-auto"
-                  src="images/about-us/pam-wisniewski.png"
+                  src="/images/about-us/pam-wisniewski.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -762,7 +762,7 @@ const About = () => {
               <div className="text-center">
                 <img
                   className="mx-auto"
-                  src="images/about-us/annie-khalid.png"
+                  src="/images/about-us/annie-khalid.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -818,7 +818,7 @@ const About = () => {
               <div className="text-center">
                 <img
                   className="mx-auto"
-                  src="images/about-us/hasnain-aslam.png"
+                  src="/images/about-us/hasnain-aslam.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">
@@ -861,7 +861,7 @@ const About = () => {
               <div className="text-center">
                 <img
                   className="mx-auto"
-                  src="images/about-us/abbas-valliani.png"
+                  src="/images/about-us/abbas-valliani.png"
                   alt=""
                 />
                 <h6 className="text-[20px] leading-[20px] pt-[1rem] font-bold md:text-[24px] md:leading-[24px] md:pt-[1.5rem]">

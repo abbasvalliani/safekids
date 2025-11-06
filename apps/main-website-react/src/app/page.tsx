@@ -15,7 +15,7 @@ const Home = () => {
         <div className="container-custom mx-auto ">
           <div className="flex flex-wrap justify-center items-center">
             <div className="w-full lg:w-12/12">
-              <img className="logo mx-auto mb-4" src="images/logo.svg" alt="" />
+              <img className="logo mx-auto mb-4" src="/images/logo.svg" alt="" />
               <h2 className="font-gallix-extrabold text-[28px] sm:text-4xl sm:leading-10 xl:text-5xl xl:leading-[52px] xl:pr-[15rem] xl:pb-[4rem] xl:pl-[15rem] leading-8 font-extrabold pb-[1rem]">
                 AI smart scans websites,
                 <span className="color2">
@@ -26,7 +26,7 @@ const Home = () => {
             </div>
             <FadeInView className="w-full lg:w-4/12 fade-left">
               <img
-                src="images/go.svg"
+                src="/images/go.svg"
                 className="w-[70%] sm:w-[50%] md:w-[35%] lg:[w-45%] xl:w-[50%] xl:pt-[4rem] min-[1920px]:w-[100%] mx-auto"
                 alt=""
               />
@@ -42,14 +42,14 @@ const Home = () => {
             </FadeInView>
             <div className="w-full lg:w-4/12">
               <img
-                src="images/img2.png"
+                src="/images/img2.png"
                 className="sm:w-[70%] md:w-[100%] mx-auto"
                 alt=""
               />
             </div>
             <FadeInView className="w-full lg:w-4/12 fade-right">
               <img
-                src="images/stop.svg"
+                src="/images/stop.svg"
                 className="w-[70%] sm:w-[50%] md:w-[35%] lg:[w-45%] xl:w-[50%] xl:pt-[4rem] min-[1920px]:w-[100%] mx-auto"
                 alt=""
               />
@@ -81,14 +81,14 @@ const Home = () => {
             </FadeInView>
             <div className="w-full px-3 lg:px-0 lg:w-7/12 relative">
               <img
-                src="images/mobile/img3-1.png"
+                src="/images/mobile/img3-1.png"
                 className="lg:hidden mx-auto"
                 alt=""
               />
               <div className="float-box-outside bg-transparent shadow-lg border border-[#eeeeee] shadow-[rgba(0, 0, 0, 0.07)] bg-[#fffffff0] rounded-[20px] z-[9] w-[90%] sm:max-lg:w-[60%] sm:max-lg:mx-auto text-left mb-[1rem] min-h-[130px] lg:min-h-[0] relative lg:absolute lg:top-[0] lg:left-[0] lg:w-[350px] lg:mb-[0] xl:w-[345px]">
                 <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px]">
                   <img
-                    src="images/icon-stop.svg"
+                    src="/images/icon-stop.svg"
                     className="mt-[-0.4rem] ml-[-3.5rem] absolute"
                     alt=""
                   />
@@ -99,14 +99,14 @@ const Home = () => {
                 </div>
               </div>
               <img
-                src="images/mobile/img3-2.png"
+                src="/images/mobile/img3-2.png"
                 className="lg:hidden mx-auto"
                 alt=""
               />
               <div className="float-box-outside bg-transparent shadow-lg border border-[#eeeeee] bg-[#fffffff0] shadow-[rgba(0, 0, 0, 0.07)] rounded-[20px] z-[9] w-[90%] sm:max-lg:w-[60%] sm:max-lg:mx-auto text-left mb-[1rem] min-h-[130px] lg:min-h-[0] relative lg:absolute lg:bottom-[0] lg:left-[150px] lg:w-[350px] lg:mb-[0] xl:w-[345px]">
                 <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px]">
                   <img
-                    src="images/icon-check.svg"
+                    src="/images/icon-check.svg"
                     className="mt-[-0.4rem] ml-[-3.5rem] absolute"
                     alt=""
                   />
@@ -115,7 +115,7 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-              <img src="images/img3.png" className="hidden lg:block" alt="" />
+              <img src="/images/img3.png" className="hidden lg:block" alt="" />
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ const Home = () => {
               <div className="float-box-outside absolute top-[-100px] left-[0] w-[295px] bg-transparent shadow-lg shadow-[rgba(0, 0, 0, 0.07)] rounded-[20px] z-[9]">
                 <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE]">
                   <img
-                    src="images/icon-check.svg"
+                    src="/images/icon-check.svg"
                     className="mt-[-0.4rem] ml-[-5.5rem] absolute"
                     alt=""
                   />
@@ -140,7 +140,7 @@ const Home = () => {
               <div className="float-box-outside absolute bottom-[0] left-[45%] w-[255px] bg-transparent shadow-lg shadow-[rgba(0, 0, 0, 0.07)] rounded-[20px] z-[9]">
                 <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE]">
                   <img
-                    src="images/icon-stop.svg"
+                    src="/images/icon-stop.svg"
                     className="mt-[-0.4rem] ml-[-5.5rem] absolute"
                     alt=""
                   />
@@ -153,7 +153,7 @@ const Home = () => {
                 <div className="w-full lg:w-6/12">
                   <div className="scan-wrapper relative inline-block">
                     <img
-                      src="images/img4-1-no-scan.png"
+                      src="/images/img4-1-no-scan.png"
                       className="scan__image"
                       alt=""
                     />
@@ -180,7 +180,7 @@ const Home = () => {
                 <div className="w-full">
                   <div className="scan-wrapper inline-block relative">
                     <img
-                      src="images/img4-1-no-scan.png"
+                      src="/images/img4-1-no-scan.png"
                       className="scan__image"
                       alt=""
                     />
@@ -189,7 +189,7 @@ const Home = () => {
                   <div className="float-box-outside w-[90%] relative text-left mb-[1rem] shadow-[none] min-h-[130px] bg-transparent rounded-[20px] z-[9]  md:max-w-[350px] mx-auto">
                     <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE] min-h-[130px]">
                       <img
-                        src="images/icon-check.svg"
+                        src="/images/icon-check.svg"
                         className="absolute mt-[-0.4rem] ml-[-3.5rem]"
                         alt=""
                       />
@@ -204,7 +204,7 @@ const Home = () => {
                   <div className="float-box-outside w-[90%] relative text-left  mb-[1rem] shadow-[none] min-h-[130px] bg-transparent rounded-[20px] z-[9]  md:max-w-[350px] mx-auto">
                     <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE] min-h-[130px]">
                       <img
-                        src="images/icon-stop.svg"
+                        src="/images/icon-stop.svg"
                         className="absolute mt-[-0.4rem] ml-[-3.5rem]"
                         alt=""
                       />
@@ -236,7 +236,7 @@ const Home = () => {
             <FadeInView className="w-full lg:w-4/12 px-4 mb-8 md:mb-0 column-tab-left fade-left">
               <div className="flex py-[1rem] px-[1rem] text-left bg-white shadow-lg rounded-[20px] lg:w-[140%]">
                 <div className="mr-4">
-                  <img src="images/icon1.svg" className="" alt="" />
+                  <img src="/images/icon1.svg" className="" alt="" />
                 </div>
                 <div>
                   <p className="">
@@ -252,7 +252,7 @@ const Home = () => {
               <div className="space h-8" />
               <div className="flex py-[1rem] px-[1rem] text-left bg-white shadow-lg rounded-[20px] lg:w-[140%]">
                 <div className="mr-4">
-                  <img src="images/icon2.svg" className="" alt="" />
+                  <img src="/images/icon2.svg" className="" alt="" />
                 </div>
                 <div>
                   <p className="">
@@ -264,7 +264,7 @@ const Home = () => {
               <div className="space h-8" />
               <div className="flex py-[1rem] px-[1rem] text-left bg-white shadow-lg rounded-[20px] lg:w-[140%]">
                 <div className="mr-4">
-                  <img src="images/icon3.svg" className="" alt="" />
+                  <img src="/images/icon3.svg" className="" alt="" />
                 </div>
                 <div>
                   <p className="">
@@ -276,7 +276,7 @@ const Home = () => {
               <div className="space h-8" />
               <div className="flex py-[1rem] px-[1rem] text-left bg-white shadow-lg rounded-[20px] lg:w-[140%]">
                 <div className="mr-4">
-                  <img src="images/icon4.svg" className="" alt="" />
+                  <img src="/images/icon4.svg" className="" alt="" />
                 </div>
                 <div>
                   <p className="">
@@ -288,7 +288,7 @@ const Home = () => {
             </FadeInView>
             <div className="w-full lg:w-8/12 px-4 mb-8 md:mb-0">
               <img
-                src="images/img5.png"
+                src="/images/img5.png"
                 className="lg:w-[110%] xl:w-[100%] xl:relative xl:right-[-5rem] z-[0] 2xl:right-[-20rem] 2xl:pt-[2rem]"
                 alt=""
               />

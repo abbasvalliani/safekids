@@ -15,7 +15,7 @@ const Terms = () => {
                 <div className="px-[2rem] pt-[5rem] pb-[1.5rem] relative shadow-2xl bg-white border border-[#EEEEEE] rounded-[20px] mb-[5rem]">
                   <img
                     className="absolute top-[-76px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                    src="images/how-it-works-privacy/icon-1.svg"
+                    src="/images/how-it-works-privacy/icon-1.svg"
                     alt=""
                   />
                   <h6 className="pb-[1.5rem] font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[40px]">
@@ -26,7 +26,7 @@ const Terms = () => {
                       <button className="btn small2">
                         Read More{' '}
                         <img
-                          src="images/icon-arrow-btn.svg"
+                          src="/images/icon-arrow-btn.svg"
                           className="inline pl-[1rem] pr-[0.5rem]"
                           alt=""
                         />
@@ -39,7 +39,7 @@ const Terms = () => {
                 <div className="px-[2rem] pt-[5rem] pb-[1.5rem] relative shadow-2xl bg-white border border-[#EEEEEE] rounded-[20px] mb-[5rem]">
                   <img
                     className="absolute top-[-76px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                    src="images/how-it-works-privacy/icon-2.svg"
+                    src="/images/how-it-works-privacy/icon-2.svg"
                     alt=""
                   />
                   <h6 className="pb-[1.5rem] font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[40px]">
@@ -50,7 +50,7 @@ const Terms = () => {
                       <button className="btn small2">
                         Read More{' '}
                         <img
-                          src="images/icon-arrow-btn.svg"
+                          src="/images/icon-arrow-btn.svg"
                           className="inline pl-[1rem] pr-[0.5rem]"
                           alt=""
                         />
@@ -63,7 +63,7 @@ const Terms = () => {
                 <div className="px-[2rem] pt-[5rem] pb-[1.5rem] relative shadow-2xl bg-white border border-[#EEEEEE] rounded-[20px] mb-[5rem]">
                   <img
                     className="absolute top-[-76px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                    src="images/how-it-works-privacy/icon-3.svg"
+                    src="/images/how-it-works-privacy/icon-3.svg"
                     alt=""
                   />
                   <h6 className="pb-[1.5rem] font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[40px]">
@@ -74,7 +74,7 @@ const Terms = () => {
                       <button className="btn small2">
                         Read More{' '}
                         <img
-                          src="images/icon-arrow-btn.svg"
+                          src="/images/icon-arrow-btn.svg"
                           className="inline pl-[1rem] pr-[0.5rem]"
                           alt=""
                         />

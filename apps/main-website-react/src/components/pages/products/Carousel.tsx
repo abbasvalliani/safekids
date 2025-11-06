@@ -67,7 +67,7 @@ const Carousel = () => {
                   className={cn('mx-auto', {
                     'carousel-image': currentSlide === 0,
                   })}
-                  src="images/products/testimonial1.png"
+                  src="/images/products/testimonial1.png"
                   alt=""
                 />
               </div>
@@ -79,7 +79,7 @@ const Carousel = () => {
                   className={cn('mx-auto', {
                     'carousel-image': currentSlide === 1,
                   })}
-                  src="images/products/testimonial2.png"
+                  src="/images/products/testimonial2.png"
                   alt=""
                 />
               </div>
@@ -91,7 +91,7 @@ const Carousel = () => {
                   className={cn('mx-auto', {
                     'carousel-image': currentSlide === 2,
                   })}
-                  src="images/products/testimonial3.png"
+                  src="/images/products/testimonial3.png"
                   alt=""
                 />
               </div>
@@ -103,7 +103,7 @@ const Carousel = () => {
                   className={cn('mx-auto', {
                     'carousel-image': currentSlide === 3,
                   })}
-                  src="images/products/testimonial4.png"
+                  src="/images/products/testimonial4.png"
                   alt=""
                 />
               </div>
@@ -115,7 +115,7 @@ const Carousel = () => {
                   className={cn('mx-auto', {
                     'carousel-image': currentSlide === 4,
                   })}
-                  src="images/products/testimonial5.png"
+                  src="/images/products/testimonial5.png"
                   alt=""
                 />
               </div>

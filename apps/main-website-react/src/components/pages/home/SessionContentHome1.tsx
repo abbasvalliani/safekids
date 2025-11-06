@@ -10,7 +10,7 @@ const SessionContentHome1 = () => {
             <div className="float-box-outside absolute xl:top-[-7%] top-[-17%] left-[40%] w-[345px] bg-transparent shadow-lg shadow-[rgba(0, 0, 0, 0.07)] rounded-[20px] z-[9]">
               <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE]">
                 <img
-                  src="images/icon-session1.png"
+                  src="/images/icon-session1.png"
                   className="mt-[-0.4rem] ml-[-5.5rem] absolute"
                   alt=""
                 />
@@ -27,7 +27,7 @@ const SessionContentHome1 = () => {
             <div className="float-box-outside absolute top-[20%] left-[5%] w-[345px] bg-transparent shadow-lg shadow-[rgba(0, 0, 0, 0.07)] rounded-[20px] z-[9]">
               <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE]">
                 <img
-                  src="images/icon-session2.png"
+                  src="/images/icon-session2.png"
                   className="mt-[-0.4rem] ml-[-5.5rem] absolute"
                   alt=""
                 />
@@ -49,7 +49,7 @@ const SessionContentHome1 = () => {
             <div className="float-box-outside absolute 2xl:top-[68%] xl:top-[63%] top-[82%] left-[5%] w-[345px] bg-transparent shadow-lg shadow-[rgba(0, 0, 0, 0.07)] rounded-[20px] z-[9]">
               <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE]">
                 <img
-                  src="images/icon-session3.png"
+                  src="/images/icon-session3.png"
                   className="mt-[-0.4rem] ml-[-5.5rem] absolute"
                   alt=""
                 />
@@ -68,7 +68,7 @@ const SessionContentHome1 = () => {
                 </p>
               </div>
             </div>
-            <img src="images/img1.png" className="" alt="" />
+            <img src="/images/img1.png" className="" alt="" />
           </div>
           <div className="lg:w-5/12 col-span-5">
             <FadeInView className="fade-right">
@@ -81,7 +81,7 @@ const SessionContentHome1 = () => {
                   Safe Kids artificial intelligence uses sophisticated models to
                   intercept content other tools traditionally miss.
                 </p>
-                <img src="images/img1.png" className="block lg:hidden" alt="" />
+                <img src="/images/img1.png" className="block lg:hidden" alt="" />
               </div>
             </FadeInView>
           </div>
@@ -89,7 +89,7 @@ const SessionContentHome1 = () => {
             <div className="float-box-outside w-[100%] text-left mb-[1rem] min-h-[130px]">
               <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE]">
                 <img
-                  src="images/icon-session1.png"
+                  src="/images/icon-session1.png"
                   className="mt-[-0.4rem] ml-[-3.5rem] absolute"
                   alt=""
                 />
@@ -106,7 +106,7 @@ const SessionContentHome1 = () => {
             <div className="float-box-outside w-[100%] text-left mb-[1rem] min-h-[130px]">
               <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE]">
                 <img
-                  src="images/icon-session2.png"
+                  src="/images/icon-session2.png"
                   className="mt-[-0.4rem] ml-[-3.5rem] absolute"
                   alt=""
                 />
@@ -128,7 +128,7 @@ const SessionContentHome1 = () => {
             <div className="float-box-outside w-[100%] text-left mb-[1rem] min-h-[130px]">
               <div className="py-[1.5rem] px-[1rem] bg-[#fffffff0] rounded-[20px] border border-[#EEEEEE]">
                 <img
-                  src="images/icon-session3.png"
+                  src="/images/icon-session3.png"
                   className="mt-[-0.4rem] ml-[-3.5rem] absolute"
                   alt=""
                 />

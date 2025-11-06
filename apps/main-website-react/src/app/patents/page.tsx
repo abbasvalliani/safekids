@@ -23,12 +23,12 @@ const Patents = () => {
             </div>
             <div className="lg:w-7/12 md:w-6/12 w-full">
               <img
-                src="images/how-it-works-privacy/img-how-it-works-privacy-banner.png"
+                src="/images/how-it-works-privacy/img-how-it-works-privacy-banner.png"
                 className="hidden lg:block max-w-[120%]"
                 alt=""
               />
               <img
-                src="images/how-it-works-privacy/mobile/img-how-it-works-privacy-banner-mobile.png"
+                src="/images/how-it-works-privacy/mobile/img-how-it-works-privacy-banner-mobile.png"
                 className="lg:hidden w-full"
                 alt=""
               />
@@ -47,7 +47,7 @@ const Patents = () => {
               <div className="px-[2rem] pt-[5rem] pb-[1.5rem] relative shadow-2xl bg-white border border-[#EEEEEE] rounded-[20px] mb-[5rem]">
                 <img
                   className="absolute top-[-76px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                  src="images/how-it-works-privacy/icon-1.svg"
+                  src="/images/how-it-works-privacy/icon-1.svg"
                   alt=""
                 />
                 <h6 className="pb-[1.5rem] font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[40px]">
@@ -89,7 +89,7 @@ const Patents = () => {
               <div className="px-[2rem] pt-[5rem] pb-[1.5rem] relative shadow-2xl bg-white border border-[#EEEEEE] rounded-[20px] mb-[5rem]">
                 <img
                   className="absolute top-[-76px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                  src="images/how-it-works-privacy/icon-2.svg"
+                  src="/images/how-it-works-privacy/icon-2.svg"
                   alt=""
                 />
                 <h6 className="pb-[1.5rem] font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[40px]">
@@ -124,7 +124,7 @@ const Patents = () => {
               <div className="px-[2rem] pt-[5rem] pb-[1.5rem] relative shadow-2xl bg-white border border-[#EEEEEE] rounded-[20px] mb-[5rem]">
                 <img
                   className="absolute top-[-76px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                  src="images/how-it-works-privacy/icon-3.svg"
+                  src="/images/how-it-works-privacy/icon-3.svg"
                   alt=""
                 />
                 <h6 className="pb-[1.5rem] font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[40px]">
@@ -152,7 +152,7 @@ const Patents = () => {
               <div className="px-[2rem] pt-[5rem] pb-[1.5rem] relative shadow-2xl bg-white border border-[#EEEEEE] rounded-[20px] mb-[5rem]">
                 <img
                   className="absolute top-[-76px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                  src="images/how-it-works-privacy/icon-1.svg"
+                  src="/images/how-it-works-privacy/icon-1.svg"
                   alt=""
                 />
                 <h6 className="pb-[1.5rem] font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[40px]">
@@ -171,7 +171,7 @@ const Patents = () => {
               <div className="px-[2rem] pt-[5rem] pb-[1.5rem] relative shadow-2xl bg-white border border-[#EEEEEE] rounded-[20px] mb-[5rem]">
                 <img
                   className="absolute top-[-76px] left-[50%] translate-x-[-50%] w-[150px] h-[150px]"
-                  src="images/how-it-works-privacy/icon-2.svg"
+                  src="/images/how-it-works-privacy/icon-2.svg"
                   alt=""
                 />
                 <h6 className="pb-[1.5rem] font-bold text-[30px] leading-[30px] sm:text-[40px] sm:leading-[40px] md:text-[25px] md:leading-[25px] xl:text-[40px] xl:leading-[40px]">

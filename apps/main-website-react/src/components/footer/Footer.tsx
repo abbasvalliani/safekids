@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="w-full md:w-5/12 md:text-left text-center">
               <Link href="/">
                 <img
-                  src="images/logo-footer.svg"
+                  src="/images/logo-footer.svg"
                   className="mx-auto md:mx-0"
                   alt=""
                 />

@@ -7,7 +7,9 @@ const { composePlugins, withNx } = require('@nx/next');
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
 const nextConfig = {
-  distDir: 'dist/apps/main-website-react/.next',
+  output: 'export',
+  distDir: 'out',
+  trailingSlash: true,
   nx: {
     // Set this to true if you would like to use SVGR
     // See: https://github.com/gregberge/svgr
