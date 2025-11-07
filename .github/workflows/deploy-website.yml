@@ -59,13 +59,11 @@ jobs:
 
       # Only move :latest if the GitHub release is not a prerelease
       - name: Tag latest for stable releases
-        if: ${{ github.event.release.prerelease == false }}
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: apps/main-website-react/Dockerfile
-          push: true
-          tags: ${{ env.IMAGE_BASE }}:latest
+        if: ${{ steps.semver.outputs.is_prerelease != 'true' }}
+        run: |
+          docker buildx imagetools create \
+            --tag ${{ env.IMAGE_BASE }}:latest \
+            ${{ steps.build.outputs.digest }}
 
       - name: Output image digest
         run: echo "Digest=${{ steps.build.outputs.digest }}"
