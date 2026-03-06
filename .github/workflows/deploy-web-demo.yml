@@ -36,7 +36,7 @@ jobs:
 
       - name: Build and push (multi tags)
         id: build
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: apps/ml-api-web-demo/Dockerfile
@@ -60,7 +60,7 @@ jobs:
       # Only move :latest if the GitHub release is not a prerelease
       - name: Tag latest for stable releases
         if: ${{ github.event.release.prerelease == false }}
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: apps/ml-api-web-demo/Dockerfile
