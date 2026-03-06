@@ -6,6 +6,7 @@ on:
 
 jobs:
   build_and_push:
+    environment: prod
     runs-on: ubuntu-latest
     env:
       IMAGE_BASE: ${{ vars.REGISTRY_HOST }}/safekids-ai/web
