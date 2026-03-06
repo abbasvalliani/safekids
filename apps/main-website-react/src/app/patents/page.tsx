@@ -159,7 +159,7 @@ const Patents = () => {
                   Pause, Reflect and Redirect
                 </h6>
                 <p className="text-[#0d6efd] mb-[1rem] text-lg">
-                  <a target="_blank" href="docs/prr.pdf">
+                  <a target="_blank" href="/docs/prr.pdf">
                     Pause, Reflect, &amp; Redirect: A novel approach for
                     empowering kids to be safer online by helping them make
                     better decisions
@@ -178,7 +178,7 @@ const Patents = () => {
                   Intent Based AI
                 </h6>
                 <p className="text-[#0d6efd] mb-[1rem] text-lg">
-                  <a target="_blank" href="docs/ai.pdf">
+                  <a target="_blank" href="/docs/ai.pdf">
                     Safe Kids AI’s Natural Language Processing (NLP) and
                     Computer Vision (CV) Technology
                   </a>
