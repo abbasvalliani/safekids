@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.48](https://github.com/abbasvalliani/safekids/compare/1.3.47...1.3.48) (2026-03-06)
+
+### Bug Fixes
+
+* correct broken research PDF links on patents page ([b9592ce](https://github.com/abbasvalliani/safekids/commit/b9592cee3d11c87a9e97476925b5e83e4c68969d))
+
 ## [1.3.47](https://github.com/abbasvalliani/safekids/compare/1.3.46...1.3.47) (2026-03-06)
 
 ## [1.3.46](https://github.com/abbasvalliani/safekids/compare/1.3.45...1.3.46) (2026-03-06)
