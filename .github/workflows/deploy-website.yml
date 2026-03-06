@@ -12,7 +12,7 @@ jobs:
       RELEASE_TAG: ${{ github.ref_name }} # e.g. v1.2.3
       SHORT_SHA: ${{ github.sha != '' && github.sha || 'unknown' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - uses: docker/setup-buildx-action@v3
 
