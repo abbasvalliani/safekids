@@ -273,7 +273,7 @@
     "jest-environment-node": "^29.7.0",
     "jsdom": "~25.0.1",
     "nx": "19.7.3",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.8",
     "prettier": "^3.4.2",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
