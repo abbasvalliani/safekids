@@ -286,7 +286,7 @@
     "vite": "~6.0.5",
     "vite-plugin-node": "^4.0.0",
     "vite-plugin-static-copy": "^2.2.0",
-    "vitest": "~2.1.8",
+    "vitest": "~2.1.9",
     "webpack": "^5.97.1",
     "webpack-merge": "^6.0.1"
   },
