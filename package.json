@@ -282,7 +282,7 @@
     "ts-jest": "^29.2.5",
     "ts-mockito": "^2.6.1",
     "ts-node": "10.9.2",
-    "typescript": "~5.7.2",
+    "typescript": "~5.7.3",
     "vite": "~6.0.5",
     "vite-plugin-node": "^4.0.0",
     "vite-plugin-static-copy": "^2.2.0",
