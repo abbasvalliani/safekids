@@ -249,7 +249,7 @@
     "@vitest/ui": "~2.1.8",
     "autoprefixer": "^10.4.20",
     "babel-loader": "^9.2.1",
-    "concurrently": "^9.1.0",
+    "concurrently": "^9.2.1",
     "copy-webpack-plugin": "^12.0.2",
     "cypress": "^13.17.0",
     "deepmerge": "^4.3.1",
