@@ -33,7 +33,7 @@ jobs:
       - name: Checkout LFS objects
         run: git lfs pull
 
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v5
         name: Install pnpm
         with:
           version: latest
