@@ -170,7 +170,7 @@
     "react-phone-input-2": "^2.15.1",
     "react-pin-field": "^3.1.5",
     "react-redux": "^9.2.0",
-    "react-router": "^7.1.1",
+    "react-router": "^7.15.0",
     "react-router-dom": "7.1.1",
     "react-slick": "^0.30.3",
     "react-week-picker": "^1.1.4",
