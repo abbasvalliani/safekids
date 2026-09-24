@@ -10,6 +10,12 @@ on:
   push:
     branches:
       - main
+  # Added by the self-hosted-CI port: without a pull_request trigger this
+  # workflow only ever ran post-merge, so the runner migration could not be
+  # validated on the PR that makes it. Mirrors build.yml in mail-agent.
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -57,21 +63,32 @@ jobs:
       - name: Checkout LFS objects
         run: git lfs pull
 
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        with:
-          version: latest
-          run_install: false
-
-      - uses: actions/setup-node@v3
+      # ── Toolchain order matters on the lean ARC runner image ──────────────
+      # The image ships NO node, so actions/setup-node MUST run FIRST:
+      # pnpm/action-setup's installer needs a node on PATH. That in turn forces
+      # `cache: 'pnpm'` off setup-node, because its cache resolver shells out to
+      # `pnpm store path` and pnpm does not exist yet at that point (circular).
+      # The cache only saved a registry hop and the runner is LAN-local, so the
+      # loss is negligible.
+      - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
-          cache: 'pnpm'
           registry-url: 'https://registry.npmjs.org'
           scope: '@safekids-ai'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # `version: latest` resolved to pnpm 11.x, which requires Node >= 22.13
+      # (it imports node:sqlite) and so aborts with ERR_UNKNOWN_BUILTIN_MODULE on
+      # the Node 20 above. PRE-EXISTING latent defect, not caused by the runner
+      # move — the last green main build predates pnpm 11. Dropping the override
+      # lets package.json's `packageManager` (pnpm@9.1.0) win, which is the version
+      # the committed lockfile was written with.
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
