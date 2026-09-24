@@ -25,7 +25,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GIT_MERGE_TOKEN }}
   build:
     runs-on: homelab-safekids
-    timeout-minutes: 15
+    # Raised from 15: same cause as build.yml — NX_NO_CLOUD means `nx build`
+    # no longer hits the Nx Cloud remote cache and is computed from scratch.
+    timeout-minutes: 30
     needs: auto-merge
     env:
       # nx.json carries an nxCloudAccessToken, so nx phones cloud.nx.app for

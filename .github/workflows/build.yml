@@ -20,7 +20,15 @@ on:
 jobs:
   build:
     runs-on: homelab-safekids
-    timeout-minutes: 10
+    # Raised from 10 by the self-hosted-CI port. The 10-minute budget was
+    # calibrated against GitHub-hosted runs that were served largely from the
+    # NX CLOUD REMOTE CACHE (safekids' last green main build took 2m06s total,
+    # booknok's 4m33s). cloud.nx.app is not on the runner's default-deny egress
+    # allowlist, so NX_NO_CLOUD is set above and every target is now computed
+    # from scratch — measured 450s+ for safekids' build+test and 750s+ for
+    # booknok's test, both of which were TRUNCATED by the old limit rather
+    # than failing. Nothing hangs; the work is simply no longer cached.
+    timeout-minutes: 30
     env:
       # nx.json carries an nxCloudAccessToken, so nx phones cloud.nx.app for
       # remote caching. That host is not on the runner's default-deny egress
