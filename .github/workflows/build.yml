@@ -20,14 +20,22 @@ on:
 jobs:
   build:
     runs-on: homelab-safekids
-    # Raised from 10 by the self-hosted-CI port. The 10-minute budget was
-    # calibrated against GitHub-hosted runs that were served largely from the
-    # NX CLOUD REMOTE CACHE (safekids' last green main build took 2m06s total,
-    # booknok's 4m33s). cloud.nx.app is not on the runner's default-deny egress
-    # allowlist, so NX_NO_CLOUD is set above and every target is now computed
-    # from scratch — measured 450s+ for safekids' build+test and 750s+ for
-    # booknok's test, both of which were TRUNCATED by the old limit rather
-    # than failing. Nothing hangs; the work is simply no longer cached.
+    # Raised from 10 by the self-hosted-CI port. TWO separate causes, and the
+    # first diagnosis was WRONG - recorded so it is not repeated.
+    #
+    #  - The stalls were NOT slowness. The runner pod is capped at 6Gi of
+    #    memory while exposing 8 CPUs, nx and jest size their worker pools
+    #    from the CPU count, and the pod was OOMKilled (exit 137, observed
+    #    directly on homelab-safekids-h78dz-runner-fq444). A dead runner
+    #    surfaces as a job timeout or as "the self-hosted runner lost
+    #    communication with the server", which reads exactly like a hang.
+    #    NX_PARALLEL below and --maxWorkers at the test call site are the
+    #    actual fix; this timeout is not.
+    #  - Separately, the job IS genuinely slower: cloud.nx.app is not on the
+    #    runner's default-deny egress allowlist, so NX_NO_CLOUD is set and
+    #    nothing comes from the Nx Cloud remote cache. safekids' last green
+    #    main build took 2m06s and booknok's 4m33s because they were largely
+    #    cache hits; computed from scratch this does not fit in 10 minutes.
     timeout-minutes: 30
     env:
       # nx.json carries an nxCloudAccessToken, so nx phones cloud.nx.app for
@@ -43,6 +51,11 @@ jobs:
       # target either script invokes. Skip the download rather than open a
       # hole in the allowlist for a binary CI never executes.
       CYPRESS_INSTALL_BINARY: '0'
+      # 8 CPUs visible, 6Gi of memory. nx sizes its task pool from the CPU
+      # count, so `run-many` ran up to 8 concurrent builds/jest processes and
+      # the pod was OOMKilled. Serialise nx tasks; the per-jest worker cap is
+      # applied at the test call site.
+      NX_PARALLEL: '1'
     permissions:
       contents: read
       packages: write
@@ -118,7 +131,9 @@ jobs:
         timeout-minutes: 12
         run: pnpm run build
 
+      # --maxWorkers=2: jest defaults to one worker per CPU (8 here) and each
+      # worker is a full node process, which is what exhausted the pod's 6Gi.
       - name: Test
         timeout-minutes: 12
-        run: pnpm run test
+        run: pnpm run test -- --maxWorkers=2
 
