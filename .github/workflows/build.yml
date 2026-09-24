@@ -27,6 +27,14 @@ jobs:
       # allowlist, so disable the cloud client rather than open a hole for a
       # cache. Same setting booknok's build already uses. Local cache still works.
       NX_NO_CLOUD: 'true'
+      # download.cypress.io is NOT on the runner's default-deny egress
+      # allowlist, so cypress's postinstall aborts the whole `pnpm install`
+      # (ELIFECYCLE). Nothing CI runs needs the binary: `test` runs jest/vite
+      # on eight lib+app projects and `build` runs build targets — the two
+      # cypress projects (ml-api-web-demo-e2e, main-website-react-e2e) have no
+      # target either script invokes. Skip the download rather than open a
+      # hole in the allowlist for a binary CI never executes.
+      CYPRESS_INSTALL_BINARY: '0'
     permissions:
       contents: read
       packages: write
