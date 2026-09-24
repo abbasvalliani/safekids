@@ -1,3 +1,21 @@
+# ── RUNS IN THE CLUSTER (self-hosted ARC runners) ───────────────────────────
+# Ported from GitHub-hosted `ubuntu-latest` to `runs-on: homelab-safekids`, following
+# numora/.github/workflows/deploy-api.yml. Two structural consequences:
+#
+#   • NO LOCAL DOCKER DAEMON. Runner pods are unprivileged by design, so the
+#     docker CLI talks to the shared ROOTLESS buildkitd over $BUILDKIT_HOST.
+#     Hence `buildx create --driver remote` + a plain `buildx build`, instead
+#     of setup-buildx-action + build-push-action, which assume a local daemon.
+#
+#   • NO REPO REGISTRY SECRETS. Harbor credentials are injected into the
+#     runner pod (HARBOR_CI_{REGISTRY,USERNAME,PASSWORD}), replacing
+#     vars.REGISTRY_HOST / vars.REGISTRY_USER / secrets.REGISTRY_TOKEN. They
+#     are POD env: readable as $VAR inside `run:`, NOT via ${{ env.VAR }}.
+#     IMAGE_PATH below is therefore the registry-relative path only; every
+#     step composes "$HARBOR_CI_REGISTRY/$IMAGE_PATH" at run time, so the
+#     image we push to is always the registry we logged in to.
+#
+# Release/versioning logic below is UNCHANGED — only the substrate moved.
 name: Build and Deploy Main Website
 
 on:
@@ -7,22 +25,24 @@ on:
 jobs:
   build_and_push:
     environment: prod
-    runs-on: ubuntu-latest
+    runs-on: homelab-safekids
+    timeout-minutes: 30
     env:
-      IMAGE_BASE: ${{ vars.REGISTRY_HOST }}/safekids-ai/web
+      # Registry-relative; the host comes from $HARBOR_CI_REGISTRY at
+      # run time so login and push can never disagree.
+      IMAGE_PATH: safekids-ai/web
       RELEASE_TAG: ${{ github.ref_name }} # e.g. v1.2.3
       SHORT_SHA: ${{ github.sha != '' && github.sha || 'unknown' }}
     steps:
       - uses: actions/checkout@v4
 
-      - uses: docker/setup-buildx-action@v3
+      # Injected robot creds, not repo secrets — see the header. $VAR, never
+      # ${{ env.VAR }}: pod env is invisible to the workflow expression context.
+      - name: Log in to Harbor
+        run: printf '%s' "$HARBOR_CI_PASSWORD" | docker login "$HARBOR_CI_REGISTRY" -u "$HARBOR_CI_USERNAME" --password-stdin
 
-      - name: Login to Harbor
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ vars.REGISTRY_HOST }}
-          username: ${{ vars.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
+      - name: Connect to the cluster BuildKit builder
+        run: docker buildx create --name cluster --driver remote "$BUILDKIT_HOST" --use
 
       - name: Derive semver tags
         id: semver
@@ -37,33 +57,35 @@ jobs:
 
       - name: Build and push (multi tags)
         id: build
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: apps/main-website-react/Dockerfile
-          push: true
-          build-args: |
-            GIT_TAG=${{ steps.semver.outputs.full }}
-          # Always push immutable version + semver rollups + git sha
-          tags: |
-            ${{ env.IMAGE_BASE }}:${{ steps.semver.outputs.full }}
-            ${{ env.IMAGE_BASE }}:${{ steps.semver.outputs.minor }}
-            ${{ env.IMAGE_BASE }}:${{ steps.semver.outputs.major }}
-            ${{ env.IMAGE_BASE }}:git-${{ env.SHORT_SHA }}
-          labels: |
-            org.opencontainers.image.title=snowslawnpro
-            org.opencontainers.image.version=${{ steps.semver.outputs.full }}
-            org.opencontainers.image.revision=${{ github.sha }}
-            org.opencontainers.image.source=${{ github.repository }}
-          provenance: true
-          sbom: true
+        run: |
+          set -euo pipefail
+          IMAGE_BASE="$HARBOR_CI_REGISTRY/$IMAGE_PATH"
+          docker buildx build --builder cluster --push \
+            -f apps/main-website-react/Dockerfile \
+            --build-arg "GIT_TAG=${{ steps.semver.outputs.full }}" \
+            --provenance=true \
+            --sbom=true \
+            -t "$IMAGE_BASE:${{ steps.semver.outputs.full }}" \
+            -t "$IMAGE_BASE:${{ steps.semver.outputs.minor }}" \
+            -t "$IMAGE_BASE:${{ steps.semver.outputs.major }}" \
+            -t "$IMAGE_BASE:git-${{ env.SHORT_SHA }}" \
+            --label "org.opencontainers.image.title=snowslawnpro" \
+            --label "org.opencontainers.image.version=${{ steps.semver.outputs.full }}" \
+            --label "org.opencontainers.image.revision=${{ github.sha }}" \
+            --label "org.opencontainers.image.source=${{ github.repository }}" \
+            --metadata-file /tmp/build-metadata.json \
+            .
+          # build-push-action exported `digest`; --metadata-file is the CLI
+          # equivalent. sed, not jq — the ARC runner image ships no jq.
+          DIGEST="$(sed -n 's/.*"containerimage.digest"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' /tmp/build-metadata.json)"
+          [ -n "$DIGEST" ] || { echo "::error::no digest in build metadata" >&2; exit 1; }
+          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
 
-      # Only move :latest if the GitHub release is not a prerelease
       - name: Tag latest for stable releases
         if: ${{ steps.semver.outputs.is_prerelease != 'true' }}
         run: |
           docker buildx imagetools create \
-            --tag ${{ env.IMAGE_BASE }}:latest \
+            --tag $HARBOR_CI_REGISTRY/$IMAGE_PATH:latest \
             ${{ steps.build.outputs.digest }}
 
       - name: Output image digest

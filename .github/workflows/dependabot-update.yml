@@ -1,3 +1,9 @@
+# ── RUNS IN THE CLUSTER (self-hosted ARC runners) ───────────────────────────
+# Ported from GitHub-hosted `ubuntu-latest` to `runs-on: homelab-safekids`.
+# The runner image ships the actions runner, git, curl and the docker/buildx
+# CLIs — and nothing else. Whatever toolchain a job needs it installs itself
+# (nodejs.org, registry.npmjs.org, pypi.org, files.pythonhosted.org and
+# github.com are all on the runner's default-deny egress allowlist).
 name: Dependabot Merged Release
 
 on:
@@ -6,6 +12,9 @@ on:
 
 jobs:
   auto-merge:
+    # stays GitHub-hosted: needs the `gh` CLI, which the ARC runner image does
+    # not ship (and cannot install — the pod is non-root with no sudo). The job
+    # is a single API call, so it costs seconds of hosted time.
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'}} # Detect that the PR author is dependabot
     steps:
@@ -15,9 +24,33 @@ jobs:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GIT_MERGE_TOKEN }}
   build:
-    runs-on: ubuntu-latest
+    runs-on: homelab-safekids
+    timeout-minutes: 15
     needs: auto-merge
+    env:
+      # nx.json carries an nxCloudAccessToken, so nx phones cloud.nx.app for
+      # remote caching. That host is not on the runner's default-deny egress
+      # allowlist, so disable the cloud client rather than open a hole for a
+      # cache. Same setting booknok's build already uses. Local cache still works.
+      NX_NO_CLOUD: 'true'
     steps:
+      # git-lfs is NOT baked into the ARC runner image, and the pod runs as a
+      # non-root user (uid 1001) with no sudo, so apt is unavailable at run
+      # time. Fetch the release tarball instead: github.com and
+      # *.githubusercontent.com are both on the runner egress allowlist.
+      # MUST precede checkout — `lfs: true` shells out to `git lfs`.
+      - name: Install git-lfs (not in the runner image)
+        run: |
+          set -euo pipefail
+          LFS_VERSION=3.5.1
+          curl -fsSL -o /tmp/git-lfs.tgz \
+            "https://github.com/git-lfs/git-lfs/releases/download/v${LFS_VERSION}/git-lfs-linux-amd64-v${LFS_VERSION}.tar.gz"
+          tar -xzf /tmp/git-lfs.tgz -C /tmp
+          mkdir -p "$HOME/.local/bin"
+          install -m 0755 "/tmp/git-lfs-${LFS_VERSION}/git-lfs" "$HOME/.local/bin/git-lfs"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          "$HOME/.local/bin/git-lfs" version
+
       - name: Checkout github repo (+ download lfs dependencies)
         uses: actions/checkout@v4
         with:
