@@ -109,8 +109,16 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build and test
-        run: |
-          pnpm run build
-          pnpm run test
+      # Step-level bounds, deliberately shorter than the job's. A JOB timeout
+      # makes GitHub discard the log entirely, which is why the first stall
+      # here was undiagnosable; a STEP timeout fails the step and the job still
+      # finishes normally, so the log survives. Split build from test so the
+      # log says which of the two is responsible.
+      - name: Build
+        timeout-minutes: 12
+        run: pnpm run build
+
+      - name: Test
+        timeout-minutes: 12
+        run: pnpm run test
 
