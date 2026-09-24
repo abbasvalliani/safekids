@@ -131,9 +131,14 @@ jobs:
         timeout-minutes: 12
         run: pnpm run build
 
-      # --maxWorkers=2: jest defaults to one worker per CPU (8 here) and each
-      # worker is a full node process, which is what exhausted the pod's 6Gi.
+      # NO --maxWorkers here, unlike booknok. `nx run-many` forwards extra
+      # flags to EVERY target, and this project list is mixed: the six
+      # nlp/vision libs are @nx/jest, but ml-api-web-demo is @nx/vite:test.
+      # Passing the jest-only flag made ml-api-web-demo:test exit non-zero
+      # having produced no test output at all. NX_PARALLEL=1 already
+      # serialises the tasks, which is what keeps this inside the pod's 6Gi;
+      # these libs' jest runs are small.
       - name: Test
         timeout-minutes: 12
-        run: pnpm run test -- --maxWorkers=2
+        run: pnpm run test
 
