@@ -7,7 +7,7 @@ afterEach(cleanup);
 test('it renders correct footer text', async () => {
     const { getAllByText, getByText } = render(<Footer />);
     await wait();
-    const copyright_text = getAllByText(/\©\ All Rights Reserved \–\ Safe Kids LLC./i);
+    const copyright_text = getAllByText(/\©\ All Rights Reserved \–\ Numora Capital, LLC\./i);
     const safekids_text = getByText(/Safe Kids\’/i);
     const service_term_text = getByText(/Services Terms/i);
     const and_text = getByText(/and/i);

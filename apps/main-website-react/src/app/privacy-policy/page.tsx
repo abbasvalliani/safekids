@@ -6,10 +6,10 @@ const PrivacyPolicy = () => {
       <main>
         <section className="pt-[10rem]">
           <div className="container-custom mx-auto privacy-container-custom">
-            <h1 className="mb-[1rem]">SAFEKIDS LLC PRIVACY POLICY</h1>
+            <h1 className="mb-[1rem]">NUMORA CAPITAL, LLC PRIVACY POLICY</h1>
             <p>Last modified: June 20th, 2022</p>
             <p>
-              Safe Kids LLC (“<strong>SafeKids</strong>“) respects your privacy
+              Numora Capital, LLC (“<strong>SafeKids</strong>“) respects your privacy
               and is committed to protecting it through our compliance with this
               Privacy Policy. However, please be aware that no security measures
               are perfect or impenetrable.
@@ -18,8 +18,8 @@ const PrivacyPolicy = () => {
               <strong>INTRODUCTION</strong>
             </p>
             <p>
-              SafeKids is a limited liability company organized under the laws
-              of the State of Virginia with offices at 1402 Stanbridge Pl
+              Numora Capital, LLC is a limited liability company organized under the
+              laws of the State of Virginia with offices at 1402 Stanbridge Pl
               Vienna, VA, 22182-1753. SafeKids monitors student use of
               School-Assigned Devices, uses artificial intelligence to identify
               Problematic Internet Use and intervenes (programmatically) to

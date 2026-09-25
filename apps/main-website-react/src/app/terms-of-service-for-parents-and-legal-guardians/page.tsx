@@ -15,12 +15,12 @@ const TermsForParents = () => {
               Last modified: June 20<sup>th</sup>, 2022
             </p>
             <p>
-              Safe Kids monitors student use of School-Assigned Devices, uses
+              Numora Capital, LLC monitors student use of School-Assigned Devices, uses
               artificial intelligence to identify Problematic Internet Use and
               Problematic Messaging and intervenes (programmatically) to
               discourage Problematic Internet Use and Problematic Messaging
               where it determines there may be such Use or Messaging (the “
-              <strong>Services</strong>”). For Safe Kids to provide the Services
+              <strong>Services</strong>”). For Numora Capital, LLC to provide the Services
               on a School Assigned Device assigned to you or your minor child,
               the Downloadable Software must be downloaded on that School
               Assigned Device. You agree to these Terms when you permit the
@@ -56,10 +56,10 @@ const TermsForParents = () => {
               </li>
               <li>
                 The term “SafeKids Downloadable Software” refers to downloadable
-                tools or other software that SafeKids makes available for
+                tools or other software that Numora Capital, LLC makes available for
                 download specifically for purposes of facilitating access to,
                 operation of, or use of the SafeKids Services, and any
-                enhancements SafeKids may make available to such Software from
+                enhancements Numora Capital, LLC may make available to such Software from
                 time-to-time.
               </li>
             </ul>
@@ -69,7 +69,7 @@ const TermsForParents = () => {
               your agreement as set forth herein.
             </p>
             <p>
-              I have reviewed the Video Demonstration and the Safe Kids LLC
+              I have reviewed the Video Demonstration and the Numora Capital, LLC
               Privacy Policy and consent to the implementation of the
               Downloadable Software on the School Assigned Device assigned to me
               or my minor child and the use of such Software and the related
@@ -98,13 +98,13 @@ const TermsForParents = () => {
               technology-based tools as well as from the Services.
             </p>
             <p>
-              I acknowledge and agree that Safe Kids, the company that developed
+              I acknowledge and agree that Numora Capital, LLC, the company that developed
               the Services and made it available to the School, shall have no
               liability of any kind arising from or associated with my child’s
               Problematic Internet Use, the failure of the Services to operate,
               or the operation of the Services including any programmatic
               intervention that may take place, and specifically waives any
-              rights or claim it may have against Safe Kids arising in
+              rights or claim it may have against Numora Capital, LLC arising in
               connection with my child’s use of the School Assigned Device and
               the impact or lack thereof of the Services.
             </p>
@@ -129,10 +129,10 @@ const TermsForParents = () => {
               </em>
             </p>
             <p>
-              I acknowledge that I have reviewed, understand and agree to Safe
-              Kids’ Privacy Policy https://www.safekids.ai/privacy-policy. I
+              I acknowledge that I have reviewed, understand and agree to Numora
+              Capital, LLC’s Privacy Policy https://www.safekids.ai/privacy-policy. I
               understand that if my child is under the age of 13, the Children’s
-              Online Privacy Protection Act (COPPA) requires Safe Kids to
+              Online Privacy Protection Act (COPPA) requires Numora Capital, LLC to
               provide parental notification and obtain parental consent before
               collecting personal information from my child or my child’s
               computer. I understand that the Software collects information from
@@ -142,8 +142,8 @@ const TermsForParents = () => {
             <p>
               <em>
                 I acknowledge that we are making these statements for the
-                benefit of the School and Safe Kids and that both School and
-                Safe Kids may rely on them.
+                benefit of the School and Numora Capital, LLC and that both School and
+                Numora Capital, LLC may rely on them.
               </em>
             </p>
           </div>

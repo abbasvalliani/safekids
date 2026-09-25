@@ -10,17 +10,17 @@ const TermsForSchools = () => {
             <br></br>
             <p>Last modified: June 20th, 2022</p>
             <p>
-              Safe Kids monitors student use of School-Assigned Devices, uses
+              Numora Capital, LLC monitors student use of School-Assigned Devices, uses
               artificial intelligence to identify Problematic Internet Use and
               Problematic Messaging and intervenes (programmatically) to
               discourage Problematic Internet Use and Problematic Messaging
               where it determines there may be such Use or Messaging (the “
               <strong>Services</strong>”). These Terms of Service (“Terms”)
-              apply to Safe Kids provision of the Services during a thirty-day
+              apply to Numora Capital, LLC’s provision of the Services during a thirty-day
               period beginning on the day on which you download the Downloadable
               Software (defined below) which enables you to access the Services
               (the “Term”). You agree to the Terms when you download the
-              Downloadable Software. Client and Safe Kids are sometimes
+              Downloadable Software. Client and Numora Capital, LLC are sometimes
               hereinafter referred to individually as a “<strong>Party</strong>”
               and collectively as the “<strong>Parties</strong>.” Unless
               otherwise specifically provided, references to Sections are to
@@ -32,7 +32,7 @@ const TermsForSchools = () => {
                 “<strong>Affiliate</strong>” means any entity that, directly or
                 indirectly, controls, is controlled by or is under common
                 control with, a Party, <u>provided</u> that in no event shall
-                Affiliates of Client include any competitors of Safe Kids. For
+                Affiliates of Client include any competitors of Numora Capital, LLC. For
                 purposes of this definition, “control” (including the terms
                 “controlled by” and “under common control with”), as used with
                 respect to any such entity, means (a) the legal or beneficial
@@ -53,7 +53,7 @@ const TermsForSchools = () => {
               </li>
               <li>
                 <strong>“Authorized Expert User” </strong>means the Expert Users
-                authorized by Client to contact Safe Kids and request second
+                authorized by Client to contact Numora Capital, LLC and request second
                 level support services.
               </li>
               <li>
@@ -86,19 +86,19 @@ const TermsForSchools = () => {
                 Information of a Party shall be treated as Confidential
                 Information. Without limiting the generality of the foregoing,
                 Client “Confidential Information” includes Personal Information
-                and Client Data, and Safe Kids’ “Confidential Information”
+                and Client Data, and Numora Capital, LLC’s “Confidential Information”
                 includes: (a) any and all aspects of the Services, SafeKids.ai
                 Platform including source code, algorithms, sequences, order,
-                methodologies, routines and processes, Documentation, and Safe
-                Kids’ policies and procedures, including, without limitation
-                on-line help materials; (b) all other Safe Kids’ Intellectual
-                Property; (c) all information concerning Safe Kids’ history,
+                methodologies, routines and processes, Documentation, and Numora
+                Capital, LLC’s policies and procedures, including, without limitation
+                on-line help materials; (b) all other Numora Capital, LLC’s Intellectual
+                Property; (c) all information concerning Numora Capital, LLC’s history,
                 operations, affairs (including financial affairs) and businesses
                 (including technical, marketing or other commercial
-                information); (d) all information concerning Safe Kids’
+                information); (d) all information concerning Numora Capital, LLC’s
                 relations with its customers, vendors, employees and service
                 providers; and (d) any discussions, considerations, options and
-                plans with respect to Safe Kids’ operations, affairs (including
+                plans with respect to Numora Capital, LLC’s operations, affairs (including
                 financial affairs) and businesses.
               </li>
               <li>
@@ -106,27 +106,27 @@ const TermsForSchools = () => {
                 documentation relating to the use or support of the Services,
                 including reference, user, systems administrator and technical
                 manuals and guides and “readme” files, whether in hard copy or
-                in on-line format, if and only to the extent Safe Kids’ acting
+                in on-line format, if and only to the extent Numora Capital, LLC’s acting
                 in its sole discretion elects to supply such materials to
               </li>
             </ul>
             <p>
               Client as any such materials may be amended, modified, or
-              supplemented by or for Safe Kids from time-to-time.
+              supplemented by or for Numora Capital, LLC from time-to-time.
             </p>
             <ul>
               <li>
                 <strong>“Downloadable Software” </strong>means downloadable
-                tools or other software that Safe Kids makes available for
+                tools or other software that Numora Capital, LLC makes available for
                 download specifically for purposes of facilitating access to,
-                operation of, or use of the Services, and any Enhancements Safe
-                Kids may make available to such Software from time-to-time.
+                operation of, or use of the Services, and any Enhancements Numora
+                Capital, LLC may make available to such Software from time-to-time.
               </li>
               <li>
                 <strong>“Enhancements</strong>” means any and all elaborations,
                 customizations, enhancements, updates, modifications, additions,
                 substitutions, and derivative works of the Services made by or
-                for Safe Kids.
+                for Numora Capital, LLC.
               </li>
               <li>
                 “<strong>Expert User</strong>” means Client designated personnel
@@ -250,16 +250,16 @@ const TermsForSchools = () => {
                 software, and other technologies and inventions, including any
                 deliverables, technical or functional descriptions,
                 requirements, plans, or reports, that are provided or used by
-                Safe Kids in connection with the Services or otherwise comprise
+                Numora Capital, LLC in connection with the Services or otherwise comprise
                 or relate to the Services or SafeKids.ai Platform. For the
                 avoidance of doubt, Safe Kids Materials include any information,
-                data, or other content derived from the Services and Safe Kids
+                data, or other content derived from the Services and Numora Capital, LLC’s
                 monitoring of Client and Student access to or use of the
                 Services other than Client Data.
               </li>
               <li>
                 “<strong>ai Platform</strong>” means the hardware, software and
-                other equipment owned or operated by or for Safe Kids and used
+                other equipment owned or operated by or for Numora Capital, LLC and used
                 to make the Services available to Authorized Users as well as to
                 collect and store Client Data.
               </li>
@@ -303,7 +303,7 @@ const TermsForSchools = () => {
               </li>
               <li>
                 “<strong>Third Party</strong>” means any person or entity that
-                is neither Safe Kids nor Client, nor any of their respective
+                is neither Numora Capital, LLC nor Client, nor any of their respective
                 Affiliates, employees, or agents.
               </li>
               <li>
@@ -316,8 +316,8 @@ const TermsForSchools = () => {
               </li>
               <li>
                 “<strong>Video Demonstration</strong>” means a video
-                demonstration of the use and operation of the Services that Safe
-                Kids makes available to the Client for use by the Client solely
+                demonstration of the use and operation of the Services that Numora
+                Capital, LLC makes available to the Client for use by the Client solely
                 to obtain parental consent to the implementation of the
                 Downloadable Software on the School Assigned Device assigned to
                 his or her child and the use of the Services in connection with
@@ -332,8 +332,8 @@ const TermsForSchools = () => {
             <h2>3.Fees and Payment</h2>
             <p>
               There is no charge of the Services under these Terms. Services
-              accessed following expiration of the Term shall be subject to Safe
-              Kids standard User Charges.
+              accessed following expiration of the Term shall be subject to Numora
+              Capital, LLC’s standard User Charges.
             </p>
             <h2>
               4.Client Right to Use Services, Third-Party Products and Video
@@ -343,7 +343,7 @@ const TermsForSchools = () => {
               <li>
                 <strong>Access to Services</strong>. Subject to and conditioned
                 on Client’s and its Authorized Users’ compliance with the terms
-                and conditions of this Agreement, Safe Kids
+                and conditions of this Agreement, Numora Capital, LLC
               </li>
             </ul>
             <p>
@@ -354,7 +354,7 @@ const TermsForSchools = () => {
             </p>
             <ul>
               <li>
-                <strong>License to </strong>Safe Kids hereby grants to Client a
+                <strong>License to </strong>Numora Capital, LLC hereby grants to Client a
                 non-exclusive, non-transferable, non- sublicensable license to
                 use and make a reasonable number of copies of the Documentation
                 during the Term solely in connection with its use of the
@@ -362,7 +362,7 @@ const TermsForSchools = () => {
                 herein.
               </li>
               <li>
-                <strong>Third-Party Products</strong>. Safe Kids may distribute
+                <strong>Third-Party Products</strong>. Numora Capital, LLC may distribute
                 certain open-source software as part of the For purposes of this
                 Agreement, such Third-Party Products are subject to their own
                 license terms. Client understands and acknowledges that such
@@ -375,7 +375,7 @@ const TermsForSchools = () => {
                 <strong>Schedule B (Third Party Products)</strong>.
               </li>
               <li>
-                <strong>Video Demonstration. </strong>Safe Kids hereby grants
+                <strong>Video Demonstration. </strong>Numora Capital, LLC hereby grants
                 Client a non-exclusive, non-sublicensable, non- transferable
                 license during the Term to use the Video Demonstration solely
                 for purposes of obtaining parental consent to the implementation
@@ -384,7 +384,7 @@ const TermsForSchools = () => {
                 connection with such child.
               </li>
               <li>
-                <strong>Platform </strong>Safe Kids shall provide the Client
+                <strong>Platform </strong>Numora Capital, LLC shall provide the Client
                 Project Manager the passwords and other log- in information
                 required to allow Client to access the Services promptly
                 following the Effective Date. Client shall access the Services
@@ -419,15 +419,15 @@ const TermsForSchools = () => {
               injurious, or contain, transmit, or activate any Harmful Code;
               (vi) damage, destroy, disrupt, disable, impair, interfere with, or
               otherwise impede or harm in any manner the Services, SafeKids.ai
-              Platform, or Safe Kids’ provision of services to any Third Party,
+              Platform, or Numora Capital, LLC’s provision of services to any Third Party,
               in whole or in part; (vii) access or use the Services or other
               Safe Kids Materials in any manner or for any purpose that
               infringes, misappropriates, or otherwise violates any Intellectual
               Property Right or other right of any Third Party, or that violates
               any applicable Law; (viii) access or use the Services or other
               Safe Kids Materials to develop, provide or use a competing
-              software service or product or any other purpose that is to Safe
-              Kids’ detriment or commercial disadvantage; or (ix) remove any
+              software service or product or any other purpose that is to Numora
+              Capital, LLC’s detriment or commercial disadvantage; or (ix) remove any
               proprietary notices from the Downloadable Software or the
               Documentation.
             </p>
@@ -440,7 +440,7 @@ const TermsForSchools = () => {
                 Kids Materials, or Third-Party Products, whether expressly, by
                 implication, estoppel, or otherwise. All right, title, and
                 interest in and to the Services, the other Safe Kids Materials,
-                and the Third-Party Products are and will remain with Safe Kids
+                and the Third-Party Products are and will remain with Numora Capital, LLC
                 and the respective rights holders in the Third-Party Products.
               </li>
             </ul>
@@ -452,12 +452,12 @@ const TermsForSchools = () => {
             </ol>
             <ul>
               <li>
-                <strong>Safe Kids. </strong>Safe Kids has and will retain sole
+                <strong>Numora Capital, LLC. </strong>Numora Capital, LLC has and will retain sole
                 control over the operation, provision, maintenance, and
                 management of the Services and other Safe Kids Materials; and
               </li>
               <li>
-                <strong>Solution Support</strong>. Safe Kids will use
+                <strong>Solution Support</strong>. Numora Capital, LLC will use
                 commercially reasonable efforts to support and maintain the
                 Services during the Term in accordance with{' '}
                 <strong>Schedule C</strong>(Maintenance and Support). Without
@@ -471,7 +471,7 @@ const TermsForSchools = () => {
                 is otherwise fully
               </li>
               <li>
-                Safe Kids reserves the right, in its sole discretion, to make
+                Numora Capital, LLC reserves the right, in its sole discretion, to make
                 any changes to the Services and other Safe Kids Materials that
                 it deems necessary or useful to: (a) maintain or enhance: (i)
                 the quality or delivery of Services and other Safe Kids
@@ -481,13 +481,13 @@ const TermsForSchools = () => {
                 with applicable Law.
               </li>
               <li>
-                <strong>Internet Access</strong>. Safe Kids is not responsible
+                <strong>Internet Access</strong>. Numora Capital, LLC is not responsible
                 for the network connection to the internet required to access
                 the Services. Without limiting the generality of the foregoing,
-                Safe Kids is not responsible for issues, problems, or conditions
+                Numora Capital, LLC is not responsible for issues, problems, or conditions
                 arising from or related to such network connection, including
                 bandwidth issues, excessive latency, network outages, viruses,
-                malware and/or any other similar conditions. Moreover, Safe Kids
+                malware and/or any other similar conditions. Moreover, Numora Capital, LLC
                 is not responsible for any fees or costs associated with
                 acquiring and maintaining internet access.
               </li>
@@ -508,14 +508,14 @@ const TermsForSchools = () => {
               </li>
             </ul>
             <p>
-              (b) provide Safe Kids with such access to Client’s premises and
-              the School-Assigned Devices as is necessary for Safe Kids to
+              (b) provide Numora Capital, LLC with such access to Client’s premises and
+              the School-Assigned Devices as is necessary for Numora Capital, LLC to
               perform the Services in accordance with this Agreement.
             </p>
             <ul>
               <li>
-                Client will provide Safe Kids such cooperation and assistance as
-                Safe Kids may reasonably request to enable Safe Kids to exercise
+                Client will provide Numora Capital, LLC such cooperation and assistance as
+                Numora Capital, LLC may reasonably request to enable Numora Capital, LLC to exercise
                 its rights and perform its obligations under and in connection
                 with this Agreement.
               </li>
@@ -524,7 +524,7 @@ const TermsForSchools = () => {
             <ul>
               <li>
                 <strong>Parental Consent. </strong>As part of its onboarding
-                process, Safe Kids provides the Client a link to Video
+                process, Numora Capital, LLC provides the Client a link to Video
                 demonstration of the Safe Kids Services intended for review by
                 students who are 18 years old or older and by parents and legal
                 guardians of students who are younger than 18. Prior to
@@ -535,13 +535,13 @@ const TermsForSchools = () => {
                 Kids Terms of Service – Parents, Legal Guardians and Adult
                 Students. In addition, Client shall obtain the following
                 statement from such students, parents, and guardians for the
-                benefit of the School and Safe Kids, and provide such statements
-                to Safe Kids:
+                benefit of the School and Numora Capital, LLC, and provide such statements
+                to Numora Capital, LLC:
               </li>
             </ul>
             <p>
               <em>
-                “I]have reviewed the Video Demonstration, Safe Kids LLC Privacy
+                “I]have reviewed the Video Demonstration, Numora Capital, LLC Privacy
                 Policy and the Safe Kids Terms of Service – Parents, Legal
                 Guardians and Adult Students and consent to the implementation
                 of the Downloadable Software on the School Assigned Device
@@ -559,7 +559,7 @@ const TermsForSchools = () => {
                 <strong>Administrator, Counselor and Teacher Consent. </strong>
                 Prior to implementing the Downloadable Software on a School
                 Assigned Device, and using the Services in connection with a
-                student, Client, with such assistance from Safe Kids as Client
+                student, Client, with such assistance from Numora Capital, LLC as Client
                 may reasonably request, shall obtain the following statements
                 from the Client-designated personnel (including administrators,
                 counselors and teachers)
@@ -572,22 +572,22 @@ const TermsForSchools = () => {
             <p>
               <em>
                 I acknowledge that I have reviewed, understand, and agree to
-                Safe Kids’ Privacy Policy (Attached).{' '}
+                Numora Capital, LLC’s Privacy Policy (Attached).{' '}
               </em>
               <em>
                 I acknowledge that I am making this statement for the benefit of
-                the Client and Safe Kids and that both Client and Safe Kids may
+                the Client and Numora Capital, LLC and that both Client and Numora Capital, LLC may
                 rely on it.
               </em>
             </p>
             <ul>
               <li>
                 <strong>Feedback</strong>. During the Term, Client shall use
-                commercially reasonable efforts to provide Safe Kids’
+                commercially reasonable efforts to provide Numora Capital, LLC’s
                 suggestions, comments or ideas and report issues or problems
                 related to its use of the Services in a timely manner. Client
                 agrees not to disclose feedback to any Third Party and hereby
-                assigns to Safe Kids all right, title and interest in and to any
+                assigns to Numora Capital, LLC all right, title and interest in and to any
                 feedback, without any right to compensation for such
               </li>
               <li>
@@ -601,12 +601,12 @@ const TermsForSchools = () => {
                 <strong>Client Project Manager</strong>”). Client project tasks
                 shall include providing timely access to Client personnel
                 required or useful for the implementation and operation of the
-                Services and such other useful tasks and functions as Safe Kids
+                Services and such other useful tasks and functions as Numora Capital, LLC
                 may reasonably request, but only to the extent the Client is
-                better positioned than Safe Kids to perform such tasks and
+                better positioned than Numora Capital, LLC to perform such tasks and
                 functions (“
                 <strong>Client Tasks</strong>”). Client may designate up to five
-                (5) Expert Users who shall be trained by Safe Kids and provide
+                (5) Expert Users who shall be trained by Numora Capital, LLC and provide
                 first level support to Authorized Users with “how to” questions
                 and other issues with respect to the use of the Services. Client
                 shall ensure that the Client Project Manager has the requisite
@@ -623,7 +623,7 @@ const TermsForSchools = () => {
                 <strong>General Obligation</strong>. Each Party acknowledges
                 that it may be furnished with, receive, or otherwise become
                 aware of or have access to Confidential Information of or
-                concerning the other. Client and Safe Kids shall each use at
+                concerning the other. Client and Numora Capital, LLC shall each use at
                 least the same degree of care to prevent disclosure, publication
                 or dissemination of the Confidential Information of the other as
                 it employs to avoid unauthorized disclosure, publication or
@@ -653,7 +653,7 @@ const TermsForSchools = () => {
             <ul>
               <li>
                 <strong>Notification to Client Designated Personnel</strong>.
-                Notwithstanding Section 7.1, Safe Kids may disclose to
+                Notwithstanding Section 7.1, Numora Capital, LLC may disclose to
                 Client-designated personnel (including administrators,
                 counselors and teachers) the identity of a student engaging in
                 Problematic Internet Use or Problematic Messaging, provide the
@@ -664,7 +664,7 @@ const TermsForSchools = () => {
                 of Problematic Internet Use or Problematic Messaging that
                 reasonably can be understood to give rise to a risk of self-harm
                 or violence against others (including the intent to acquire or
-                use a weapon), Safe Kids may disclose such information to Client
+                use a weapon), Numora Capital, LLC may disclose such information to Client
                 designated personnel at the Client before or simultaneous with
                 the Solution generated warnings.
               </li>
@@ -722,7 +722,7 @@ const TermsForSchools = () => {
                 Downloadable Software and Documentation, or destroy all such
                 copies and certify in writing to the disclosing Party that such
                 Confidential Information has been destroyed. Notwithstanding the
-                foregoing, Safe Kids may retain copies of Client Data in
+                foregoing, Numora Capital, LLC may retain copies of Client Data in
                 accordance with its rights under Section 9.
               </li>
               <li>
@@ -745,8 +745,8 @@ const TermsForSchools = () => {
               </li>
             </ul>
             <p>
-              Platform. As between Client and Safe Kids, Client Data shall be
-              and remain property of Client. Safe Kids shall not and shall cause
+              Platform. As between Client and Numora Capital, LLC, Client Data shall be
+              and remain property of Client. Numora Capital, LLC shall not and shall cause
               its personnel not to: (a) possess or assert any lien or other
               right against or to Client Data; (b) sell, assign, or lease, or
               otherwise dispose of any Client Data; and (c) use any Client Data
@@ -754,37 +754,37 @@ const TermsForSchools = () => {
             </p>
             <ul>
               <li>
-                Safe Kids shall: (a) take all steps reasonably required to
+                Numora Capital, LLC shall: (a) take all steps reasonably required to
                 ensure that it observes and complies with
               </li>
             </ul>
             <p>
               (i) the provisions of Section 8; (ii) all Applicable Data Privacy
               and Security Rules relating to the protection of Client Data; and
-              (iii) the Safe Kids Privacy Policy;
+              (iii) the Numora Capital, LLC Privacy Policy;
             </p>
             <p>
-              (b) not permit any Safe Kids’ personnel to attempt to access, or
+              (b) not permit any Numora Capital, LLC’s personnel to attempt to access, or
               allow access to, Client Data or files or programs containing
               Client Data except to the extent such access is specifically
-              required for such Safe Kids’ personnel to perform the specific
+              required for such Numora Capital, LLC’s personnel to perform the specific
               functions, services, responsibilities and tasks assigned to such
-              Safe Kids’ personnel; (c) have in place adequate administrative,
+              Numora Capital, LLC’s personnel; (c) have in place adequate administrative,
               technical, logical security safeguards (and policies, practices,
               processes and procedures for the utilization and maintenance of
-              such safeguards) to ensure the protection of Client Data. Safe
-              Kids will notify Client of all suspected or actual security
+              such safeguards) to ensure the protection of Client Data. Numora
+              Capital, LLC will notify Client of all suspected or actual security
               breaches involving Client Data upon first suspecting or becoming
               aware of a breach, and address and remedy security breaches as
               soon as possible whether or not first suspected or discovered by
-              Safe Kids.
+              Numora Capital, LLC.
             </p>
-            <h2>9.Safe Kids Right to Use of Client Data</h2>
+            <h2>9.Numora Capital, LLC Right to Use of Client Data</h2>
             <ul>
               <li>
-                <strong>Safe Kids License Rights</strong>. Client grants Safe
-                Kids a worldwide, nonexclusive, irrevocable, perpetual license
-                to retain, use, aggregate with other Safe Kids’ customer data,
+                <strong>Numora Capital, LLC License Rights</strong>. Client grants Numora
+                Capital, LLC a worldwide, nonexclusive, irrevocable, perpetual license
+                to retain, use, aggregate with other Numora Capital, LLC’s customer data,
                 reproduce, publish, distribute and modify, including creating
                 derivative works of, Client Data solely for the following
                 purposes:
@@ -800,7 +800,7 @@ const TermsForSchools = () => {
               </li>
               <li>Developing new Safe Kids Services;</li>
               <li>
-                Training Safe Kids and Client personnel regarding the use,
+                Training Numora Capital, LLC and Client personnel regarding the use,
                 maintenance, and support of the Services;
               </li>
               <li>
@@ -820,9 +820,9 @@ const TermsForSchools = () => {
             </ul>
             <p>
               Without limiting the generality of the foregoing, the license
-              granted to Safe Kids under Section 9.1 shall also permit Safe Kids
+              granted to Numora Capital, LLC under Section 9.1 shall also permit Numora Capital, LLC
               to aggregate Client Data with other Client Data and with data of
-              other Safe Kids’ clients, but solely for one or more of the
+              other Numora Capital, LLC’s clients, but solely for one or more of the
               purposes described in Section 9.1(a) through 9.1(g).
             </p>
             <ol start={10}>
@@ -832,17 +832,17 @@ const TermsForSchools = () => {
             </ol>
             <ul>
               <li>
-                <strong>Safe Kids Materials</strong>. Safe Kids owns all right,
+                <strong>Safe Kids Materials</strong>. Numora Capital, LLC owns all right,
                 title, and interest, including all Intellectual Property Rights,
                 in and to the Safe Kids Materials.
               </li>
               <li>
-                <strong>Client Data</strong>. As between Safe Kids and Client,
+                <strong>Client Data</strong>. As between Numora Capital, LLC and Client,
                 Client owns all right, title, and interest, including all
                 Intellectual Property Rights, in and to the Client
               </li>
               <li>
-                Notwithstanding the foregoing, Safe Kids may use and retain
+                Notwithstanding the foregoing, Numora Capital, LLC may use and retain
                 copies of Client Data in accordance with its rights under
                 Section 9.
               </li>
@@ -932,10 +932,10 @@ const TermsForSchools = () => {
             <ul>
               <li>
                 <strong>By </strong>Client shall indemnify, defend, and hold
-                harmless Safe Kids and its Affiliates and its and their
+                harmless Numora Capital, LLC and its Affiliates and its and their
                 respective officers, directors, personnel, agents, successors,
                 and assigns, from and against any and all Losses incurred by
-                Safe Kids with respect to any Third-Party claim arising from or
+                Numora Capital, LLC with respect to any Third-Party claim arising from or
                 in connection with:
               </li>
             </ul>
@@ -948,7 +948,7 @@ const TermsForSchools = () => {
             </p>
             <ul>
               <li>
-                <strong>By Safe Kids. </strong>Safe Kids shall indemnify,
+                <strong>By Numora Capital, LLC. </strong>Numora Capital, LLC shall indemnify,
                 defend, and hold harmless Client and its respective officers,
                 directors, personnel, agents, successors, and assigns, from and
                 against any and all Losses incurred by Client with respect to
@@ -967,17 +967,17 @@ const TermsForSchools = () => {
               <li>
                 access to or use of the Safe Kids Materials in combination with
                 any hardware, system, software, network, or other materials or
-                service not authorized by Safe Kids in writing;
+                service not authorized by Numora Capital, LLC in writing;
               </li>
               <li>
                 modification of the Safe Kids Materials other than: (i) by or on
-                behalf of Safe Kids; or (ii) with Safe Kids written approval in
-                accordance with Safe Kids written specification; or
+                behalf of Numora Capital, LLC; or (ii) with Numora Capital, LLC’s written approval in
+                accordance with Numora Capital, LLC’s written specification; or
               </li>
               <li>
                 failure to timely implement any modifications, upgrades,
                 replacements, or enhancements made available to Client by or on
-                behalf of Safe Kids.
+                behalf of Numora Capital, LLC.
               </li>
               <li>
                 <strong>Indemnification Procedure</strong>. Each party shall
@@ -1008,11 +1008,11 @@ const TermsForSchools = () => {
               </li>
               <li>
                 <strong>Mitigation</strong>. If any of the Services or Safe Kids
-                Materials are, or in Safe Kids’ opinion are likely to be,
+                Materials are, or in Numora Capital, LLC’s opinion are likely to be,
                 claimed to infringe, misappropriate, or otherwise violate any
                 Third-Party Intellectual Property Right, or if Client’s or any
                 Authorized User’s use of the Services or other Safe Kids
-                Materials is enjoined or threatened to be enjoined, Safe Kids
+                Materials is enjoined or threatened to be enjoined, Numora Capital, LLC
                 may, at its option and sole cost and expense:
               </li>
               <li>
@@ -1062,7 +1062,7 @@ const TermsForSchools = () => {
               </li>
               <li>
                 Except as expressly otherwise provided in Section 13.3, in no
-                event will Safe Kids’ aggregate liability arising out of or
+                event will Numora Capital, LLC’s aggregate liability arising out of or
                 related to this Agreement under any legal or equitable theory,
                 including breach of contract, tort (including negligence),
                 strict liability, and otherwise exceed the Fees paid by Client
@@ -1080,15 +1080,15 @@ const TermsForSchools = () => {
               </li>
             </ol>
             <p>
-              Safe Kids may, directly or indirectly, and by use of a disabling
+              Numora Capital, LLC may, directly or indirectly, and by use of a disabling
               device or any other lawful means, suspend, terminate, or otherwise
               deny Client’s, any Authorized User’s, or any other Person’s access
               to or use of all or any part of the Services or Safe Kids
               Materials, without incurring any resulting obligation or
-              liability, if: (a) Safe Kids receives a judicial or other
+              liability, if: (a) Numora Capital, LLC receives a judicial or other
               governmental demand or order, subpoena, or law enforcement request
-              that expressly or by reasonable implication requires Safe Kids to
-              do so; or (b) Safe Kids believes, in its good faith and reasonable
+              that expressly or by reasonable implication requires Numora Capital, LLC to
+              do so; or (b) Numora Capital, LLC believes, in its good faith and reasonable
               discretion, that: (i) Client or any Authorized User has failed to
               comply with any material term of
             </p>
@@ -1100,7 +1100,7 @@ const TermsForSchools = () => {
               any Authorized User is, has been, or is likely to be involved in
               any fraudulent, misleading, or unlawful activities; or (iii) this
               Agreement expires or is terminated. Section 14 does not limit any
-              of Safe Kids’s other rights or remedies, whether at law, in
+              of Numora Capital, LLC’s other rights or remedies, whether at law, in
               equity, or under this Agreement.
             </p>
             <h2>15.Termination of Agreement</h2>
@@ -1122,7 +1122,7 @@ const TermsForSchools = () => {
               <li>
                 <strong>Termination for Convenience. </strong>Either Party may
                 terminate this Agreement for convenience, for any reason or no
-                reason, upon sixty (60) days prior written notice to Safe Kids.
+                reason, upon sixty (60) days prior written notice to Numora Capital, LLC.
               </li>
               <li>
                 <strong>Insolvency</strong>. Either Party may terminate this
@@ -1159,10 +1159,10 @@ const TermsForSchools = () => {
             <ul>
               <li>
                 <strong>Background Checks</strong>. For each individual assigned
-                to perform services under this Agreement, Safe Kids shall
+                to perform services under this Agreement, Numora Capital, LLC shall
                 conduct, at its own expense, a reference check, a technical
-                evaluation, and a criminal background check. To the extent Safe
-                Kids personnel will be on Client premises, Safe Kids shall
+                evaluation, and a criminal background check. To the extent Numora
+                Capital, LLC personnel will be on Client premises, Numora Capital, LLC shall
                 comply with the requirements of all laws, rules and regulations
                 applicable to personnel performing services on Client premises,
                 if any.
@@ -1241,7 +1241,7 @@ const TermsForSchools = () => {
               <li>
                 <strong>Entire Agreement; Amendment</strong>. This Agreement,
                 and all schedules and attachments hereto, constitute the entire
-                agreement between Safe Kids and Client with respect to the
+                agreement between Numora Capital, LLC and Client with respect to the
                 subject matter hereof and thereof and supersede all prior and
                 contemporaneous representations, proposals, discussions, and
                 communications by or between the Parties, whether oral or in
@@ -1263,15 +1263,15 @@ const TermsForSchools = () => {
               involuntarily, by operation of law or otherwise, this Agreement or
               any of its rights or obligations under this Agreement without the
               prior written consent of the other Party; provided, however, (i)
-              Safe Kids may assign, sell, transfer, delegate or otherwise
+              Numora Capital, LLC may assign, sell, transfer, delegate or otherwise
               dispose of this Agreement or any of its rights or obligations
               under this Agreement without the prior written consent of the
               other Party solely in connection with a merger, consolidation,
-              sale of all or substantially all of such Safe Kids’ assets or
+              sale of all or substantially all of such Numora Capital, LLC’s assets or
               stock or like event; and
             </p>
             <p>
-              (ii) Safe Kids may assign and/or subcontract all or a portion of
+              (ii) Numora Capital, LLC may assign and/or subcontract all or a portion of
               this Agreement to an Affiliate without the consent of Client. Any
               purported assignment, sale, transfer, delegation or other
               disposition by a Party, except as permitted herein, shall be null
@@ -1335,10 +1335,10 @@ const TermsForSchools = () => {
                 this Agreement, the Parties shall draft and agree a press
                 release concerning this Agreement and the relationship between
                 the Parties. Once agreed, either or both Parties may issue the
-                Moreover, Safe Kids may identify Client as a client of Safe Kids
+                Moreover, Numora Capital, LLC may identify Client as a client of Numora Capital, LLC
                 and generally describe the objectives of the engagement, how
-                Safe Kids supported the Client’s objectives, and what benefits
-                Client realized in Safe Kids’ promotional materials,
+                Numora Capital, LLC supported the Client’s objectives, and what benefits
+                Client realized in Numora Capital, LLC’s promotional materials,
                 presentations, web site, and proposals to current and
                 prospective clients and other Third Parties in connection with
                 the marketing of its business.
@@ -1347,14 +1347,14 @@ const TermsForSchools = () => {
                 <strong>Covenant of Good Faith and Cooperation</strong>. The
                 Parties agree that, in their respective dealings arising out of
                 or related to this Agreement, they shall act fairly and in good
-                faith. Without limiting the foregoing, Safe Kids’ performance
+                faith. Without limiting the foregoing, Numora Capital, LLC’s performance
                 depends upon Client’s timely and effective cooperation in
                 connection with the implementation of this Agreement, including
-                providing Safe Kids with reasonable facilities, timely access to
+                providing Numora Capital, LLC with reasonable facilities, timely access to
                 appropriate data, information, and appropriately skilled Client
-                personnel. Safe Kids shall not be liable for any failure to
+                personnel. Numora Capital, LLC shall not be liable for any failure to
                 perform its obligations, to the extent that the failure is
-                caused by Client’s lack of cooperation. Safe Kids may rely upon
+                caused by Client’s lack of cooperation. Numora Capital, LLC may rely upon
                 the accuracy and completeness of data, material, and other
                 information furnished by Client, without any independent
                 investigation or verification.
@@ -1388,7 +1388,7 @@ const TermsForSchools = () => {
             <p>In the case of Client:</p>
             <ul>
               <li>
-                Subject to the notice requirements of this Agreement, Safe Kids
+                Subject to the notice requirements of this Agreement, Numora Capital, LLC
                 and Client may correspond and convey information, documentation
                 and work product via Internet e-mail unless Client expressly
                 requests otherwise, though such shall not constitute official
@@ -1426,7 +1426,7 @@ const TermsForSchools = () => {
             <p>&nbsp;</p>
             <p>
               This <strong>Schedule C (Maintenance and Support) </strong>
-              describes Safe Kids maintenance and support obligations. This
+              describes Numora Capital, LLC’s maintenance and support obligations. This
             </p>
             <p>
               <strong>Schedule C </strong>is incorporated in and made a part of
@@ -1439,7 +1439,7 @@ const TermsForSchools = () => {
                 hours are 9:00 AM to 5:00 PM Eastern Standard Time during days
                 the Client is providing classroom or remote instruction.
               </li>
-              <li>Safe Kids shall:</li>
+              <li>Numora Capital, LLC shall:</li>
             </ol>
             <ul>
               <li>
@@ -1466,13 +1466,13 @@ const TermsForSchools = () => {
                 Employ trained staff to receive and review requests for second
                 level assistance from Authorized Expert Users during business
                 hours. For clarity, the backup Authorized Expert Users would
-                only be permitted to contact Safe Kids if the primary Authorized
+                only be permitted to contact Numora Capital, LLC if the primary Authorized
                 User is not available. Second level assistance shall include:
               </li>
               <li>
                 Creating (relying on existing materials to the extent possible)
                 a clear, concise and comprehensive knowledge database for use by
-                Safe Kids personnel providing second level support services and
+                Numora Capital, LLC personnel providing second level support services and
                 maintaining it so that it remains clear, concise, comprehensive
                 and up to date throughout the Term;
               </li>
@@ -1491,14 +1491,14 @@ const TermsForSchools = () => {
               </li>
               <li>
                 Address and resolve outages and problems with functionality that
-                Safe Kids determines are attributable to Safe For this purpose,
+                Numora Capital, LLC determines are attributable to Safe For this purpose,
                 resolving defects includes system testing of defect resolution
                 and updating documentation;
               </li>
               <li>
                 Provide Client and assisting Client to implement patches,
                 corrections, updates and new releases of the Downloadable
-                Software that Safe Kids elects to make available to all of its
+                Software that Numora Capital, LLC elects to make available to all of its
                 customers;
               </li>
               <li>
@@ -1518,7 +1518,7 @@ const TermsForSchools = () => {
             </ul>
             <ol start={3}>
               <li>
-                Client shall be responsible for (and Safe Kids performance of
+                Client shall be responsible for (and Numora Capital, LLC’s performance of
                 the Services described in Section 2 shall be contingent upon
                 Client’s):
                 <ul>
@@ -1527,20 +1527,20 @@ const TermsForSchools = () => {
                     students;
                   </li>
                   <li>
-                    Using a process mutually agreed with Safe Kids to report
+                    Using a process mutually agreed with Numora Capital, LLC to report
                     questions, issues and problems;
                   </li>
                   <li>Conducting UAT;</li>
                   <li>
                     Approving and elevating patches, corrections, updates, and
                     new releases to production within INSERT days of the day on
-                    which Safe Kids makes such patches, corrections, updates and
+                    which Numora Capital, LLC makes such patches, corrections, updates and
                     new releases available to Client;
                   </li>
                   <li>
-                    Notifying Safe Kids of upcoming changes to regulatory
+                    Notifying Numora Capital, LLC of upcoming changes to regulatory
                     requirements that may impact the Downloadable Software and /
-                    or Services to enable Safe Kids to perform an impact
+                    or Services to enable Numora Capital, LLC to perform an impact
                     analysis and recommend any necessary changes;
                   </li>
                   <li>
@@ -1549,7 +1549,7 @@ const TermsForSchools = () => {
                     requests; and
                   </li>
                   <li>
-                    Providing Safe Kids administrative access to deploy patches,
+                    Providing Numora Capital, LLC administrative access to deploy patches,
                     corrections, updates and new releases to School Assigned
                     Devices. Where such access is not provided, the Client shall
                     be responsible for deploying such patches, corrections,

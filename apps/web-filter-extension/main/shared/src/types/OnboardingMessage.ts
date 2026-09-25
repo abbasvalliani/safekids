@@ -36,7 +36,7 @@ export const defaultMessages: OnBoardingMessages = {
     getStarted_footer_servicesTerms: 'Services Terms',
     getStarted_footer_and: 'and',
     getStarted_footer_privacyPolicy: 'Privacy Policy',
-    getStarted_footer_rights_reserved: `© All Rights Reserved - Safe Kids LLC.`,
+    getStarted_footer_rights_reserved: `© All Rights Reserved - Numora Capital, LLC.`,
     getStarted_welcome: 'Welcome to',
     getStarted_login: 'Then: Login',
     getStarted_redirect_signup: "If you're a parent or guardian, you need to login to get the access code at",

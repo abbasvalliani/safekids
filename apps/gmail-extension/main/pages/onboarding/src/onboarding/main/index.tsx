@@ -22,7 +22,7 @@ const GmailOnBoarding = () => {
         <Description></Description>
       </div>
       <Footer>
-        <span>© All Rights Reserved – Safe Kids LLC.</span>
+        <span>© All Rights Reserved – Numora Capital, LLC.</span>
         <span>
           Safe Kids’{" "}
           <a

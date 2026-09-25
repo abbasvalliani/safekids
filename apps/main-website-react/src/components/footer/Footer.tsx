@@ -53,7 +53,7 @@ const Footer = () => {
                 {/*<a href="https://app.safekids.ai/signin" target="_blank" class="ml-4 text-sm font-medium leading-[19px] text-white no-underline px-[0.8rem]">Login</a>*/}
               </div>
               <div className="pt-[2rem] xl:pt-0">
-                © 2025 Safe Kids LLC. All Rights Reserved.
+                © 2026 Numora Capital, LLC. All Rights Reserved.
                 <span className="ml-2">Version: {process.env.NEXT_PUBLIC_GIT_TAG ?? 'unknown'}</span>
               </div>
             </div>
