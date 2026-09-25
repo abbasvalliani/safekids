@@ -253,7 +253,7 @@ const TermsForSchools = () => {
                 Numora Capital, LLC in connection with the Services or otherwise comprise
                 or relate to the Services or SafeKids.ai Platform. For the
                 avoidance of doubt, Safe Kids Materials include any information,
-                data, or other content derived from the Services and Numora Capital, LLC
+                data, or other content derived from the Services and Numora Capital, LLC’s
                 monitoring of Client and Student access to or use of the
                 Services other than Client Data.
               </li>
@@ -333,7 +333,7 @@ const TermsForSchools = () => {
             <p>
               There is no charge of the Services under these Terms. Services
               accessed following expiration of the Term shall be subject to Numora
-              Capital, LLC standard User Charges.
+              Capital, LLC’s standard User Charges.
             </p>
             <h2>
               4.Client Right to Use Services, Third-Party Products and Video
