@@ -18,7 +18,8 @@ const PrivacyPolicy = () => {
               <strong>INTRODUCTION</strong>
             </p>
             <p>
-              SafeKids is a limited liability company with offices at 1402 Stanbridge Pl
+              Numora Capital, LLC is a limited liability company organized under the
+              laws of the State of Virginia with offices at 1402 Stanbridge Pl
               Vienna, VA, 22182-1753. SafeKids monitors student use of
               School-Assigned Devices, uses artificial intelligence to identify
               Problematic Internet Use and intervenes (programmatically) to
