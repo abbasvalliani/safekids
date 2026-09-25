@@ -12,10 +12,18 @@ RUN pnpm install --ignore-scripts --frozen-lockfile
 COPY . .
 RUN pnpm run homepage
 
-FROM nginx:alpine
+# nginx-unprivileged is the NGINX-maintained image that runs as the non-root
+# nginx user (uid/gid 101) out of the box: pid file and temp paths live in /tmp,
+# so nothing under /etc, /var/cache or /usr/share needs to be writable.
+FROM nginxinc/nginx-unprivileged:alpine
 
+# Content and config are copied as root-owned, world-readable files: the nginx
+# user only needs to read them.
 COPY --from=builder /app/dist/apps/main-website-react/out /usr/share/nginx/html/
 COPY --from=builder /app/apps/main-website-react/nginx-config.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
+
+# Numeric so Kubernetes can verify runAsNonRoot without a runAsUser override.
+USER 101:101
+EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
