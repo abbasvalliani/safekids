@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.3.49](https://github.com/abbasvalliani/safekids/compare/1.3.48...1.3.49) (2026-09-25)
+
 ## [1.3.48](https://github.com/abbasvalliani/safekids/compare/1.3.47...1.3.48) (2026-03-06)
 
 ### Bug Fixes

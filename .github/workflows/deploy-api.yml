@@ -51,7 +51,7 @@ jobs:
             ${{ env.IMAGE_BASE }}:${{ steps.semver.outputs.major }}
             ${{ env.IMAGE_BASE }}:git-${{ env.SHORT_SHA }}
           labels: |
-            org.opencontainers.image.title=snowslawnpro
+            org.opencontainers.image.title=safekids-api
             org.opencontainers.image.version=${{ steps.semver.outputs.full }}
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.source=${{ github.repository }}
