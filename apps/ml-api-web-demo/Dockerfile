@@ -13,11 +13,19 @@ ENV GIT_TAG=$GIT_TAG
 
 RUN pnpm run web-demo
 
-FROM nginx:latest AS deployer
+# nginx-unprivileged is the NGINX-maintained image that runs as the non-root
+# nginx user (uid/gid 101) out of the box: pid file and temp paths live in /tmp,
+# so nothing under /etc, /var/cache or /usr/share needs to be writable.
+FROM nginxinc/nginx-unprivileged:alpine AS deployer
 
-WORKDIR /app
+# Content and config are root-owned; the nginx user only needs to read them.
+# The demo has its own nginx.conf (listen 8080) — scripts/vite-nginx.conf is
+# still used by apps/ml-api-web, which runs stock nginx on :80.
 COPY --from=builder /build/dist/apps/ml-api-web-demo /usr/share/nginx/html/
-COPY --from=builder /build/scripts/vite-nginx.conf /etc/nginx/conf.d/default.conf
-RUN chmod -R 755 /usr/share/nginx/html
+COPY --from=builder /build/apps/ml-api-web-demo/nginx.conf /etc/nginx/conf.d/default.conf
+USER root
+RUN chmod -R a+rX /usr/share/nginx/html
 
-EXPOSE 80
+# Numeric so Kubernetes can verify runAsNonRoot without a runAsUser override.
+USER 101:101
+EXPOSE 8080
