@@ -541,7 +541,7 @@ const TermsForSchools = () => {
             </ul>
             <p>
               <em>
-                “I]have reviewed the Video Demonstration, Safe Kids LLC Privacy
+                “I]have reviewed the Video Demonstration, Numora Capital, LLC Privacy
                 Policy and the Safe Kids Terms of Service – Parents, Legal
                 Guardians and Adult Students and consent to the implementation
                 of the Downloadable Software on the School Assigned Device

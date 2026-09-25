@@ -69,7 +69,7 @@ const TermsForParents = () => {
               your agreement as set forth herein.
             </p>
             <p>
-              I have reviewed the Video Demonstration and the Safe Kids LLC
+              I have reviewed the Video Demonstration and the Numora Capital, LLC
               Privacy Policy and consent to the implementation of the
               Downloadable Software on the School Assigned Device assigned to me
               or my minor child and the use of such Software and the related

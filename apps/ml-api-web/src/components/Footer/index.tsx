@@ -16,7 +16,7 @@ export const FooterContainer = styled.div<Props>`
 
 const Footer = ({ anchorColor }: Props): JSX.Element => (
     <FooterContainer anchorColor={anchorColor}>
-        <span>© All Rights Reserved – Safe Kids LLC.</span>
+        <span>© All Rights Reserved – Numora Capital, LLC.</span>
         <span>
             Safe Kids’{' '}
             <a className="primary-text cursor-pointer" href="https://www.safekids.ai/termsandconditions/" target="_blank" rel="noopener noreferrer">

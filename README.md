@@ -44,7 +44,7 @@ The most important request is to modify this codebase to make it better. Any mod
 you do, please commit back to this repository. I think that's only fair to improve the overall
 software. 
 
-&copy; Safe Kids LLC, 2024
+&copy; Numora Capital, LLC, 2026
 ```plaintext
 All rights reserved. No part of this publication may be reproduced, 
 distributed, or transmitted in any form or by any means, including photocopying, 
