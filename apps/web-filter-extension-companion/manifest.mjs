@@ -1,4 +1,4 @@
-import packageJson from './project.json' assert { type: 'json' };
+import packageJson from './project.json' with { type: 'json' };
 
 /**
  * After changing, please reload the extension at `chrome://extensions`

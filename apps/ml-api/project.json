@@ -12,7 +12,7 @@
       "options": {
         "outputPath": "dist/apps/ml-api",
         "webpackConfig": "apps/ml-api/webpack.config.js",
-        "generatePackageJson": false
+        "generatePackageJson": true
       },
       "configurations": {
         "development": {

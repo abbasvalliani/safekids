@@ -147,7 +147,9 @@ JSON.parse = jest.fn().mockImplementationOnce(() => {
         planType: 'FREE',
     };
 });
-JSON.stringify = jest.fn();
+// Spy (real implementation kept): Nest >=10.4.16 hashes module metadata with
+// JSON.stringify, so stubbing it to return undefined breaks createTestingModule.
+jest.spyOn(JSON, "stringify");
 
 describe('Chrome service test', () => {
     let service: ChromeService;

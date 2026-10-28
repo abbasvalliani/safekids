@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.50](https://github.com/abbasvalliani/safekids/compare/1.3.49...1.3.50) (2026-10-28)
+
+### Bug Fixes
+
+* harden the api, web and demo images: Node 24 LTS (trixie-slim) and nginx-unprivileged 1.30.6 pinned by digest, multi-stage api runtime with prod-only deps, patched vulnerable npm deps
+
 ## [1.3.49](https://github.com/abbasvalliani/safekids/compare/1.3.48...1.3.49) (2026-09-25)
 
 ## [1.3.48](https://github.com/abbasvalliani/safekids/compare/1.3.47...1.3.48) (2026-03-06)
