@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.51](https://github.com/abbasvalliani/safekids/compare/1.3.50...1.3.51) (2026-11-01)
+
+### Chores
+
+* **security:** pnpm 11.28.6 with supply-chain hardening (install scripts denied by default, 3-day release-age cooldown, no-downgrade trust policy, exotic subdeps blocked); stop pushing moving :latest / :vX / :vX.Y image tags; remove the unattended Dependabot auto-merge
+* **ci:** GitHub Actions on Node 24, pinned by commit SHA; Renovate (self-hosted) and release-deps automatic patch releases
+
 ## [1.3.50](https://github.com/abbasvalliani/safekids/compare/1.3.49...1.3.50) (2026-10-28)
 
 ### Bug Fixes
