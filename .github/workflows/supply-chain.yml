@@ -1,0 +1,234 @@
+# Supply-chain gates for pull requests (secure auto-update plan, phase P2).
+#
+# osv-scanner  BLOCKS a PR only when
+#                (a) any dependency matches a malicious-package advisory
+#                    (OSV id or alias starting `MAL-`), or
+#                (b) the PR introduces a vulnerability that the base commit
+#                    does not have (OSV-Scanner's documented PR "diff" mode:
+#                    scan base, scan head, osv-reporter --old/--new).
+#              Vulnerabilities that already exist on the base branch never
+#              fail the job, so PRs that FIX vulnerabilities (e.g. Renovate)
+#              pass. On push to main only (a) can fail it.
+# zizmor       GitHub Actions static analysis, REPORT-ONLY for now: findings
+#              are printed, summarised and uploaded as an artifact; the job
+#              never fails on them.
+#
+# Results go to workflow artifacts, not code scanning (not available on every
+# repo without GHAS). No secrets are used. Neither tool sends telemetry.
+#
+# Runner: GitHub-hosted on purpose. This is a PUBLIC repo; never use a
+# self-hosted runner here.
+name: Supply chain
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: supply-chain-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  osv-scanner:
+    name: osv-scanner
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    env:
+      GOTOOLCHAIN: auto
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check out base commit
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: git checkout --force --quiet "${BASE_SHA}"
+
+      - name: Scan base commit
+        id: scan-old
+        if: github.event_name == 'pull_request'
+        continue-on-error: true
+        uses: google/osv-scanner-action/osv-scanner-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
+        with:
+          scan-args: |-
+            --format=json
+            --output=old-results.json
+            --recursive
+            ./
+
+      - name: Check out head commit
+        if: github.event_name == 'pull_request'
+        run: git checkout --force --quiet "${GITHUB_SHA}"
+
+      - name: Scan head commit
+        id: scan-new
+        continue-on-error: true
+        uses: google/osv-scanner-action/osv-scanner-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
+        with:
+          scan-args: |-
+            --format=json
+            --output=new-results.json
+            --recursive
+            ./
+
+      # osv-scanner exits non-zero both when it finds vulnerabilities and when
+      # the scan itself fails. A failed scan writes no results file, and the
+      # reporter would read a missing file as "nothing new", so a PR that
+      # breaks the scanner must fail here instead of passing as clean.
+      - name: Check that the scans completed
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          status=0
+          if [ "${EVENT}" = "pull_request" ] && [ ! -s old-results.json ]; then
+            echo "::error::OSV-Scanner did not produce results for the base commit."
+            status=1
+          fi
+          if [ ! -s new-results.json ]; then
+            echo "::error::OSV-Scanner did not produce results for the head commit."
+            status=1
+          fi
+          exit "${status}"
+
+      - name: Block malicious packages (MAL-)
+        id: malicious
+        run: |
+          jq -r '
+            [ .results[]? | .source.path as $src | .packages[]?
+              | .package as $p | .vulnerabilities[]?
+              | select(([.id] + (.aliases // [])) | any(startswith("MAL-")))
+              | "\(.id)  \($p.ecosystem)/\($p.name)@\($p.version)  (\($src))" ]
+            | unique | .[]' new-results.json > malicious.txt
+          if [ -s malicious.txt ]; then
+            echo "::error::Malicious package advisories (MAL-) found:"
+            cat malicious.txt
+            { echo "### Malicious packages (MAL-)"; echo '```'; cat malicious.txt; echo '```'; } >> "${GITHUB_STEP_SUMMARY}"
+            exit 1
+          fi
+          echo "No MAL- advisories."
+
+      - name: Report vulnerabilities new in this PR
+        id: reporter
+        if: ${{ !cancelled() && github.event_name == 'pull_request' && steps.malicious.outcome != 'skipped' }}
+        uses: google/osv-scanner-action/osv-reporter-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
+        with:
+          scan-args: |-
+            --output=osv-results.sarif
+            --old=old-results.json
+            --new=new-results.json
+            --gh-annotations=true
+            --fail-on-vuln=true
+
+      - name: Convert results to SARIF
+        if: ${{ !cancelled() && github.event_name != 'pull_request' && steps.malicious.outcome != 'skipped' }}
+        uses: google/osv-scanner-action/osv-reporter-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
+        with:
+          scan-args: |-
+            --output=osv-results.sarif
+            --new=new-results.json
+            --gh-annotations=false
+            --fail-on-vuln=false
+
+      - name: Summary
+        if: ${{ !cancelled() }}
+        run: |
+          count() {
+            [ -s "$1" ] || { echo "n/a"; return; }
+            jq '[.results[]?.packages[]? | .package as $p | .vulnerabilities[]? | "\($p.ecosystem)/\($p.name)|\(.id)"] | unique | length' "$1"
+          }
+          {
+            echo "### OSV-Scanner"
+            echo "| | package/advisory pairs |"
+            echo "|---|---|"
+            echo "| base | $(count old-results.json) |"
+            echo "| head | $(count new-results.json) |"
+            echo
+            echo "Blocks only on MAL- advisories or vulnerabilities new in this PR. Full results are in the \`osv-scanner-results\` artifact."
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      - name: Upload results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: osv-scanner-results
+          path: |
+            old-results.json
+            new-results.json
+            osv-results.sarif
+            malicious.txt
+          if-no-files-found: warn
+          retention-days: 14
+
+  zizmor:
+    name: zizmor
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    env:
+      ZIZMOR_VERSION: 1.31.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Hash-verified wheel from PyPI (the same install method zizmor-action
+      # uses); the wheel contains only the zizmor executable.
+      - name: Install zizmor
+        run: |
+          dir="${RUNNER_TEMP}/zizmor"
+          mkdir -p "${dir}"
+          cat > "${dir}/requirements.txt" <<EOF
+          zizmor==${ZIZMOR_VERSION} \
+            --hash=sha256:58e878eb2dbd2c6183c105e1ac28c14f7dd1eca44a783f1fe2a69647d012c410 \
+            --hash=sha256:d9b36840c560a8abe39d9ef3d077239aabf6d572c5c2b629c970592a617dbf6f
+          EOF
+          python3 -m pip download --quiet --no-input --disable-pip-version-check \
+            --only-binary=:all: --no-deps --require-hashes \
+            --dest "${dir}/wheel" --requirement "${dir}/requirements.txt"
+          python3 -m zipfile -e "${dir}"/wheel/*.whl "${dir}/unpacked"
+          bin="${dir}/unpacked/zizmor-${ZIZMOR_VERSION}.data/scripts/zizmor"
+          chmod +x "${bin}"
+          "${bin}" --version
+          echo "ZIZMOR=${bin}" >> "${GITHUB_ENV}"
+
+      # REPORT-ONLY: zizmor exits non-zero when it has findings; that is
+      # swallowed here on purpose until the findings are fixed up.
+      - name: Run zizmor (report only)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          "${ZIZMOR}" --color=never --format=plain . | tee zizmor.txt
+          "${ZIZMOR}" --color=never --format=json-v1 . > zizmor.json
+          "${ZIZMOR}" --color=never --format=sarif . > zizmor.sarif
+          {
+            echo "### zizmor ${ZIZMOR_VERSION} (report only)"
+            echo "| severity | findings |"
+            echo "|---|---|"
+            jq -r '[.[] | select(.ignored | not) | .determinations.severity]
+                   | group_by(.) | map("| \(.[0]) | \(length) |") | .[]' zizmor.json 2>/dev/null
+          } >> "${GITHUB_STEP_SUMMARY}"
+          exit 0
+
+      - name: Upload results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: zizmor-results
+          path: |
+            zizmor.txt
+            zizmor.json
+            zizmor.sarif
+          if-no-files-found: warn
+          retention-days: 14
