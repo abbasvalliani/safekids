@@ -28,12 +28,7 @@ jobs:
         id: semver
         run: |
           TAG="${RELEASE_TAG#v}"         # strip leading v if present -> 1.2.3
-          MAJOR="${TAG%%.*}"             # 1
-          REST="${TAG#*.}"               # 2.3
-          MINOR="${REST%%.*}"            # 2
           echo "full=v${TAG}" >> $GITHUB_OUTPUT
-          echo "major=v${MAJOR}" >> $GITHUB_OUTPUT
-          echo "minor=v${MAJOR}.${MINOR}" >> $GITHUB_OUTPUT
 
       - name: Build and push (multi tags)
         id: build
@@ -44,11 +39,11 @@ jobs:
           push: true
           build-args: |
             GIT_TAG=${{ steps.semver.outputs.full }}
-          # Always push immutable version + semver rollups + git sha
+          # Immutable tags only: the release version + git sha. No moving tags
+          # (:latest, :vX, :vX.Y) -- deploys pin an exact version (infra
+          # deploy-app-safekids safekids:imageTag).
           tags: |
             ${{ env.IMAGE_BASE }}:${{ steps.semver.outputs.full }}
-            ${{ env.IMAGE_BASE }}:${{ steps.semver.outputs.minor }}
-            ${{ env.IMAGE_BASE }}:${{ steps.semver.outputs.major }}
             ${{ env.IMAGE_BASE }}:git-${{ env.SHORT_SHA }}
           labels: |
             org.opencontainers.image.title=snowslawnpro
@@ -57,16 +52,6 @@ jobs:
             org.opencontainers.image.source=${{ github.repository }}
           provenance: true
           sbom: true
-
-      # Only move :latest if the GitHub release is not a prerelease
-      - name: Tag latest for stable releases
-        if: ${{ github.event.release.prerelease == false }}
-        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
-        with:
-          context: .
-          file: apps/ml-api-web-demo/Dockerfile
-          push: true
-          tags: ${{ env.IMAGE_BASE }}:latest
 
       - name: Output image digest
         run: echo "Digest=${{ steps.build.outputs.digest }}"

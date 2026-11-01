@@ -3,9 +3,9 @@
 # others. Base images are pinned by version AND digest.
 FROM node:24.22.1-trixie-slim@sha256:89c5244bc22a9bc3287d89ebc7e49b9cb5bb84cd40e6175ac3421d5a9f68b95a AS builder
 WORKDIR /build
-COPY package.json pnpm-lock.yaml ./
-RUN version=$(grep 'packageManager' package.json | awk -F'"' '{print $4}' | awk -F'@' '{print $2}') \
- && npm install -g --ignore-scripts "pnpm@$version"
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# Exactly the pnpm in package.json `packageManager` (keep the two in sync).
+RUN npm install -g --ignore-scripts pnpm@11.28.6
 
 RUN pnpm install --ignore-scripts --frozen-lockfile
 COPY . .

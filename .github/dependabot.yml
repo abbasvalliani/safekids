@@ -1,15 +1,8 @@
 version: 2
+# npm version updates are handled by Renovate (with release-age cooldowns), not
+# Dependabot. Dependabot security alerts/updates stay enabled at the repo level.
+# Nothing in this repo auto-merges Dependabot PRs.
 updates:
-  # Enable security updates for all dependencies in package.json
-  - package-ecosystem: "npm"
-    directory: "/" # Root directory
-    schedule:
-      interval: "daily"
-    open-pull-requests-limit: 10
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-
   - package-ecosystem: "github-actions"
     directory: "/"
     open-pull-requests-limit: 25
