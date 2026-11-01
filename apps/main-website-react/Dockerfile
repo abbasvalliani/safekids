@@ -6,9 +6,9 @@ ARG GIT_TAG=unknown
 ENV NEXT_PUBLIC_GIT_TAG=${GIT_TAG}
 
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN version=$(grep 'packageManager' package.json | awk -F'"' '{print $4}' | awk -F'@' '{print $2}') \
- && npm install -g --ignore-scripts "pnpm@$version"
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# Exactly the pnpm in package.json `packageManager` (keep the two in sync).
+RUN npm install -g --ignore-scripts pnpm@11.28.6
 
 COPY nx.json tsconfig.base.json ./
 RUN pnpm install --ignore-scripts --frozen-lockfile

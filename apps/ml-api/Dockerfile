@@ -11,9 +11,9 @@ ARG NODE_IMAGE=node:24.22.1-trixie-slim@sha256:89c5244bc22a9bc3287d89ebc7e49b9cb
 FROM ${NODE_IMAGE} AS builder
 
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN version=$(grep 'packageManager' package.json | awk -F'"' '{print $4}' | awk -F'@' '{print $2}') \
- && npm install -g --ignore-scripts "pnpm@$version"
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# Exactly the pnpm in package.json `packageManager` (keep the two in sync).
+RUN npm install -g --ignore-scripts pnpm@11.28.6
 RUN pnpm install --ignore-scripts --frozen-lockfile
 COPY . .
 
@@ -24,7 +24,9 @@ RUN pnpm run api
 # just those, so dev tooling (nx, webpack, esbuild, jest, ...) and the
 # frontend-only deps of the monorepo never reach the runtime image.
 WORKDIR /runtime-deps
-RUN cp /app/dist/apps/ml-api/package.json /app/dist/apps/ml-api/pnpm-lock.yaml ./ \
+# pnpm-workspace.yaml carries the overrides + supply-chain policy the pruned
+# lockfile was generated under; without it --frozen-lockfile rejects the lockfile.
+RUN cp /app/dist/apps/ml-api/package.json /app/dist/apps/ml-api/pnpm-lock.yaml /app/pnpm-workspace.yaml ./ \
  && pnpm install --prod --frozen-lockfile --ignore-scripts --config.node-linker=hoisted
 
 # ---------------------------------------------------------------------------
