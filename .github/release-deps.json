@@ -1,0 +1,45 @@
+{
+  "$comment": "Config for .github/scripts/release-deps.mjs (run by .github/workflows/release-deps.yml). paths = what the component ships: a non-Renovate commit touching any of them blocks its automatic release.",
+  "bot": "infinitelogic-renovate[bot]",
+  "repo": "abbasvalliani/safekids",
+  "ciWorkflows": [
+    "build.yml"
+  ],
+  "commitMessage": "chore: release {version}",
+  "annotatedTags": true,
+  "tagMessage": "Release {version}",
+  "githubRelease": {
+    "name": "Release {version}"
+  },
+  "components": [
+    {
+      "name": "safekids",
+      "tag": "{version}",
+      "paths": [
+        "apps",
+        "libs",
+        "assets",
+        "docker",
+        "model_files",
+        "tools",
+        "scripts",
+        "package.json",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "tsconfig.base.json",
+        "nx.json",
+        "jest.config.ts",
+        "jest.preset.js",
+        ".dockerignore",
+        "version.json"
+      ],
+      "versionFiles": [
+        {
+          "path": "version.json",
+          "type": "version-json"
+        }
+      ],
+      "changelog": "CHANGELOG.md"
+    }
+  ]
+}

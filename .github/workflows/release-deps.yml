@@ -1,0 +1,115 @@
+# Release Dependency Updates — automatic PATCH releases for Renovate-only changes.
+#
+# Daily at 11:30 UTC, after Renovate's 00:00–06:00 ET window. For each component in
+# .github/release-deps.json, .github/scripts/release-deps.mjs cuts a patch release
+# when, and only when, EVERY commit touching that component since its last release
+# tag was authored by infinitelogic-renovate[bot] and changes only dependency files
+# (verified by content: dependency maps in package.json, lockfiles, dependency lines
+# in pyproject.toml, image refs in Dockerfiles, `uses:` in workflows). No migration or
+# feature code can ride along, so the release is safe to deploy and to roll back.
+# Anything else — a human commit, a bot commit touching code — blocks that component
+# and leaves it to the normal manual release flow. The script header lists every rule.
+#
+# Gate: Build and Test (build.yml) must be green on main's HEAD (a missing run is an error).
+# Release: bump patch in the version file(s), commit, tag, push main, then one tag per
+# push (GitHub drops workflow events for >3 tags in one push); then the GitHub Release "Release X.Y.Z"
+# (the deploy-*.yml workflows run on `release: created`).
+#
+# RELEASE_TOKEN (repo secret, owner-provided: fine-grained PAT, Contents read/write on
+# this repo only). Required: pushes made with the default GITHUB_TOKEN never trigger
+# other workflows, so a tag pushed with it would build and deploy nothing.
+#
+# The release-it flow (`pnpm release`) also runs `npm run build` and stamps dist/
+# manifests; nothing in dist/ is committed and the root package is private (no npm
+# publish), so the git + GitHub-release half below is the whole deployable release.
+#
+# Dry run locally:  node .github/scripts/release-deps.mjs [--check-ci]
+# Unit tests:       node --test .github/scripts/release-deps.test.mjs
+name: Release Dependency Updates
+
+on:
+  schedule:
+    # 11:30 UTC = 06:30 EST / 07:30 EDT: after Renovate's 00:00–06:00 ET window in both
+    # DST states (07:30 UTC would be 02:30–03:30 ET, mid-window).
+    - cron: '30 11 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Plan only: print what would be released, push nothing'
+        type: boolean
+        default: false
+
+concurrency:
+  group: release-deps
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read  # the CI gate reads main's workflow runs
+    outputs:
+      sha: ${{ steps.plan.outputs.sha }}
+      count: ${{ steps.plan.outputs.count }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+          fetch-tags: true
+          persist-credentials: false
+
+      - name: Test the selection logic
+        run: node --test .github/scripts/release-deps.test.mjs
+
+      - name: Plan
+        id: plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node .github/scripts/release-deps.mjs --check-ci --json "$RUNNER_TEMP/plan.json"
+          echo "sha=$(jq -r .sha "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
+          echo "count=$(jq '.releases | length' "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
+
+  release:
+    needs: plan
+    if: needs.plan.outputs.count != '0' && !inputs.dry_run
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # Every write (push, tags, GitHub release) goes through RELEASE_TOKEN; GITHUB_TOKEN stays read-only.
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Require RELEASE_TOKEN
+        env:
+          RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        run: |
+          if [ -z "$RELEASE_TOKEN" ]; then
+            echo "::error::secret RELEASE_TOKEN is not set. A GITHUB_TOKEN push cannot trigger the deploy workflows, so nothing is released."
+            exit 1
+          fi
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.plan.outputs.sha }}
+          fetch-depth: 0
+          fetch-tags: true
+          token: ${{ secrets.RELEASE_TOKEN }}
+          persist-credentials: true  # the push below authenticates as RELEASE_TOKEN
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}  # CI gate re-check (actions: read)
+          RELEASE_GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}  # gh release create: must not be GITHUB_TOKEN
+          PLAN_SHA: ${{ needs.plan.outputs.sha }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Recomputes the plan on the same commit and re-checks CI; the push to main is a
+          # fast-forward or nothing (a main that moved since the plan rejects it, no tag leaves).
+          node .github/scripts/release-deps.mjs --check-ci --execute --push --expect-sha "$PLAN_SHA"
