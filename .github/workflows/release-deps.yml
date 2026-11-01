@@ -80,17 +80,30 @@ jobs:
     if: needs.plan.outputs.count != '0' && !inputs.dry_run
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    # Every write (push, tags, GitHub release) goes through RELEASE_TOKEN; GITHUB_TOKEN stays read-only.
+    # Every write (push, tags, GitHub release) goes through the release credential; GITHUB_TOKEN stays read-only.
     permissions:
       contents: read
       actions: read
     steps:
-      - name: Require RELEASE_TOKEN
+      # Credential: a 1-hour token from the infinitelogic-release GitHub App
+      # (vars.RELEASE_APP_CLIENT_ID + secrets.RELEASE_APP_PRIVATE_KEY; App
+      # credentials never expire). Fallback: the RELEASE_TOKEN PAT. Either way
+      # the push triggers the tag-triggered deploy workflows; GITHUB_TOKEN can't.
+      - name: Mint release token (infinitelogic-release App)
+        id: app
+        if: vars.RELEASE_APP_CLIENT_ID != ''
+        continue-on-error: true
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          client-id: ${{ vars.RELEASE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+
+      - name: Require a release credential
         env:
-          RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          RELEASE_CREDENTIAL: ${{ steps.app.outputs.token || secrets.RELEASE_TOKEN }}
         run: |
-          if [ -z "$RELEASE_TOKEN" ]; then
-            echo "::error::secret RELEASE_TOKEN is not set. A GITHUB_TOKEN push cannot trigger the deploy workflows, so nothing is released."
+          if [ -z "$RELEASE_CREDENTIAL" ]; then
+            echo "::error::no release credential: neither the infinitelogic-release App token nor secret RELEASE_TOKEN is available. A GITHUB_TOKEN push cannot trigger the deploy workflows, so nothing is released."
             exit 1
           fi
 
@@ -99,13 +112,13 @@ jobs:
           ref: ${{ needs.plan.outputs.sha }}
           fetch-depth: 0
           fetch-tags: true
-          token: ${{ secrets.RELEASE_TOKEN }}
-          persist-credentials: true  # the push below authenticates as RELEASE_TOKEN
+          token: ${{ steps.app.outputs.token || secrets.RELEASE_TOKEN }}
+          persist-credentials: true  # the push below authenticates with the release credential
 
       - name: Release
         env:
           GH_TOKEN: ${{ github.token }}  # CI gate re-check (actions: read)
-          RELEASE_GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}  # gh release create: must not be GITHUB_TOKEN
+          RELEASE_GH_TOKEN: ${{ steps.app.outputs.token || secrets.RELEASE_TOKEN }}  # gh release create: must not be GITHUB_TOKEN
           PLAN_SHA: ${{ needs.plan.outputs.sha }}
         run: |
           git config user.name "github-actions[bot]"
