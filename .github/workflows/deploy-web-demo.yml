@@ -4,6 +4,10 @@ on:
   release:
     types: [created]
 
+# Least privilege: the job only checks out code; Harbor auth uses REGISTRY_TOKEN.
+permissions:
+  contents: read
+
 jobs:
   build_and_push:
     environment: prod
@@ -55,6 +59,79 @@ jobs:
 
       - name: Output image digest
         run: echo "Digest=${{ steps.build.outputs.digest }}"
+
+      # --- Release scan + SBOM (P2, report-only) ---------------------------
+      # Trivy is installed from its pinned, immutable GitHub release and
+      # checked against a hard-coded SHA-256 (not via aquasecurity/trivy-action:
+      # see the March 2026 Trivy supply-chain advisory GHSA-69fq-xp46-6x23).
+      # The scan reads the image BY DIGEST from Harbor, reusing the
+      # docker/login-action credentials in ~/.docker/config.json.
+      # Report-only: findings never fail the release (exit-code 0), and a
+      # scanner outage doesn't either (continue-on-error).
+      - name: Install Trivy (pinned release, checksum-verified)
+        id: trivy_install
+        continue-on-error: true
+        env:
+          TRIVY_VERSION: "0.76.0"
+          TRIVY_SHA256: "e24b1c51293c1b15e4ba8d45bbc7891ba053f90278ec2698f3562c993e145fe7"
+        run: |
+          set -euo pipefail
+          dir="${RUNNER_TEMP}/trivy"
+          tarball="trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
+          mkdir -p "${dir}"
+          curl -fsSL --retry 3 -o "${dir}/${tarball}" \
+            "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/${tarball}"
+          echo "${TRIVY_SHA256}  ${dir}/${tarball}" | sha256sum -c -
+          tar -xzf "${dir}/${tarball}" -C "${dir}" trivy
+          "${dir}/trivy" --version
+          echo "${dir}" >> "$GITHUB_PATH"
+
+      - name: Trivy scan + SBOM (report-only)
+        if: steps.trivy_install.outcome == 'success'
+        continue-on-error: true
+        env:
+          IMAGE_REF: ${{ env.IMAGE_BASE }}@${{ steps.build.outputs.digest }}
+          TRIVY_DISABLE_TELEMETRY: "true"
+          TRIVY_SKIP_VERSION_CHECK: "true"
+          TRIVY_NO_PROGRESS: "true"
+          TRIVY_IMAGE_SRC: remote
+          TRIVY_CACHE_DIR: ${{ runner.temp }}/trivy-cache
+        run: |
+          set -euo pipefail
+          out="${RUNNER_TEMP}/release-scan"
+          mkdir -p "${out}"
+          # Fixable CRITICAL/HIGH only; never fails the job.
+          trivy image --scanners vuln --severity CRITICAL,HIGH --ignore-unfixed \
+            --exit-code 0 --format json --output "${out}/trivy-vulns.json" "${IMAGE_REF}"
+          trivy convert --format table "${out}/trivy-vulns.json"
+          # Full-package CycloneDX SBOM of the same digest.
+          trivy image --format cyclonedx --output "${out}/sbom.cdx.json" "${IMAGE_REF}"
+          {
+            echo "### Trivy (report-only): \`${IMAGE_REF}\`"
+            echo
+            echo "Fixable vulnerabilities only (\`--ignore-unfixed\`), CRITICAL and HIGH."
+            echo
+            echo "| Severity | Findings | Unique CVEs |"
+            echo "| --- | --- | --- |"
+            for sev in CRITICAL HIGH; do
+              jq -r --arg s "${sev}" '
+                [.Results[]?.Vulnerabilities[]? | select(.Severity == $s)] as $v
+                | "| \($s) | \($v | length) | \($v | map(.VulnerabilityID) | unique | length) |"
+              ' "${out}/trivy-vulns.json"
+            done
+            echo
+            echo "CycloneDX SBOM + JSON report are attached as a workflow artifact."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload SBOM + scan report
+        if: steps.trivy_install.outcome == 'success'
+        continue-on-error: true
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-sbom-scan-${{ steps.semver.outputs.full }}
+          path: ${{ runner.temp }}/release-scan/
+          if-no-files-found: warn
+          retention-days: 90
 #      - name: Trigger Coolify deployment via webhook
 #        uses: fjogeleit/http-request-action@v1
 #        with:
