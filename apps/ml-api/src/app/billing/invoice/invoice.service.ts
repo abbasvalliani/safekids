@@ -3,7 +3,8 @@ import { Invoice, InvoiceCreationAttributes } from './entities/invoice.entity';
 import { INVOICE_REPOSITORY } from '../../constants';
 import { BillingService } from '../billing.service';
 import { AccountService } from '../../accounts/account.service';
-import { Stripe } from 'stripe';
+import Stripe from 'stripe';
+import { invoiceSubscription } from '../stripe.utils';
 
 @Injectable()
 export class InvoiceService {
@@ -24,7 +25,7 @@ export class InvoiceService {
                 amountPaid: String(invoice.amount_paid ? invoice.amount_paid / 100 : invoice.amount_paid),
                 amountDue: String(invoice.amount_due ? invoice.amount_due / 100 : invoice.amount_due),
                 amountRemaining: String(invoice.amount_remaining ? invoice.amount_remaining / 100 : invoice.amount_remaining),
-                subscriptionId: invoice.subscription.toString(),
+                subscriptionId: String(this.subscriptionId(invoice) ?? obj.id),
                 accountId: account.id,
             };
             await this.repository.upsert(upcomingInvoice);
@@ -37,7 +38,12 @@ export class InvoiceService {
         }
     }
 
-    async fetchUpcomingInvoice(subscriptionId: string): Promise<Stripe.UpcomingInvoice> {
+    private subscriptionId(invoice: Stripe.Invoice): string | null {
+        const subscription = invoiceSubscription(invoice);
+        return typeof subscription === 'string' ? subscription : subscription?.id ?? null;
+    }
+
+    async fetchUpcomingInvoice(subscriptionId: string): Promise<Stripe.Invoice> {
         return await this.billingService.getUpcomingInvoice(subscriptionId);
     }
 

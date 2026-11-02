@@ -12,7 +12,7 @@ import {PromoCodeErrors} from './promo-code.errors';
 import {LoggingService} from '../../logger/logging.service';
 import {AccountService} from '../../accounts/account.service';
 import {Op} from 'sequelize';
-import {Stripe} from 'stripe';
+import Stripe from 'stripe';
 import {SubscriptionService} from '../subscription/subscription.service';
 import {CouponService} from '../coupon/coupon.service';
 import {CreateSubscriptionDto} from '../subscription/dto/createSubscriptionDto';
@@ -187,7 +187,8 @@ export class PromoCodeService {
 
     this.logger.debug(`Promotion Code[${promotionCodeName}] found for subscription[${subscriptionId}]`);
 
-    if (promotionCodeName && !subscription.discount?.promotion_code && !subscription.discount?.coupon) {
+    // fetchSubscription expands discounts; any discount (coupon or promotion code) counts.
+    if (promotionCodeName && !subscription.discounts?.length) {
       this.logger.debug(`Activating Promotion Code[${promotionCodeName}] on subscription[${subscriptionId}]`);
       await this.billingService.applyPromotionCode(subscriptionId, promotionCodeName);
     } else {

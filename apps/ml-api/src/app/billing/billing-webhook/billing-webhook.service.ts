@@ -2,7 +2,8 @@ import { Inject, Injectable } from '@nestjs/common';
 import { ConfigService} from '@nestjs/config';
 import { LoggingService } from '../../logger/logging.service';
 import { SubscriptionService } from '../subscription/subscription.service';
-import { Stripe } from 'stripe';
+import Stripe from 'stripe';
+import { invoiceSubscription } from '../stripe.utils';
 import { PromoCodeService } from '../promo-code/promo-code.service';
 import { InvoiceService } from '../invoice/invoice.service';
 import { OrgUnitService } from '../../org-unit/org-unit.service';
@@ -11,6 +12,12 @@ import { Sequelize } from 'sequelize-typescript';
 
 @Injectable()
 export class BillingWebhookService {
+    /** Subscription id of an invoice (`parent.subscription_details` since API 2025-03-31.basil). */
+    private static subscriptionId(invoice: Stripe.Invoice): string {
+        const subscription = invoiceSubscription(invoice);
+        return typeof subscription === 'string' ? subscription : subscription?.id;
+    }
+
     constructor(
         private readonly config: ConfigService,
         private readonly log: LoggingService,
@@ -31,7 +38,7 @@ export class BillingWebhookService {
             case 'invoice.paid':
                 {
                     try {
-                        await this.subscriptionService.extendSubscription(dataObject.subscription);
+                        await this.subscriptionService.extendSubscription(BillingWebhookService.subscriptionId(dataObject));
                         this.log.debug('Renewed customer subscription', event);
                     } catch (error) {
                         this.log.error(`Error while handling ${event.type} event`, error);
@@ -52,10 +59,13 @@ export class BillingWebhookService {
                             this.log.debug('Downgrading user after all payment attempts failed');
                             //await this.subscriptionService.downgradePlan(dataObject.customer);
                         } else {
-                            await this.subscriptionService.updateSubscription(invoice.subscription);
+                            await this.subscriptionService.updateSubscription(BillingWebhookService.subscriptionId(invoice));
                         }
 
-                        await await this.subscriptionService.sendPaymentFailedEmail(invoice.subscription as Stripe.Subscription);
+                        // The invoice carries the subscription id; the email only needs the id.
+                        await this.subscriptionService.sendPaymentFailedEmail({
+                            id: BillingWebhookService.subscriptionId(invoice),
+                        } as Stripe.Subscription);
                     } catch (ex) {
                         this.log.error('Error while handling failed payment hook', {
                             ex,

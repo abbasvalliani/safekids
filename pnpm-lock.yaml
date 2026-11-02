@@ -495,8 +495,8 @@ importers:
         specifier: ^0.5.21
         version: 0.5.21
       stripe:
-        specifier: ^17.7.0
-        version: 17.7.0
+        specifier: 23.0.0
+        version: 23.0.0(@types/node@24.19.2)
       styled-components:
         specifier: ^6.1.13
         version: 6.1.13(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -13729,9 +13729,14 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  stripe@17.7.0:
-    resolution: {integrity: sha512-aT2BU9KkizY9SATf14WhhYVv2uOapBWX0OFWF4xvcj1mPaNotlSc2CsxpS4DS46ZueSppmCF5BX1sNYBtwBvfw==}
-    engines: {node: '>=12.*'}
+  stripe@23.0.0:
+    resolution: {integrity: sha512-MDE2A5ZVVluYURORaZEVghSmnLJc3w6aHAlZSxDQMsOjOb3V0O6ro/CiaeFlJS4N7uIVmsg98ocRsPmUK6YfyA==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@types/node': '>=20'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
   strong-log-transformer@2.1.0:
     resolution: {integrity: sha512-B3Hgul+z0L9a236FAUC9iZsL+nVHgoCJnqCbN588DjYxvGXaXaaFbfmQ/JhvKjZwsOukuR72XbHv71Qkug0HxA==}
@@ -31230,10 +31235,9 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  stripe@17.7.0:
-    dependencies:
+  stripe@23.0.0(@types/node@24.19.2):
+    optionalDependencies:
       '@types/node': 24.19.2
-      qs: 6.16.2
 
   strong-log-transformer@2.1.0:
     dependencies:
