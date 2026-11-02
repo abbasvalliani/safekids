@@ -28,6 +28,36 @@ overrides:
   'tar@7': 7.5.22
   'underscore@1': 1.13.8
   'validator@13': 13.15.35
+  # Targeted transitive fixes: lowest patched version within the same major.
+  # Parent-scoped (a>b) where an unscoped range would also catch, and downgrade,
+  # a direct dependency or an already-newer copy.
+  '@babel/core@>=7 <7.29.6': 7.29.6
+  '@babel/helpers@>=7 <7.26.10': 7.26.10
+  '@babel/runtime@>=7 <7.26.10': 7.26.10
+  'ajv@>=8 <8.18.0': 8.18.0
+  'browserslist@>=4 <4.28.7': 4.28.7
+  'colord@>=2 <2.9.4': 2.9.4
+  'fast-uri@>=2 <2.4.8': 2.4.8
+  'fast-uri@>=3 <3.1.9': 3.1.9
+  'immutable@>=5 <5.1.8': 5.1.8
+  'js-yaml@>=3 <3.15.2': 3.15.2
+  'koa@>=2 <2.16.4': 2.16.4
+  'lodash-es@>=4 <4.18.0': 4.18.0
+  'picomatch@>=2 <2.3.2': 2.3.2
+  'picomatch@>=4 <4.0.4': 4.0.4
+  'postcss-selector-parser@>=6 <6.1.5': 6.1.5
+  # qs: 6.16.1 is the lowest fix; 6.16.2 was already locked, so no downgrade.
+  '@cypress/request>qs': 6.16.2
+  'express@4>qs': 6.16.2
+  'svgo@>=3 <3.3.5': 3.3.5
+  'tar-fs@>=3 <3.1.1': 3.1.1
+  'uuid@>=11 <11.1.1': 11.1.1
+  '@nestjs/cli>webpack': 5.104.1
+  '@module-federation/dts-plugin>ws': 8.21.0
+  'yaml@>=1 <1.10.3': 1.10.3
+  # sanitize-html >=2.17.6 needs ESM-only htmlparser2 12, which the jest setup
+  # cannot load (nlp-js-node, gmail-extension tests). 2.17.5 is the newest CJS one.
+  'sbd>sanitize-html': 2.17.5
 
 # Every dependency with an install script, reviewed: NONE needs it. Build + unit
 # tests pass with all of them denied, and the Dockerfiles already install with
