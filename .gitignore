@@ -55,3 +55,4 @@ migrations.json
 
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
+*.tsbuildinfo

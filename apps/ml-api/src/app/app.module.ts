@@ -109,7 +109,6 @@ import webappConfig from "./config/webapp"
 import winstonConfig from "./config/winston"
 import {MlModule} from "./ml/ml.module";
 import {QueueModule} from "./queue/queue.module";
-import { redisStore } from 'cache-manager-redis-yet';
 import {WebCategoryModule} from "./web-category/web-category.module";
 
 const ENV = process.env.APP_ENV || 'development';
@@ -287,10 +286,11 @@ export class AppModule implements NestModule {
     consumer
       .apply(RawBodyMiddleware)
       .forRoutes({
-        path: '/payment/*/webhooks',
+        // Express 5 / path-to-regexp 8: wildcards must be named.
+        path: '/payment/*splat/webhooks',
         method: RequestMethod.POST,
       })
       .apply(JsonBodyMiddleware)
-      .forRoutes('*');
+      .forRoutes('{*splat}');
   }
 }

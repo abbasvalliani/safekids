@@ -1,13 +1,15 @@
 'use client';
 import { useEffect } from 'react';
 import React from 'react';
-import $ from 'jquery';
+// jQuery 4 needs a window when imported; the factory defers that to the browser.
+import { jQueryFactory } from 'jquery/factory';
 
 type Props = {
   children: React.ReactNode;
 };
 export default function JsClient({ children }: Props) {
   useEffect(() => {
+    const $ = jQueryFactory(window);
     window.addEventListener('load', () => {
       // Add 'loaded' class to body when page is fully loaded
       document.body.classList.add('loaded');

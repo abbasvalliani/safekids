@@ -1,5 +1,4 @@
 import language from '@google-cloud/language';
-import {GoogleAuth, grpc} from 'google-gax';
 import {googleMapping} from "./google-mapping";
 
 import {WebCategorizer} from "../web-categorizer";
@@ -24,14 +23,9 @@ class GoogleWebCategorizer extends WebCategorizer {
   constructor(apiKey: string, model: string, logger?: Logger) {
     super(apiKey, model, logger);
 
-    const sslCreds = grpc.credentials.createSsl();
-    const googleAuth = new GoogleAuth();
-    const authClient = googleAuth.fromAPIKey(apiKey);
-    const credentials = grpc.credentials.combineChannelCredentials(
-      sslCreds,
-      grpc.credentials.createFromGoogleCredential(authClient)
-    );
-    this.client = new language.LanguageServiceClient({sslCreds: credentials});
+    // google-gax 5+ takes the API key directly (the hand-built grpc
+    // credentials from GoogleAuth.fromAPIKey no longer type-check).
+    this.client = new language.LanguageServiceClient({apiKey});
   }
 
   public getProviderName(): WebCategoryProviderType {

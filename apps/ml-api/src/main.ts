@@ -10,7 +10,7 @@ import { install as sourceMapSupportInit } from 'source-map-support';
 import { config } from 'dotenv';
 import { PRODUCTION } from './app/constants';
 
-config();
+config({ quiet: true }); // dotenv 17+ logs on load unless quiet
 
 const winstonLogger = WinstonModule.createLogger(winstonOptions());
 

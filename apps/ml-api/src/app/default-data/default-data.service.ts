@@ -28,7 +28,7 @@ import {CouponService} from '../billing/coupon/coupon.service';
 import {AuthService} from '../consumer/auth/auth.service';
 import {ExpressConfig} from "../config/express";
 
-config();
+config({ quiet: true }); // dotenv 17+ logs on load unless quiet
 
 @Injectable()
 export class DefaultDataService {

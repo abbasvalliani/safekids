@@ -204,7 +204,6 @@ const SidebarWithHeader: React.FC<Props> = ({ children }) => {
       <SidebarContent display={{ base: 'none', md: 'block' }} />
       <DrawerRoot
         placement="start"
-        returnFocusOnClose={false}
         size="xs"
       >
         <DrawerBackdrop />
