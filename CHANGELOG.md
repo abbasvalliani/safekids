@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.3.53](https://github.com/abbasvalliani/safekids/compare/1.3.52...1.3.53) (2026-11-02)
+
+### Dependencies
+
+* chore(deps): update dependency @date-io/date-fns to v3.2.1 (#296) ([6929f6a](https://github.com/abbasvalliani/safekids/commit/6929f6aa7738aae27ce1b3a5736d6aebe1d0f7e2))
+* chore(deps): update dependency @grpc/grpc-js@1 to v1.14.7 (#297) ([e1f2cc0](https://github.com/abbasvalliani/safekids/commit/e1f2cc0ea7e50e750f62aae7fd751ea80bb3dc24))
+* chore(deps): update dependency @inboxsdk/core to v2.2.33 (#298) ([871a7a0](https://github.com/abbasvalliani/safekids/commit/871a7a0f0cc99aa42c60b2a9b96bbf083a3aa69f))
+* chore(deps): update dependency @types/google-libphonenumber to v7.4.31 (#299) ([a39f6f1](https://github.com/abbasvalliani/safekids/commit/a39f6f1a6dcab44a3d789cab42fbf9d605bcad01))
+* chore(deps): update dependency dotenv to v18.0.9 (#300) ([34b29a5](https://github.com/abbasvalliani/safekids/commit/34b29a5bd0a95b2b88d2f45066e56518611e92b2))
+
 ## 1.3.52 (2026-11-02)
 
 ### Chores
