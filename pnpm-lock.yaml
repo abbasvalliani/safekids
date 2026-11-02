@@ -79,7 +79,7 @@ importers:
         version: 2.6.2(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(@emotion/styled@11.14.0(@emotion/react@11.14.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1))(react@19.3.1)
       '@date-io/date-fns':
         specifier: ^3.2.0
-        version: 3.2.0(date-fns@4.1.0)
+        version: 3.2.1(date-fns@4.1.0)
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.3.0)(react@19.3.1)(supports-color@8.1.1)
@@ -1834,10 +1834,10 @@ packages:
   '@date-io/core@3.2.0':
     resolution: {integrity: sha512-hqwXvY8/YBsT9RwQITG868ZNb1MVFFkF7W1Ecv4P472j/ZWa7EFcgSmxy8PUElNVZfvhdvfv+a8j6NWJqOX5mA==}
 
-  '@date-io/date-fns@3.2.0':
-    resolution: {integrity: sha512-qkWB6E8lTwlwWq1xodXsY7On3gUoLsibdRu5cSAL1+oklrMOqpKmTzoZ9UFdvTs4Z0RYAi1D9ZelfqOCjT2quQ==}
+  '@date-io/date-fns@3.2.1':
+    resolution: {integrity: sha512-CtXgTOAamkImI+CmbWRNdBi4ljj9xm/tdoPa+eeeiygduzubJTsXp18vYz+Vs/9yLho1zUOXlxpsfsF7PsXSWQ==}
     peerDependencies:
-      date-fns: ^3.2.0
+      date-fns: ^3.2.0 || ^4.1.0
     peerDependenciesMeta:
       date-fns:
         optional: true
@@ -16507,7 +16507,7 @@ snapshots:
 
   '@date-io/core@3.2.0': {}
 
-  '@date-io/date-fns@3.2.0(date-fns@4.1.0)':
+  '@date-io/date-fns@3.2.1(date-fns@4.1.0)':
     dependencies:
       '@date-io/core': 3.2.0
     optionalDependencies:
