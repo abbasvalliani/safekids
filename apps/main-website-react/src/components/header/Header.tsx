@@ -3,7 +3,8 @@ import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { routes } from '../../routes/routes';
-import $ from 'jquery';
+// jQuery 4 needs a window when imported; the factory defers that to the browser.
+import { jQueryFactory } from 'jquery/factory';
 import Sheet from '../ui/Sheet';
 import { usePathname, useRouter } from 'next/navigation';
 import { cn } from '../../lib/utils';
@@ -13,6 +14,7 @@ const Header = () => {
   const router = useRouter();
   const pathname = usePathname()
   useEffect(() => {
+    const $ = jQueryFactory(window);
     function onScroll() {
       const scrollTop = $(window).scrollTop() || 0;
       if (scrollTop > 1) {

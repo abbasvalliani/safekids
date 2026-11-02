@@ -56,11 +56,10 @@
       "dependsOn": ["build"]
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "executor": "nx:run-commands",
       "options": {
-        "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/ml-api-web-demo"
+        "command": "vitest run --passWithNoTests",
+        "cwd": "apps/ml-api-web-demo"
       }
     },
     "lint": {

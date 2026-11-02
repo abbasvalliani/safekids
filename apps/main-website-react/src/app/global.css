@@ -1,6 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*
+  Tailwind v4, CSS-first. Theme and preflight are layered as usual, but the
+  utilities stay UNLAYERED, as they were in v3: the hand-written CSS below then
+  wins or loses against utilities by specificity and source order exactly as
+  before (unlayered rules would otherwise always beat layered utilities, e.g.
+  an `h1 {}` rule overriding `text-[100px]`). Sources: this app only.
+*/
+@layer theme, base, components;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' source('../..');
+/*
+  Tailwind v3 never generated these classes (it ignored arbitrary min-[...]
+  variants here, and 12/12 is not a v3 fraction), so the live site has never
+  applied them. v4 would; keep them off so the upgrade does not change the layout.
+*/
+@source not inline('lg:w-12/12 min-[1920]:pt-[3rem] min-[1920px]:leading-[100%] min-[1920px]:leading-[120px] min-[1920px]:leading-[35px] min-[1920px]:leading-[78px] min-[1920px]:mx-[4.5rem] min-[1920px]:pb-0 min-[1920px]:pb-[5rem] min-[1920px]:pl-[15rem] min-[1920px]:pl-[5rem] min-[1920px]:pr-[15rem] min-[1920px]:pr-[5rem] min-[1920px]:pr-[6rem] min-[1920px]:pr-[7rem] min-[1920px]:pt-[0] min-[1920px]:pt-[25rem] min-[1920px]:right-[5rem] min-[1920px]:text-[100px] min-[1920px]:text-[120px] min-[1920px]:text-[24px] min-[1920px]:text-[90px] min-[1920px]:w-[100%] min-[321px]:leading-[35px] min-[321px]:text-[30px] min-[415px]:text-[24px] min-[431px]:mt-[-14%] min-[481px]:leading-[45px] min-[481px]:text-[40px]');
+
+/*
+  Tailwind v3 compatibility (from the v4 upgrade guide): v4 changed the default
+  border color to currentColor and the button cursor to default.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 html {
   margin: 0 !important;

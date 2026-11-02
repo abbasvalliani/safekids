@@ -1,7 +1,7 @@
 import { IDatabaseConfig } from './dbConfig.interface';
 import * as dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ quiet: true }); // dotenv 17+ logs on load unless quiet
 
 export const databaseConfig: IDatabaseConfig = {
     development: {

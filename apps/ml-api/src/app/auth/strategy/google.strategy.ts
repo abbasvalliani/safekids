@@ -6,7 +6,7 @@ import jwtConfig from '../../config/jwt';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { GoogleOauthTokenDto } from '../../google-ouath/dto/google.oauth.token.dto';
 import { UserService } from '../../user/user.service';
-config();
+config({ quiet: true }); // dotenv 17+ logs on load unless quiet
 
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
