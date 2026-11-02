@@ -4,6 +4,7 @@ import {HttpException, HttpStatus, Injectable, NotFoundException} from '@nestjs/
 import {SubscriptionDto} from './subscription/dto/subscription.dto';
 import {StripeService} from './stripe.service';
 import {PromotionCodeDto} from './plan/dto/promotionCode.dto';
+import {discountsParam, promotionCoupon} from './stripe.utils';
 
 @Injectable()
 export class BillingService {
@@ -48,12 +49,15 @@ export class BillingService {
         },
       ],
       trial_period_days: dto.trailPeriod,
-      promotion_code: dto.promotionCodeId,
+      discounts: discountsParam(undefined, dto.promotionCodeId),
     });
   }
 
   async fetchSubscription(id: string): Promise<Stripe.Subscription> {
-    return await this.stripeService.client().subscriptions.retrieve(id);
+    // discounts are ids unless expanded; their coupon sits under source.coupon.
+    return await this.stripeService.client().subscriptions.retrieve(id, {
+      expand: ['discounts', 'discounts.source.coupon'],
+    });
   }
 
   async updateSubscription(dto: SubscriptionDto): Promise<void> {
@@ -67,8 +71,7 @@ export class BillingService {
           price: dto.priceId,
         },
       ],
-      coupon: dto.coupon,
-      promotion_code: dto.promotionCodeId,
+      discounts: discountsParam(dto.coupon, dto.promotionCodeId),
     });
   }
 
@@ -105,7 +108,10 @@ export class BillingService {
 
   //PROMOTION CODES
   async fetchPromotionCodeByName(code: string): Promise<PromotionCodeDto> {
-    const codes: Stripe.ApiList<Stripe.PromotionCode> = await this.stripeService.client().promotionCodes.list({code});
+    const codes: Stripe.ApiList<Stripe.PromotionCode> = await this.stripeService.client().promotionCodes.list({
+      code,
+      expand: ['data.promotion.coupon'],
+    });
     if (codes && codes.data && codes.data.length > 0) {
       const promotionCode: Stripe.PromotionCode = codes.data[0];
       if (!promotionCode.active) {
@@ -116,10 +122,10 @@ export class BillingService {
         id: promotionCode.id,
         active: promotionCode.active,
         expiresAt: promotionCode.expires_at,
-        redeemBy: promotionCode.coupon.redeem_by,
-        currency: promotionCode.coupon.currency,
-        percentOff: promotionCode.coupon.percent_off,
-        amountOff: promotionCode.coupon.amount_off,
+        redeemBy: promotionCoupon(promotionCode)?.redeem_by,
+        currency: promotionCoupon(promotionCode)?.currency,
+        percentOff: promotionCoupon(promotionCode)?.percent_off,
+        amountOff: promotionCoupon(promotionCode)?.amount_off,
         referrerAccountId: referrerAccountId,
       };
     }
@@ -137,7 +143,7 @@ export class BillingService {
     });
 
     await this.stripeService.client().subscriptions.update(subscriptionId, {
-      promotion_code: promotionCode.id,
+      discounts: discountsParam(undefined, promotionCode.id),
       metadata: {referrer: promotionCode.referrerAccountId},
     });
     this.log.debug(`Promotion code[${promotionCodeName}] applied to subscription[${subscriptionId}]`);
@@ -151,17 +157,23 @@ export class BillingService {
    * @param coupon
    */
   async generatePromoCode(accountId: string, customerId: string, code: string, coupon: string): Promise<PromotionCodeDto> {
-    const promoCodeDto: Stripe.PromotionCodeCreateParams = {
+    const responseList: Stripe.ApiList<Stripe.PromotionCode> = await this.stripeService.client().promotionCodes.list({
       active: true,
       coupon,
       code,
-    };
-    const responseList: Stripe.ApiList<Stripe.PromotionCode> = await this.stripeService.client().promotionCodes.list(promoCodeDto);
+      expand: ['data.promotion.coupon'],
+    });
     if (responseList && responseList.data.length > 0) {
       return this.buildResponse(responseList.data[0]);
     }
 
-    promoCodeDto.restrictions = {first_time_transaction: true};
+    const promoCodeDto: Stripe.PromotionCodeCreateParams = {
+      active: true,
+      promotion: {type: 'coupon', coupon},
+      code,
+      restrictions: {first_time_transaction: true},
+      expand: ['promotion.coupon'],
+    };
     const response: Stripe.Response<Stripe.PromotionCode> = await this.stripeService.client().promotionCodes.create(promoCodeDto);
     if (response) {
       return this.buildResponse(response);
@@ -174,7 +186,7 @@ export class BillingService {
       code: response.code,
       active: response.active,
       apiKey: response.id,
-      coupon: response.coupon?.name,
+      coupon: promotionCoupon(response)?.name,
       expiresAt: response.expires_at,
       times_redeemed: response.times_redeemed,
     };
@@ -196,7 +208,8 @@ export class BillingService {
   }
 
   //INVOICE
-  async getUpcomingInvoice(subscriptionId: string): Promise<Stripe.UpcomingInvoice> {
-    return await this.stripeService.client().invoices.retrieveUpcoming({subscription: subscriptionId});
+  // invoices.retrieveUpcoming was replaced by invoices.createPreview (basil).
+  async getUpcomingInvoice(subscriptionId: string): Promise<Stripe.Invoice> {
+    return await this.stripeService.client().invoices.createPreview({subscription: subscriptionId});
   }
 }

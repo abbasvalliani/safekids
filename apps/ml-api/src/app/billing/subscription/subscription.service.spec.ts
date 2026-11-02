@@ -75,14 +75,24 @@ class Fixture {
             status: 'trialing',
             trial_start: new Date().getTime(),
             trial_end: new Date().getTime(),
-            current_period_start: new Date().getTime(),
-            current_period_end: new Date().getTime(),
+            // API 2025-03-31.basil+: the period is on the items, discounts are a
+            // list (expanded here) whose coupon sits under source.coupon.
+            items: {
+                data: [
+                    {
+                        current_period_start: new Date().getTime(),
+                        current_period_end: new Date().getTime(),
+                    },
+                ],
+            },
             trialUsed: true,
             cancel_at_period_end: true,
-            discount: {
-                coupon: { name: 'TEST' },
-                promotion_code: 'TEST00',
-            },
+            discounts: [
+                {
+                    source: { type: 'coupon', coupon: { name: 'TEST' } },
+                    promotion_code: 'TEST00',
+                },
+            ],
         } as any;
     }
 
@@ -270,7 +280,7 @@ describe('Subscription Service tests', () => {
         //given
         const subscription = Fixture.getSubscription();
 
-        jest.spyOn(Fixture.BillingService, 'getPromotionCode').mockResolvedValue(subscription.discount.promotion_code);
+        jest.spyOn(Fixture.BillingService, 'getPromotionCode').mockResolvedValue(subscription.discounts[0].promotion_code);
 
         //when
         await service.saveSubscription(subscription);
@@ -284,13 +294,13 @@ describe('Subscription Service tests', () => {
             status: subscription.status,
             trialStartTime: new Date(subscription.trial_start * 1000),
             trialEndTime: new Date(subscription.trial_end * 1000),
-            subscriptionStartTime: new Date(subscription.current_period_start * 1000),
-            subscriptionEndTime: new Date(subscription.current_period_end * 1000),
+            subscriptionStartTime: new Date(subscription.items.data[0].current_period_start * 1000),
+            subscriptionEndTime: new Date(subscription.items.data[0].current_period_end * 1000),
             trialUsed: true,
             accountId: subscription.metadata.accountId,
             cancelAtPeriodEnd: subscription.cancel_at_period_end,
-            coupon: subscription.discount.coupon.name,
-            promotionCode: subscription.discount.promotion_code,
+            coupon: subscription.discounts[0].source.coupon.name,
+            promotionCode: subscription.discounts[0].promotion_code,
         } as CreateSubscriptionDto;
 
         expect(Fixture.SUBSCRIPTION_REPOSITORY.create).toHaveBeenCalledWith(result);
@@ -299,7 +309,7 @@ describe('Subscription Service tests', () => {
     it('Should update subscription', async () => {
         //given
         const subscription = Fixture.getSubscription();
-        jest.spyOn(Fixture.BillingService, 'getPromotionCode').mockResolvedValue(subscription.discount.promotion_code);
+        jest.spyOn(Fixture.BillingService, 'getPromotionCode').mockResolvedValue(subscription.discounts[0].promotion_code);
 
         //when
         await service.updateSubscription(subscription);

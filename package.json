@@ -189,7 +189,7 @@
     "slick-carousel": "^2.0.0",
     "source-map-explorer": "^2.5.3",
     "source-map-support": "^0.5.21",
-    "stripe": "^17.7.0",
+    "stripe": "23.0.0",
     "styled-components": "^6.1.13",
     "tailwind-merge": "^3.7.0",
     "tldts": "^7.4.18",

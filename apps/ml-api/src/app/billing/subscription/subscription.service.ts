@@ -7,7 +7,8 @@ import {CustomerService} from '../customer/customer.service';
 import {PlanService} from '../plan/plan.service';
 import {SEQUELIZE, SUBSCRIPTION_REPOSITORY} from '../../constants';
 import {Subscription} from './entities/subscription.entity';
-import {Stripe} from 'stripe';
+import Stripe from 'stripe';
+import { discountCoupon, firstDiscount, hasUnexpandedDiscounts, subscriptionPeriod } from '../stripe.utils';
 import { v4 as uuidv4 } from 'uuid';
 import {EmailTemplates} from '../../email/email.templates';
 import {EmailService} from '../../email/email.service';
@@ -164,8 +165,15 @@ export class SubscriptionService {
 
   //////////////////////////DATABASE OPERATIONS///////////////////////////////////
 
+  /** Webhook payloads carry discount ids only; re-read the subscription to get them expanded. */
+  private async withDiscounts(response: Stripe.Subscription): Promise<Stripe.Subscription> {
+    return hasUnexpandedDiscounts(response) ? await this.billingService.fetchSubscription(response.id) : response;
+  }
+
   async saveSubscription(response: Stripe.Subscription): Promise<void> {
-    const promotionCode = await this.billingService.getPromotionCode(response.discount?.promotion_code);
+    const discount = firstDiscount(await this.withDiscounts(response));
+    const promotionCode = await this.billingService.getPromotionCode(discount?.promotion_code);
+    const period = subscriptionPeriod(response);
 
     const subscription = {
       id: response.id,
@@ -173,12 +181,12 @@ export class SubscriptionService {
       status: response.status,
       trialStartTime: new Date(response.trial_start * 1000),
       trialEndTime: new Date(response.trial_end * 1000),
-      subscriptionStartTime: new Date(response.current_period_start * 1000),
-      subscriptionEndTime: new Date(response.current_period_end * 1000),
+      subscriptionStartTime: new Date(period.start * 1000),
+      subscriptionEndTime: new Date(period.end * 1000),
       trialUsed: true,
       accountId: response.metadata.accountId,
       cancelAtPeriodEnd: response.cancel_at_period_end,
-      coupon: response.discount?.coupon?.name,
+      coupon: discountCoupon(discount)?.name,
       promotionCode,
     } as CreateSubscriptionDto;
     await this.repository.create(subscription);
@@ -193,7 +201,9 @@ export class SubscriptionService {
       response = subscriptionRequest as Stripe.Subscription;
     }
 
-    const promotionCode = await this.billingService.getPromotionCode(response.discount?.promotion_code);
+    const discount = firstDiscount(await this.withDiscounts(response));
+    const promotionCode = await this.billingService.getPromotionCode(discount?.promotion_code);
+    const period = subscriptionPeriod(response);
 
     const objToUpdate = {
       id: response.id,
@@ -201,13 +211,13 @@ export class SubscriptionService {
       status: response.status,
       trialStartTime: new Date(response.trial_start * 1000),
       trialEndTime: new Date(response.trial_end * 1000),
-      subscriptionStartTime: new Date(response.current_period_start * 1000),
-      subscriptionEndTime: new Date(response.current_period_end * 1000),
+      subscriptionStartTime: new Date(period.start * 1000),
+      subscriptionEndTime: new Date(period.end * 1000),
       trialUsed: true,
       default_payment_method: response.default_payment_method,
       accountId: response.metadata.accountId,
       cancelAtPeriodEnd: response.cancel_at_period_end,
-      coupon: response.discount?.coupon?.name,
+      coupon: discountCoupon(discount)?.name,
       promotionCode,
     } as CreateSubscriptionDto;
 
@@ -233,9 +243,10 @@ export class SubscriptionService {
 
   async extendSubscription(id: string) {
     const subscription = await this.billingService.fetchSubscription(id);
+    const period = subscriptionPeriod(subscription);
     const subscriptionDTO = {
-      subscriptionStartTime: new Date(subscription.current_period_start * 1000),
-      subscriptionEndTime: new Date(subscription.current_period_end * 1000),
+      subscriptionStartTime: new Date(period.start * 1000),
+      subscriptionEndTime: new Date(period.end * 1000),
       status: subscription.status,
     };
 
