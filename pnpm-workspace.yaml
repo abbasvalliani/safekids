@@ -51,7 +51,7 @@ overrides:
   'yaml@>=1 <1.10.3': 1.10.3
   # sanitize-html >=2.17.6 needs ESM-only htmlparser2 12, which the jest setup
   # cannot load (nlp-js-node, gmail-extension tests). 2.17.5 is the newest CJS one.
-  'sbd>sanitize-html': 2.17.5
+  'sbd>sanitize-html': 2.18.0
   # Security fixes younger than the 2-week update rule (still past the 3-day policy):
   # lowest patched version in the same major.
   'body-parser@>=2 <2.4.0': 2.4.0
@@ -119,3 +119,5 @@ blockExoticSubdeps: true
 minimumReleaseAgeExclude:
   # Renovate security update: esbuild@0.25.0
   - esbuild@0.25.0
+  # Renovate security update: sanitize-html@2.18.0
+  - sanitize-html@2.18.0
