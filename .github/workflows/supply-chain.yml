@@ -5,7 +5,7 @@
 #                    (OSV id or alias starting `MAL-`), or
 #                (b) the PR introduces a vulnerability that the base commit
 #                    does not have (OSV-Scanner's documented PR "diff" mode:
-#                    scan base, scan head, osv-reporter --old/--new).
+#                    scan base, scan head, compare advisory IDs per package).
 #              Vulnerabilities that already exist on the base branch never
 #              fail the job, so PRs that FIX vulnerabilities (e.g. Renovate)
 #              pass. On push to main only (a) can fail it.
@@ -116,17 +116,27 @@ jobs:
           fi
           echo "No MAL- advisories."
 
-      - name: Report vulnerabilities new in this PR
+      - name: Block vulnerabilities new in this PR
         id: reporter
         if: ${{ !cancelled() && github.event_name == 'pull_request' && steps.malicious.outcome != 'skipped' }}
-        uses: google/osv-scanner-action/osv-reporter-action@b1d267aea5211fa648d9d442fa64b90dbdcbdd36 # v2.7.0
-        with:
-          scan-args: |-
-            --output=osv-results.sarif
-            --old=old-results.json
-            --new=new-results.json
-            --gh-annotations=true
-            --fail-on-vuln=true
+        run: |
+          # Compare advisory IDs per package (ecosystem/name), NOT exact versions:
+          # a patch bump that still carries an advisory the base already had is not
+          # "new" (osv-reporter --old/--new matched on versions and failed those).
+          keys() {
+            jq -r '[.results[]?.packages[]? | .package as $p | .vulnerabilities[]?
+                    | "\($p.ecosystem)/\($p.name)|\(.id)"] | unique | .[]' "$1" | sort -u
+          }
+          keys old-results.json > old.keys
+          keys new-results.json > new.keys
+          comm -13 old.keys new.keys > introduced.txt
+          fixed=$(comm -23 old.keys new.keys | wc -l)
+          if [ -s introduced.txt ]; then
+            echo "::error::$(wc -l < introduced.txt) advisory/package pair(s) are new in this PR"
+            sed 's/^/  /' introduced.txt
+            exit 1
+          fi
+          echo "No advisories new in this PR (${fixed} fixed)."
 
       - name: Convert results to SARIF
         if: ${{ !cancelled() && github.event_name != 'pull_request' && steps.malicious.outcome != 'skipped' }}
