@@ -1,13 +1,8 @@
-# pnpm 11 settings (pnpm 11 reads settings from this file, not package.json).
-# Supply-chain hardening: only reviewed packages may run install scripts,
-# new releases must be 3 days old before they can be resolved, and a
-# package whose publish trust level drops (e.g. lost provenance) fails install.
-
 overrides:
   '@grpc/grpc-js@1': 1.14.6
   'axios@1': 1.20.0
   'body-parser@1': 1.20.9
-  'brace-expansion@1': 1.1.21
+  'brace-expansion@1': 2.1.7
   'brace-expansion@2': 2.1.7
   'form-data@2': 2.5.6
   'form-data@4': 4.0.6
@@ -84,3 +79,5 @@ blockExoticSubdeps: true
 minimumReleaseAgeExclude:
   # Renovate security update: esbuild@0.25.0
   - esbuild@0.25.0
+  # Renovate security update: brace-expansion@2.1.7
+  - brace-expansion@2.1.7
