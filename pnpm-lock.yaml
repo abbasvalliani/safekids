@@ -492,7 +492,7 @@ importers:
         version: 0.0.0
       uuid:
         specifier: ^11.0.3
-        version: 11.0.3
+        version: 11.1.1
       valid-url:
         specifier: ^1.0.9
         version: 1.0.9
@@ -13409,6 +13409,10 @@ packages:
 
   uuid@11.0.3:
     resolution: {integrity: sha512-d0z310fCWv5dJwnX1Y/MncBAqGMKEzlBb1AOf7z9K8ALnd0utBX/msg/fA0+sbyN1ihbMsLhrBlnl1ak7Wa0rg==}
+    hasBin: true
+
+  uuid@11.1.1:
+    resolution: {integrity: sha512-vIYxrBCC/N/K+Js3qSN88go7kIfNPssr/hHCesKCQNAjmgvYS2oqr69kIufEG+O4+PfezOH4EbIeHCfFov8ZgQ==}
     hasBin: true
 
   uuid@7.0.3:
@@ -29821,6 +29825,8 @@ snapshots:
   uuid@10.0.0: {}
 
   uuid@11.0.3: {}
+
+  uuid@11.1.1: {}
 
   uuid@7.0.3: {}
 
