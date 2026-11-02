@@ -15,6 +15,7 @@
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "{workspaceRoot}/dist/{projectRoot}",
         "main": "libs/extension-i18n/src/index.ts",
@@ -39,8 +40,7 @@
         "development": {
           "tsConfig": "libs/extension-i18n/tsconfig.lib.json"
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "generate-i18n": {
       "executor": "nx:run-commands",

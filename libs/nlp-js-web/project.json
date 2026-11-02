@@ -15,6 +15,7 @@
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "{workspaceRoot}/dist/{projectRoot}",
         "main": "libs/nlp-js-web/src/index.ts",
@@ -39,8 +40,7 @@
         "development": {
           "tsConfig": "libs/nlp-js-web/tsconfig.lib.json"
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "package": {
       "executor": "nx:run-commands",

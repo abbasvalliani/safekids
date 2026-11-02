@@ -1,6 +1,7 @@
-import baseConfig from '../../../jest.config';
+const baseConfig =
+  require('../../../jest.config').default ?? require('../../../jest.config');
 
-export default {
+module.exports = {
   ...baseConfig,
   rootDir: __dirname,
   testMatch: ['<rootDir>/**/*.test.{ts,tsx}'],

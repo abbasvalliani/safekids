@@ -1,10 +1,10 @@
 /* eslint-disable */
-export default {
+module.exports = {
   displayName: 'gmail-extension-background',
   preset: '../../../../jest.preset.js',
   testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json'}],
+    '^(?!.*/node_modules/).+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../../../coverage/apps/gmail-extension-background',

@@ -1,13 +1,13 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "ESNext",
     "outDir": "../../dist/out-tsc",
     "esModuleInterop": true,
     "declaration": true,
     "sourceMap": true,
     "noEmit": false,
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "types": ["chrome", "node"],
     "lib": ["ES2021", "dom"]
   },

@@ -43,6 +43,7 @@
     "preview": {
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
+      "dependsOn": ["build"],
       "options": {
         "buildTarget": "ml-api-web:build"
       },
@@ -53,11 +54,10 @@
         "production": {
           "buildTarget": "ml-api-web:build:production"
         }
-      },
-      "dependsOn": ["build"]
+      }
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/vitest:test",
       "outputs": ["{options.reportsDirectory}"],
       "options": {
         "passWithNoTests": true,

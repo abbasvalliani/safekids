@@ -16,10 +16,8 @@
         "name": "next"
       }
     ],
-    "types": [
-      "jest",
-      "node"
-    ]
+    "types": ["jest", "node"],
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "**/*.ts",
@@ -33,10 +31,5 @@
     "../../dist/apps/main-website-react/dist/apps/main-website-react/.next/types/**/*.ts",
     "dist/apps/main-website-react/.next/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "jest.config.ts",
-    "**/*.spec.ts",
-    "**/*.test.ts"
-  ]
+  "exclude": ["node_modules", "jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }

@@ -15,6 +15,7 @@
     "build": {
       "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "{workspaceRoot}/dist/{projectRoot}",
         "main": "libs/extension-dev-utils/src/index.ts",
@@ -40,8 +41,7 @@
         "development": {
           "tsConfig": "libs/extension-dev-utils/tsconfig.lib.json"
         }
-      },
-      "defaultConfiguration": "production"
+      }
     },
     "package": {
       "executor": "nx:run-commands",

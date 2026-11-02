@@ -6,7 +6,28 @@ import 'slick-carousel/slick/slick-theme.css';
 import { cn } from '../../../lib/utils';
 import { gellix } from '../../fonts/gellix';
 
+// Same query react-slick builds for the 768px `responsive` breakpoint below.
+const MOBILE_QUERY = '(min-width: 0px) and (max-width: 768px)';
+
+// react-slick 0.31 replaced enquire.js with window.matchMedia listeners, which
+// only fire when the viewport crosses a breakpoint, never on mount. A page
+// loaded on a phone therefore kept the desktop settings (5 thumbnails, not
+// infinite), which broke the mobile carousel. Track the breakpoint here and
+// pass the mobile settings explicitly; `responsive` stays for resizes.
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mql = window.matchMedia(MOBILE_QUERY);
+    const update = () => setIsMobile(mql.matches);
+    update();
+    mql.addEventListener('change', update);
+    return () => mql.removeEventListener('change', update);
+  }, []);
+  return isMobile;
+};
+
 const Carousel = () => {
+  const isMobile = useIsMobile();
   const [nav1, setNav1] = useState<Slider | undefined>();
   const [nav2, setNav2] = useState<Slider | undefined>();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -14,6 +35,12 @@ const Carousel = () => {
   useEffect(() => {
     console.log('current', currentSlide)
   }, [currentSlide])
+  const mobileNavSettings = {
+    slidesToShow: 1,
+    centerMode: false,
+    focusOnSelect: false,
+    infinite: true,
+  };
   const navSettings = {
     dots: false,
     arrows: false,
@@ -28,14 +55,10 @@ const Carousel = () => {
     responsive: [
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-          focusOnSelect: false,
-          infinite: true
-        },
+        settings: mobileNavSettings,
       },
     ],
+    ...(isMobile ? mobileNavSettings : {}),
   };
   const settings = {
     dots: true,

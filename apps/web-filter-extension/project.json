@@ -4,12 +4,12 @@
   "sourceRoot": "/src",
   "type": "module",
   "projectType": "application",
+  "tags": [],
   "implicitDependencies": [
     "extension-hmr",
     "extension-vite-config",
     "extension-dev-utils"
   ],
-  "tags": [],
   "targets": {
     "build": {
       "executor": "nx:run-commands",
@@ -33,9 +33,7 @@
     },
     "build-background": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "configFile": "apps/web-filter-extension/main/background/vite.config.mjs",
@@ -53,9 +51,7 @@
     },
     "build-content": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "configFile": "apps/web-filter-extension/main/content/vite.config.mjs",
@@ -73,9 +69,7 @@
     },
     "build-popup": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "configFile": "apps/web-filter-extension/main/pages/popup/vite.config.mjs",
@@ -92,9 +86,7 @@
     },
     "build-onboarding": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "configFile": "apps/web-filter-extension/main/pages/onboarding/vite.config.mjs",
@@ -111,9 +103,7 @@
     },
     "build-prr": {
       "executor": "@nx/vite:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "configFile": "apps/web-filter-extension/main/pages/prr/vite.config.mjs",
@@ -136,13 +126,9 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "apps/web-filter-extension/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["apps/web-filter-extension/**/*.{ts,tsx,js,jsx}"]
       }
     }
   }
