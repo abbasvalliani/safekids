@@ -94,7 +94,7 @@ importers:
         version: 2.2.0(react@19.3.1)
       '@inboxsdk/core':
         specifier: ^2.2.0
-        version: 2.2.0(kefir@3.8.8)
+        version: 2.2.33(kefir@3.8.8)
       '@json2csv/node':
         specifier: ^7.0.8
         version: 7.0.8
@@ -2589,8 +2589,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@inboxsdk/core@2.2.0':
-    resolution: {integrity: sha512-WAwNPCC/iSbyBfwUFXNoLHw5f9saCHNEw9VxNEpRf0jRDauwwCsNakMzQT/vcWeBQnhutNAF+sEM7o5kBSpXew==}
+  '@inboxsdk/core@2.2.33':
+    resolution: {integrity: sha512-g7nnqxmoHI9/irHPpmIQqsH1euYY2V600rt4H/1DgXYo4tGf89JXNSxHlBm0EXWdDL2HbGbGXx97DJcIdYJLeQ==}
 
   '@inquirer/ansi@1.0.2':
     resolution: {integrity: sha512-S8qNSZiYzFd0wAcyG5AXCvUHC5Sr7xpZ9wZ2py9XR88jUz8wooStVx5M6dRzczbBWjic9NP7+rY0Xi7qqK/aMQ==}
@@ -17133,7 +17133,7 @@ snapshots:
   '@img/sharp-win32-x64@0.35.5':
     optional: true
 
-  '@inboxsdk/core@2.2.0(kefir@3.8.8)':
+  '@inboxsdk/core@2.2.33(kefir@3.8.8)':
     dependencies:
       '@babel/runtime': 7.26.10
       '@types/kefir': 3.8.11
