@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.52 (2026-11-02)
+
+### Chores
+
+* **deps:** general dependency update of the website, API and demo (#288): Next 16, Tailwind 4, NestJS 11 / Express 5, Vite 7, plus security fixes (root lockfile findings 418 → 90)
+
 ## [1.3.51](https://github.com/abbasvalliani/safekids/compare/1.3.50...1.3.51) (2026-11-01)
 
 ### Chores
