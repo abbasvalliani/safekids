@@ -10,11 +10,7 @@ const nextConfig = {
   output: 'export',
   distDir: 'out',
   trailingSlash: true,
-  nx: {
-    // Set this to true if you would like to use SVGR
-    // See: https://github.com/gregberge/svgr
-    svgr: false,
-  },
+  nx: {},
   async redirects() {
     return [
       {
@@ -22,7 +18,7 @@ const nextConfig = {
         destination: '/how-it-works',
         permanent: true,
       },
-    ]
+    ];
   },
 };
 

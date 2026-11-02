@@ -24,10 +24,13 @@ RUN pnpm run api
 # just those, so dev tooling (nx, webpack, esbuild, jest, ...) and the
 # frontend-only deps of the monorepo never reach the runtime image.
 WORKDIR /runtime-deps
-# pnpm-workspace.yaml carries the overrides + supply-chain policy the pruned
-# lockfile was generated under; without it --frozen-lockfile rejects the lockfile.
-RUN cp /app/dist/apps/ml-api/package.json /app/dist/apps/ml-api/pnpm-lock.yaml /app/pnpm-workspace.yaml ./ \
- && pnpm install --prod --frozen-lockfile --ignore-scripts --config.node-linker=hoisted
+# Nx 23 writes a pruned pnpm-workspace.yaml next to the pruned lockfile (the
+# overrides are already resolved into it, so it carries none; the root file's
+# overrides would make --frozen-lockfile reject it). The supply-chain settings
+# it does not carry are passed explicitly.
+RUN cp /app/dist/apps/ml-api/package.json /app/dist/apps/ml-api/pnpm-lock.yaml /app/dist/apps/ml-api/pnpm-workspace.yaml ./ \
+ && pnpm install --prod --frozen-lockfile --ignore-scripts --config.node-linker=hoisted \
+      --config.trust-policy=no-downgrade --config.block-exotic-subdeps=true --config.strict-dep-builds=true
 
 # ---------------------------------------------------------------------------
 # runtime

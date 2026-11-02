@@ -29,7 +29,7 @@
   ],
   "license": "Safe Kids License",
   "dependencies": {
-    "onnxruntime-web": "^1.16.1"
+    "onnxruntime-web": "^1.30.0"
   },
   "sideEffects": false,
   "generators": "./plugin/generators.json",

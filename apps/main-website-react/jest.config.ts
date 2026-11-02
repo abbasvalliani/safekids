@@ -1,5 +1,5 @@
 /* eslint-disable */
-export default {
+module.exports = {
   displayName: 'main-website-react',
   preset: '../../jest.preset.js',
   transform: {

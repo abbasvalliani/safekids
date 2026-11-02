@@ -29,8 +29,8 @@
   ],
   "license": "Safe Kids License",
   "dependencies": {
-    "@techstark/opencv-js": "^4.8.0-release.9",
-    "onnxruntime-common": "^1.16.1",
+    "@techstark/opencv-js": "^4.10.0-release.1",
+    "onnxruntime-common": "^1.30.0",
     "sbd": "^1.0.19",
     "abstract-logging": "^2.0.1"
   },

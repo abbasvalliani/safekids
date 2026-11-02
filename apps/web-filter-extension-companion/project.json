@@ -10,6 +10,11 @@
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
+      "dependsOn": [
+        {
+          "target": "build:content"
+        }
+      ],
       "options": {
         "viteConfig": "apps/web-filter-extension-companion/vite.config.mts",
         "outputPath": "dist/apps/web-filter-extension-companion",
@@ -22,12 +27,7 @@
         "production": {
           "mode": "production"
         }
-      },
-      "dependsOn": [
-        {
-          "target": "build:content"
-        }
-      ]
+      }
     },
     "serve": {
       "executor": "@nx/vite:dev-server",
@@ -49,6 +49,7 @@
     "preview": {
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
+      "dependsOn": ["build"],
       "options": {
         "buildTarget": "web-filter-extension-companion:build"
       },
@@ -59,8 +60,7 @@
         "production": {
           "buildTarget": "web-filter-extension-companion:build:production"
         }
-      },
-      "dependsOn": ["build"]
+      }
     },
     "test": {
       "executor": "@nx/jest:jest",

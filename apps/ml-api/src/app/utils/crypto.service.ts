@@ -1,30 +1,37 @@
-import AWS_SDK from 'aws-sdk';
+import { DecryptCommand, EncryptCommand, KMSClient } from '@aws-sdk/client-kms';
 
-const {KMS} = AWS_SDK
-
-const kms = new KMS({
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+// AWS SDK v3. Credentials and region come from the same environment variables
+// the v2 client used; an unset key pair falls back to the default provider chain.
+const kms = new KMSClient({
     region: process.env.AWS_REGION,
+    credentials:
+        process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY
+            ? {
+                  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+                  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+              }
+            : undefined,
 });
 
 export class CryptoUtil {
     static async encrypt(plainText) {
-        const params = {
-            KeyId: process.env.AWS_KMS_KEY_ID,
-            Plaintext: plainText,
-        };
-        const { CiphertextBlob } = await kms.encrypt(params).promise();
+        const { CiphertextBlob } = await kms.send(
+            new EncryptCommand({
+                KeyId: process.env.AWS_KMS_KEY_ID,
+                Plaintext: Buffer.from(String(plainText)),
+            }),
+        );
 
         // store encrypted data as base64 encoded string
-        return CiphertextBlob.toString('base64');
+        return Buffer.from(CiphertextBlob).toString('base64');
     }
 
     static async decrypt(plainText) {
-        const params = {
-            CiphertextBlob: Buffer.from(plainText, 'base64'),
-        };
-        const { Plaintext } = await kms.decrypt(params).promise();
-        return Plaintext.toString();
+        const { Plaintext } = await kms.send(
+            new DecryptCommand({
+                CiphertextBlob: Buffer.from(plainText, 'base64'),
+            }),
+        );
+        return Buffer.from(Plaintext).toString();
     }
 }

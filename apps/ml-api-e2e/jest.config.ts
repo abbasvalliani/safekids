@@ -1,5 +1,5 @@
 /* eslint-disable */
-export default {
+module.exports = {
   displayName: 'ml-api-e2e',
   preset: '../../jest.preset.js',
   globalSetup: '<rootDir>/src/support/global-setup.ts',
@@ -7,7 +7,7 @@ export default {
   setupFiles: ['<rootDir>/src/support/test-setup.ts'],
   testEnvironment: 'node',
   transform: {
-    '^.+\\.[tj]s$': [
+    '^(?!.*/node_modules/).+\\.[tj]s$': [
       'ts-jest',
       {
         tsconfig: '<rootDir>/tsconfig.spec.json',

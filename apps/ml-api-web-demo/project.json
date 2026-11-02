@@ -42,6 +42,7 @@
     "preview": {
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
+      "dependsOn": ["build"],
       "options": {
         "buildTarget": "ml-api-web-demo:build"
       },
@@ -52,8 +53,7 @@
         "production": {
           "buildTarget": "ml-api-web-demo:build:production"
         }
-      },
-      "dependsOn": ["build"]
+      }
     },
     "test": {
       "executor": "nx:run-commands",

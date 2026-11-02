@@ -46,18 +46,28 @@ overrides:
   'express@4>qs': 6.16.2
   'svgo@>=3 <3.3.5': 3.3.5
   'tar-fs@>=3 <3.1.1': 3.1.1
-  'uuid@>=11 <11.1.1': 11.1.1
   '@module-federation/dts-plugin>ws': 8.21.0
   'yaml@>=1 <1.10.3': 1.10.3
-  # sanitize-html >=2.17.6 needs ESM-only htmlparser2 12, which the jest setup
-  # cannot load (nlp-js-node, gmail-extension tests). 2.17.5 is the newest CJS one.
-  'sbd>sanitize-html': 2.17.5
+  # sbd pins an old sanitize-html; the latest needs ESM-only htmlparser2 12,
+  # which jest 30 loads through require(esm) on Node >= 24.9.
+  'sbd>sanitize-html': 2.18.1
   # Security fixes younger than the 2-week update rule (still past the 3-day policy):
   # lowest patched version in the same major.
   'body-parser@>=2 <2.4.0': 2.4.0
   'fast-uri@>=4 <4.2.3': 4.2.3
   'node-forge@>=1 <1.4.1': 1.4.1
   'serialize-javascript@>=7 <7.1.3': 7.1.3
+  # Upgrade batch 2026-11-02 (nx 23 / jest 30 / release-it 21 brought these in):
+  # lowest patched version in the same major.
+  'undici@>=7 <7.30.1': 7.30.1
+  # socks 2.8.10 moves to the patched ip-address 10.
+  'socks@>=2 <2.8.10': 2.8.10
+  # uuid < 11.1.1 (sequelize 6, @sequelize/core alpha, reduxed-chrome-storage,
+  # xcode): only v1/v4 are used, unchanged in 11, which still ships CommonJS.
+  'uuid@>=7 <11.1.1': 11.1.1
+  # redux-toolkit (the unscoped 1.x package, not @reduxjs/toolkit) pins
+  # lodash 3, which has no patched 3.x; nothing in the repo imports it.
+  'redux-toolkit>lodash': 4.18.1
   # Parents that pin an exact vulnerable version.
   '@nestjs/swagger>js-yaml': 5.4.1
   'fastify@>=5 <5.12.6': 5.12.6
@@ -87,6 +97,10 @@ allowBuilds:
   'protobufjs': false
   'puppeteer': false
   'sharp': false
+  # jest 30 (jest-resolve): napi-postinstall only re-downloads the native binding
+  # when the per-platform optional package is missing; the optional packages
+  # ship it prebuilt, so the script is not needed.
+  'unrs-resolver': false
 
 strictDepBuilds: true
 minimumReleaseAge: 4320
