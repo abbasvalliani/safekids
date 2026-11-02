@@ -84,3 +84,5 @@ blockExoticSubdeps: true
 minimumReleaseAgeExclude:
   # Renovate security update: esbuild@0.25.0
   - esbuild@0.25.0
+  # Renovate security update: moment@2.31.0
+  - moment@2.31.0
