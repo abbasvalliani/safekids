@@ -26,9 +26,9 @@ overrides:
   # Targeted transitive fixes: lowest patched version within the same major.
   # Parent-scoped (a>b) where an unscoped range would also catch, and downgrade,
   # a direct dependency or an already-newer copy.
-  '@babel/core@>=7 <7.29.6': 7.29.6
-  '@babel/helpers@>=7 <7.26.10': 7.26.10
-  '@babel/runtime@>=7 <7.26.10': 7.26.10
+  '@babel/core@>=7 <7.29.6': 7.29.7
+  '@babel/helpers@>=7 <7.26.10': 7.29.10
+  '@babel/runtime@>=7 <7.26.10': 7.29.10
   'ajv@>=8 <8.18.0': 8.18.0
   'browserslist@>=4 <4.28.7': 4.28.7
   'colord@>=2 <2.9.4': 2.9.4
