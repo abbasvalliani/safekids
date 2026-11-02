@@ -208,7 +208,7 @@ importers:
         version: 4.10.0-release.1
       '@types/google-libphonenumber':
         specifier: ^7.4.30
-        version: 7.4.30
+        version: 7.4.31
       '@types/jquery':
         specifier: ^4.0.1
         version: 4.0.1
@@ -5392,8 +5392,8 @@ packages:
   '@types/filewriter@0.0.33':
     resolution: {integrity: sha512-xFU8ZXTw4gd358lb2jw25nxY9QAgqn2+bKKjKOYfNCzN4DKCFetK7sPtrlpg66Ywe3vWY9FNxprZawAh9wfJ3g==}
 
-  '@types/google-libphonenumber@7.4.30':
-    resolution: {integrity: sha512-Td1X1ayRxePEm6/jPHUBs2tT6TzW1lrVB6ZX7ViPGellyzO/0xMNi+wx5nH6jEitjznq276VGIqjK5qAju0XVw==}
+  '@types/google-libphonenumber@7.4.31':
+    resolution: {integrity: sha512-NqtRPbLfRbCsqYTVb2UHM67AhMUfTYarxy32u14QilQq7i2C37jtvxbEmb0U0oCMMZtFfpoAtbuhrXwF7/EyVg==}
 
   '@types/graceful-fs@4.1.9':
     resolution: {integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==}
@@ -20953,7 +20953,7 @@ snapshots:
 
   '@types/filewriter@0.0.33': {}
 
-  '@types/google-libphonenumber@7.4.30': {}
+  '@types/google-libphonenumber@7.4.31': {}
 
   '@types/graceful-fs@4.1.9':
     dependencies:
