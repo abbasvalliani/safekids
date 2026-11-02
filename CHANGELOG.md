@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.54 (2026-11-02)
+
+### Chores
+
+* **deps:** held-back majors (#312): nx 23, NestJS 12, Jest 30, TypeScript 6, Vite 8, ESLint 10, aws-sdk v3, react-slick 0.31; all 22 libs lockfiles re-resolved (OSV 860 → 18, 0 critical)
+
 ## [1.3.53](https://github.com/abbasvalliani/safekids/compare/1.3.52...1.3.53) (2026-11-02)
 
 ### Dependencies
