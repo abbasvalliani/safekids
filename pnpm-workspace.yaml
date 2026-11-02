@@ -1,10 +1,5 @@
-# pnpm 11 settings (pnpm 11 reads settings from this file, not package.json).
-# Supply-chain hardening: only reviewed packages may run install scripts,
-# new releases must be 3 days old before they can be resolved, and a
-# package whose publish trust level drops (e.g. lost provenance) fails install.
-
 overrides:
-  '@grpc/grpc-js@1': 1.14.6
+  '@grpc/grpc-js@1': 1.14.7
   'axios@1': 1.20.0
   'body-parser@1': 1.20.9
   'brace-expansion@1': 1.1.21
