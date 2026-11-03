@@ -1,0 +1,11 @@
+{
+  "name": "image-size1-compat",
+  "version": "1.999.0",
+  "private": true,
+  "description": "image-size 1.x call style (sync file path or buffer) over patched image-size 2. Used by metro via pnpm-workspace.yaml overrides.",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "image-size-v2": "npm:image-size@2.0.3"
+  }
+}
