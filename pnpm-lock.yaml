@@ -626,10 +626,10 @@ importers:
         version: 23.3.0(@swc-node/register@1.12.1(@swc/core@1.16.18(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.18(@swc/helpers@0.5.23))
       '@release-it/bumper':
         specifier: 8.0.1
-        version: 8.0.1(release-it@21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1))
+        version: 8.0.1(release-it@21.1.2(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1))
       '@release-it/conventional-changelog':
         specifier: 12.0.2
-        version: 12.0.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.3)(release-it@21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1))
+        version: 12.0.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.3)(release-it@21.1.2(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1))
       '@rollup/plugin-sucrase':
         specifier: ^5.0.2
         version: 5.0.2(rollup@4.64.10)
@@ -799,8 +799,8 @@ importers:
         specifier: ^2.11.2
         version: 2.11.2(puppeteer-extra@3.3.6(@types/puppeteer@7.0.4(supports-color@8.1.1)(typescript@6.0.3))(puppeteer-core@24.43.1(supports-color@8.1.1))(puppeteer@24.43.1(supports-color@8.1.1)(typescript@6.0.3))(supports-color@8.1.1))(supports-color@8.1.1)
       release-it:
-        specifier: 21.1.1
-        version: 21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1)
+        specifier: 21.1.2
+        version: 21.1.2(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1)
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3
@@ -13462,8 +13462,8 @@ packages:
     resolution: {integrity: sha512-cnE+y8bz4NhMjISKbgeVJtqNbtf5QpjZP+Bslo+UqkIt9QPnX9q095eiRRASJG1/tz6dlNr6Z5NsBiWYokp6EQ==}
     hasBin: true
 
-  release-it@21.1.1:
-    resolution: {integrity: sha512-jOhoWMK3hm5UAYfxREcLW1BRlNzMhKfjN8m4sxjnOOPXDWk6b//mZIk2ABv9Cno/eH1M911iyGaCMtapnwS7Ng==}
+  release-it@21.1.2:
+    resolution: {integrity: sha512-5jy1qepCnvifzMjMV+Vj0redgjsK8uQF5VeUwP7xVJAadhxLLWAtzju+CUyEUUd/7Ru95LR+uuiQmScgl3l8BA==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
     hasBin: true
 
@@ -20904,7 +20904,7 @@ snapshots:
       react: 19.3.1
       react-redux: 9.2.0(@types/react@19.3.0)(react@19.3.1)(redux@5.0.1)
 
-  '@release-it/bumper@8.0.1(release-it@21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1))':
+  '@release-it/bumper@8.0.1(release-it@21.1.2(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1))':
     dependencies:
       '@decimalturn/toml-patch': 3.3.1
       '@iarna/toml': 3.0.0
@@ -20914,10 +20914,10 @@ snapshots:
       ini: 7.0.0
       js-yaml: 5.5.0
       lodash-es: 4.18.1
-      release-it: 21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1)
+      release-it: 21.1.2(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1)
       verkit: 0.4.1
 
-  '@release-it/conventional-changelog@12.0.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.3)(release-it@21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1))':
+  '@release-it/conventional-changelog@12.0.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.3)(release-it@21.1.2(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1))':
     dependencies:
       '@conventional-changelog/git-client': 3.2.0(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.3)
       concat-stream: 2.0.0
@@ -20925,7 +20925,7 @@ snapshots:
       conventional-changelog-angular: 9.4.0
       conventional-changelog-conventionalcommits: 10.4.1
       conventional-recommended-bump: 12.1.0
-      release-it: 21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1)
+      release-it: 21.1.2(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1)
       semver: 7.8.5
     transitivePeerDependencies:
       - conventional-commits-filter
@@ -31239,7 +31239,7 @@ snapshots:
     dependencies:
       jsesc: 3.0.2
 
-  release-it@21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1):
+  release-it@21.1.2(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1):
     dependencies:
       '@inquirer/prompts': 8.7.3(@types/node@24.19.2)
       '@octokit/rest': 22.0.1
