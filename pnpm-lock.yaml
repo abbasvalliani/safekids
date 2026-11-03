@@ -298,7 +298,7 @@ importers:
         version: 6.12.1(supports-color@8.1.1)
       google-libphonenumber:
         specifier: ^3.2.40
-        version: 3.2.40
+        version: 3.2.48
       googleapis:
         specifier: ^186.0.0
         version: 186.0.0(supports-color@8.1.1)
@@ -9536,8 +9536,8 @@ packages:
     resolution: {integrity: sha512-U/OUrt4+aUiELB8sgaPJAdVfPzFOPjo1ngXVOwbR1NcCHV7ZcPOW0Ecwdbp8J86NmxBwLMJUOj8AgRSOZm5iJQ==}
     engines: {node: '>=22'}
 
-  google-libphonenumber@3.2.40:
-    resolution: {integrity: sha512-bzGxX/vfggcV80LVcibki+JvR91x6zHpBpovDXSfmZUGn6uLzhbYXsWll2a80EG6qTmvf8lt7KZZ/pkMml8ckw==}
+  google-libphonenumber@3.2.48:
+    resolution: {integrity: sha512-x8Z8baHTiMchHIcQUsCU5HNwbCVA8UOoVkOMfGxOpCtkoUG6pAAp6jtjKILHgmhNzEb6t3t8i4UxAMIkNZr3DA==}
     engines: {node: '>=0.10'}
 
   google-logging-utils@2.1.0:
@@ -26559,7 +26559,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  google-libphonenumber@3.2.40: {}
+  google-libphonenumber@3.2.48: {}
 
   google-logging-utils@2.1.0: {}
 
