@@ -487,7 +487,7 @@ importers:
         version: 6.3.0
       simplebar-react:
         specifier: ^3.3.0
-        version: 3.3.0(react@19.3.1)
+        version: 3.3.2(react@19.3.1)
       slick-carousel:
         specifier: ^2.0.0
         version: 2.0.0(jquery@4.0.0)
@@ -14092,8 +14092,11 @@ packages:
   simplebar-core@1.3.0:
     resolution: {integrity: sha512-LpWl3w0caz0bl322E68qsrRPpIn+rWBGAaEJ0lUJA7Xpr2sw92AkIhg6VWj988IefLXYh50ILatfAnbNoCFrlA==}
 
-  simplebar-react@3.3.0:
-    resolution: {integrity: sha512-sxzy+xRuU41He4tT4QLGYutchtOuye/xxVeq7xhyOiwMiHNK1ZpvbOTyy+7P0i7gfpXLGTJ8Bep8+4Mhdgtz/g==}
+  simplebar-core@1.3.2:
+    resolution: {integrity: sha512-qKgTTuTqapjsFGkNhCjyPhysnbZGpQqNmjk0nOYjFN5ordC/Wjvg+RbYCyMSnW60l/Z0ZS82GbNltly6PMUH1w==}
+
+  simplebar-react@3.3.2:
+    resolution: {integrity: sha512-ZsgcQhKLtt5ra0BRIJeApfkTBQCa1vUPA/WXI4HcYReFt+oCEOvdVz6rR/XsGJcKxTlCRPmdGx1uJIUChupo+A==}
     peerDependencies:
       react: '>=16.8.0'
 
@@ -31981,10 +31984,15 @@ snapshots:
     dependencies:
       lodash: 4.18.1
 
-  simplebar-react@3.3.0(react@19.3.1):
+  simplebar-core@1.3.2:
+    dependencies:
+      lodash: 4.18.1
+      lodash-es: 4.18.0
+
+  simplebar-react@3.3.2(react@19.3.1):
     dependencies:
       react: 19.3.1
-      simplebar-core: 1.3.0
+      simplebar-core: 1.3.2
 
   simplebar@6.3.0:
     dependencies:
