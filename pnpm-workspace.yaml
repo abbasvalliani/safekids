@@ -55,7 +55,7 @@ overrides:
   # lowest patched version in the same major.
   'body-parser@>=2 <2.4.0': 2.4.0
   'fast-uri@>=4 <4.2.3': 4.2.3
-  'node-forge@>=1 <1.4.1': 1.4.1
+  'node-forge@>=1 <1.4.1': 1.4.2
   'serialize-javascript@>=7 <7.1.3': 7.1.3
   # Upgrade batch 2026-11-02 (nx 23 / jest 30 / release-it 21 brought these in):
   # lowest patched version in the same major.
