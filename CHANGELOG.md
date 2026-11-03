@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.55](https://github.com/abbasvalliani/safekids/compare/1.3.54...1.3.55) (2026-11-03)
+
+### Dependencies
+
+* chore(deps): update dependency fastify@>=5 <5.12.6 to v5.12.7 (#302) ([57cebcf](https://github.com/abbasvalliani/safekids/commit/57cebcf18004164a9a29849a4ac0c8b8fdc82617))
+* chore(deps): update dependency cypress to v16.2.1 (#314) ([25cf1e2](https://github.com/abbasvalliani/safekids/commit/25cf1e2f4091765af57d634583a4a163efbd12f6))
+* chore(deps): update dependency formik to v2.4.9 (#303) ([dde24cd](https://github.com/abbasvalliani/safekids/commit/dde24cdc62fc81d5f5f9e3a194c2621adbd55e37))
+* chore(deps): update dependency google-auth-library to v11.3.2 (#304) ([70f1f6a](https://github.com/abbasvalliani/safekids/commit/70f1f6a1293c04b4c19609ef34936f62ca95ed44))
+* chore(deps): update dependency google-libphonenumber to v3.2.48 (#305) ([2529386](https://github.com/abbasvalliani/safekids/commit/2529386aa22ca3e638421e211996a5078405994f))
+* chore(deps): update dependency html-react-parser to v5.2.17 (#306) ([e8d550f](https://github.com/abbasvalliani/safekids/commit/e8d550f86aa0d3a6b4f5c7fdf64f7646cb9a5a27))
+
 ## 1.3.54 (2026-11-02)
 
 ### Chores
