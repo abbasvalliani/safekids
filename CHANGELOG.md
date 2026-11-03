@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.56 (2026-11-03)
+
+### Bug Fixes
+
+* **deps:** clear 8 of 9 Dependabot alerts (extract-zip, image-size, file-type, glob, minimatch, phin) and roll up the open Renovate PRs (#324)
+
 ## [1.3.55](https://github.com/abbasvalliani/safekids/compare/1.3.54...1.3.55) (2026-11-03)
 
 ### Dependencies
