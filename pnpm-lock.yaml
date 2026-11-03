@@ -478,7 +478,7 @@ importers:
         version: 6.37.8(mysql2@3.24.6(@types/node@24.19.2))(pg-hstore@2.3.4)(supports-color@8.1.1)
       sequelize-typescript:
         specifier: ^2.1.6
-        version: 2.1.6(@types/node@24.19.2)(@types/validator@13.12.2)(reflect-metadata@0.2.2)(sequelize@6.37.8(mysql2@3.24.6(@types/node@24.19.2))(pg-hstore@2.3.4)(supports-color@8.1.1))
+        version: 2.1.6(@types/node@24.19.2)(@types/validator@13.15.10)(reflect-metadata@0.2.2)(sequelize@6.37.8(mysql2@3.24.6(@types/node@24.19.2))(pg-hstore@2.3.4)(supports-color@8.1.1))
       short-hash:
         specifier: ^1.0.0
         version: 1.0.0
@@ -631,7 +631,7 @@ importers:
         specifier: 12.0.2
         version: 12.0.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.3)(release-it@21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1))
       '@rollup/plugin-sucrase':
-        specifier: ^5.0.2
+        specifier: 5.0.2
         version: 5.0.2(rollup@4.64.10)
       '@swc-node/register':
         specifier: 1.12.1
@@ -643,19 +643,19 @@ importers:
         specifier: 1.16.18
         version: 1.16.18(@swc/helpers@0.5.23)
       '@tailwindcss/postcss':
-        specifier: ^4.3.3
+        specifier: 4.3.3
         version: 4.3.3
       '@testing-library/react':
         specifier: 16.3.3
         version: 16.3.3(@testing-library/dom@10.4.0)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@types/chrome':
-        specifier: ^0.0.287
+        specifier: 0.0.287
         version: 0.0.287
       '@types/jest':
         specifier: 30.0.0
         version: 30.0.0
       '@types/multer':
-        specifier: ^2.3.0
+        specifier: 2.3.0
         version: 2.3.0
       '@types/node':
         specifier: 24.19.2
@@ -667,13 +667,13 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(@types/react@19.3.0)
       '@types/sequelize':
-        specifier: ^4.28.20
+        specifier: 4.28.20
         version: 4.28.20
       '@types/uuid':
-        specifier: ^10.0.0
+        specifier: 10.0.0
         version: 10.0.0
       '@types/ws':
-        specifier: ^8.5.13
+        specifier: 8.5.13
         version: 8.5.13
       '@typescript-eslint/eslint-plugin':
         specifier: 8.71.2
@@ -688,10 +688,10 @@ importers:
         specifier: 4.3.3
         version: 4.3.3(@swc/helpers@0.5.23)(vite@8.3.4(@types/node@24.19.2)(esbuild@0.25.12)(jiti@2.7.0)(less@4.1.3)(sass-embedded@1.107.0)(sass@1.107.0)(stylus@0.64.0(supports-color@8.1.1))(terser@5.51.2)(yaml@2.8.3))
       '@vitest/coverage-v8':
-        specifier: ~5.0.5
+        specifier: 5.0.5
         version: 5.0.5(vitest@5.0.5)
       '@vitest/ui':
-        specifier: ~5.0.5
+        specifier: 5.0.5
         version: 5.0.5(vitest@5.0.5)
       babel-jest:
         specifier: 30.5.2
@@ -703,10 +703,10 @@ importers:
         specifier: 2.3.3
         version: 2.3.3(@babel/core@7.29.7(supports-color@8.1.1))
       concurrently:
-        specifier: ^9.1.0
+        specifier: 9.1.0
         version: 9.1.0
       copy-webpack-plugin:
-        specifier: ^14.0.0
+        specifier: 14.0.0
         version: 14.0.0(webpack@5.112.0)
       cypress:
         specifier: 16.2.1
@@ -718,7 +718,7 @@ importers:
         specifier: 11.0.0
         version: 11.0.0
       esbuild:
-        specifier: ^0.25.0
+        specifier: 0.25.12
         version: 0.25.12
       eslint:
         specifier: 10.13.0
@@ -745,22 +745,22 @@ importers:
         specifier: 7.1.1
         version: 7.1.1(eslint@10.13.0(jiti@2.7.0)(supports-color@8.1.1))(supports-color@8.1.1)
       esm:
-        specifier: ^3.2.25
+        specifier: 3.2.25
         version: 3.2.25
       fast-glob:
-        specifier: ^3.3.2
+        specifier: 3.3.2
         version: 3.3.2
       form-data:
         specifier: 4.0.6
         version: 4.0.6
       fs-extra:
-        specifier: ^11.2.0
+        specifier: 11.2.0
         version: 11.2.0
       jest:
         specifier: 30.5.2
         version: 30.5.2(@types/node@24.19.2)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.23))(@types/node@24.19.2)(typescript@6.0.3))
       jest-chrome:
-        specifier: ^0.8.0
+        specifier: 0.8.0
         version: 0.8.0(jest@30.5.2(@types/node@24.19.2)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.23))(@types/node@24.19.2)(typescript@6.0.3)))
       jest-environment-jsdom:
         specifier: 30.5.2
@@ -775,7 +775,7 @@ importers:
         specifier: 2.7.0
         version: 2.7.0
       jsdom:
-        specifier: ~30.1.3
+        specifier: 30.1.3
         version: 30.1.3(@noble/hashes@1.8.0)
       jsonc-eslint-parser:
         specifier: 3.3.0
@@ -787,28 +787,28 @@ importers:
         specifier: 8.5.30
         version: 8.5.30
       prettier:
-        specifier: ^3.9.10
+        specifier: 3.9.10
         version: 3.9.10
       puppeteer:
         specifier: 24.43.1
         version: 24.43.1(supports-color@8.1.1)(typescript@6.0.3)
       puppeteer-extra:
-        specifier: ^3.3.6
+        specifier: 3.3.6
         version: 3.3.6(@types/puppeteer@7.0.4(supports-color@8.1.1)(typescript@6.0.3))(puppeteer-core@24.43.1(supports-color@8.1.1))(puppeteer@24.43.1(supports-color@8.1.1)(typescript@6.0.3))(supports-color@8.1.1)
       puppeteer-extra-plugin-stealth:
-        specifier: ^2.11.2
+        specifier: 2.11.2
         version: 2.11.2(puppeteer-extra@3.3.6(@types/puppeteer@7.0.4(supports-color@8.1.1)(typescript@6.0.3))(puppeteer-core@24.43.1(supports-color@8.1.1))(puppeteer@24.43.1(supports-color@8.1.1)(typescript@6.0.3))(supports-color@8.1.1))(supports-color@8.1.1)
       release-it:
         specifier: 21.1.1
         version: 21.1.1(@types/node@24.19.2)(magicast@0.5.5)(supports-color@8.1.1)
       tailwindcss:
-        specifier: ^4.3.3
+        specifier: 4.3.3
         version: 4.3.3
       ts-jest:
-        specifier: ^29.4.15
+        specifier: 29.4.15
         version: 29.4.15(@babel/core@7.29.7(supports-color@8.1.1))(@jest/transform@30.5.2(supports-color@8.1.1))(@jest/types@30.5.1)(babel-jest@30.5.2(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(esbuild@0.25.12)(jest-util@30.5.1)(jest@30.5.2(@types/node@24.19.2)(babel-plugin-macros@3.1.0)(supports-color@8.1.1)(ts-node@10.9.2(@swc/core@1.16.18(@swc/helpers@0.5.23))(@types/node@24.19.2)(typescript@6.0.3)))(typescript@6.0.3)
       ts-mockito:
-        specifier: ^2.6.1
+        specifier: 2.6.1
         version: 2.6.1
       ts-node:
         specifier: 10.9.2
@@ -829,13 +829,13 @@ importers:
         specifier: 4.1.1
         version: 4.1.1(vite@8.3.4(@types/node@24.19.2)(esbuild@0.25.12)(jiti@2.7.0)(less@4.1.3)(sass-embedded@1.107.0)(sass@1.107.0)(stylus@0.64.0(supports-color@8.1.1))(terser@5.51.2)(yaml@2.8.3))
       vitest:
-        specifier: ~5.0.5
+        specifier: 5.0.5
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(jsdom@30.1.3(@noble/hashes@1.8.0))(vite@8.3.4(@types/node@24.19.2)(esbuild@0.25.12)(jiti@2.7.0)(less@4.1.3)(sass-embedded@1.107.0)(sass@1.107.0)(stylus@0.64.0(supports-color@8.1.1))(terser@5.51.2)(yaml@2.8.3))
       webpack:
         specifier: 5.112.0
         version: 5.112.0(@swc/core@1.16.18(@swc/helpers@0.5.23))(cssnano@7.1.9(postcss@8.5.30))(csso@5.0.5)(esbuild@0.25.12)(lightningcss@1.33.0)(postcss@8.5.30)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(uglify-js@3.19.3)(webpack-cli@7.2.3)
       webpack-merge:
-        specifier: ^6.0.1
+        specifier: 6.0.1
         version: 6.0.1
 
 packages:
@@ -31767,10 +31767,10 @@ snapshots:
 
   sequelize-pool@8.0.0: {}
 
-  sequelize-typescript@2.1.6(@types/node@24.19.2)(@types/validator@13.12.2)(reflect-metadata@0.2.2)(sequelize@6.37.8(mysql2@3.24.6(@types/node@24.19.2))(pg-hstore@2.3.4)(supports-color@8.1.1)):
+  sequelize-typescript@2.1.6(@types/node@24.19.2)(@types/validator@13.15.10)(reflect-metadata@0.2.2)(sequelize@6.37.8(mysql2@3.24.6(@types/node@24.19.2))(pg-hstore@2.3.4)(supports-color@8.1.1)):
     dependencies:
       '@types/node': 24.19.2
-      '@types/validator': 13.12.2
+      '@types/validator': 13.15.10
       glob: 7.2.0
       reflect-metadata: 0.2.2
       sequelize: 6.37.8(mysql2@3.24.6(@types/node@24.19.2))(pg-hstore@2.3.4)(supports-color@8.1.1)

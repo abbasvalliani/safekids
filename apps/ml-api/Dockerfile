@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
 # Base images are pinned by version AND digest (resolve with `crane digest`).
 # Node 24 is the Active LTS line. trixie (Debian 13) rather than the bookworm
 # `-slim` default: same Node build, but no zlib1g CRITICAL and fewer HIGH OS CVEs.
