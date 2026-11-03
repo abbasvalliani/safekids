@@ -37,7 +37,7 @@ overrides:
   colord@>=2 <2.9.4: 2.9.4
   fast-uri@>=2 <2.4.8: 2.4.8
   fast-uri@>=3 <3.1.9: 3.1.9
-  immutable@>=5 <5.1.8: 5.1.8
+  immutable@>=5 <5.1.8: 5.1.9
   js-yaml@>=3 <3.15.2: 3.15.2
   koa@>=2 <2.16.4: 2.16.4
   lodash-es@>=4 <4.18.0: 4.18.0
@@ -9872,8 +9872,8 @@ packages:
   immer@10.1.1:
     resolution: {integrity: sha512-s2MPrmjovJcoMaHtx6K11Ra7oD05NT97w1IC5zpMkT6Atjr7H8LjaDd81iIxUYpMKSRRNMJE703M1Fhr/TctHw==}
 
-  immutable@5.1.8:
-    resolution: {integrity: sha512-TM5YqrGeTsVIPPpILzeqZ8D2Zc2TvNgSDi88zPF2a4cyqQdWV/wVWBDRDbNzzrLeRWScrFcOX9lW2iX6GOtUDw==}
+  immutable@5.1.9:
+    resolution: {integrity: sha512-m8nVez3rwrgmWxtLMt1ZYXB2Lv7OKYn/disyxAlSDYAlKSlFoPPfIAmAM/M5xqL4m4C/wAPw7S2/CNaUii1Hxg==}
 
   import-cwd@3.0.0:
     resolution: {integrity: sha512-4pnzH16plW+hgvRECbDWpQl3cqtvSofHWh44met7ESfZ8UZOWWddm8hEyDTqREJ9RbYHY8gi8DqmaelApoOGMg==}
@@ -26972,7 +26972,7 @@ snapshots:
 
   immer@10.1.1: {}
 
-  immutable@5.1.8: {}
+  immutable@5.1.9: {}
 
   import-cwd@3.0.0:
     dependencies:
@@ -31591,7 +31591,7 @@ snapshots:
     dependencies:
       '@bufbuild/protobuf': 2.16.0
       colorjs.io: 0.7.1
-      immutable: 5.1.8
+      immutable: 5.1.9
       rxjs: 7.8.2
       supports-color: 8.1.1
       sync-child-process: 1.1.1
@@ -31628,7 +31628,7 @@ snapshots:
   sass@1.107.0:
     dependencies:
       chokidar: 5.0.0
-      immutable: 5.1.8
+      immutable: 5.1.9
       source-map-js: 1.2.2
     optionalDependencies:
       '@parcel/watcher': 2.5.0
