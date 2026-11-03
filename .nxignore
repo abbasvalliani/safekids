@@ -1,0 +1,2 @@
+# pnpm override facades (see pnpm-workspace.yaml), not Nx projects.
+tools/compat

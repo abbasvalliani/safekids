@@ -1,0 +1,11 @@
+{
+  "name": "minimatch3-compat",
+  "version": "3.999.0",
+  "private": true,
+  "description": "minimatch v3 call-style API (callable default export) on top of the patched minimatch 11, for consumers that still require('minimatch') as a function.",
+  "main": "index.js",
+  "license": "ISC",
+  "dependencies": {
+    "minimatch": "11.0.3"
+  }
+}

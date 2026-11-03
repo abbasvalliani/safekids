@@ -1,9 +1,12 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
 # Not published by any workflow today; kept buildable and hardened like the
 # others. Base images are pinned by version AND digest.
 FROM node:24.22.1-trixie-slim@sha256:89c5244bc22a9bc3287d89ebc7e49b9cb5bb84cd40e6175ac3421d5a9f68b95a AS builder
 WORKDIR /build
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# tools/compat holds the file: dependency facades the pnpm-workspace.yaml
+# overrides point at; they must be present before `pnpm install`.
+COPY tools/compat ./tools/compat
 # Exactly the pnpm in package.json `packageManager` (keep the two in sync).
 RUN npm install -g --ignore-scripts pnpm@11.28.6
 

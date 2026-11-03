@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
 # Base images are pinned by version AND digest (resolve with `crane digest`).
 # Node 24 is the Active LTS line. trixie (Debian 13) rather than the bookworm
 # `-slim` default: same Node build, but no zlib1g CRITICAL and fewer HIGH OS CVEs.
@@ -12,6 +12,9 @@ FROM ${NODE_IMAGE} AS builder
 
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+# tools/compat holds the file: dependency facades the pnpm-workspace.yaml
+# overrides point at; they must be present before `pnpm install`.
+COPY tools/compat ./tools/compat
 # Exactly the pnpm in package.json `packageManager` (keep the two in sync).
 RUN npm install -g --ignore-scripts pnpm@11.28.6
 RUN pnpm install --ignore-scripts --frozen-lockfile
@@ -28,7 +31,9 @@ WORKDIR /runtime-deps
 # overrides are already resolved into it, so it carries none; the root file's
 # overrides would make --frozen-lockfile reject it). The supply-chain settings
 # it does not carry are passed explicitly.
-RUN cp /app/dist/apps/ml-api/package.json /app/dist/apps/ml-api/pnpm-lock.yaml /app/dist/apps/ml-api/pnpm-workspace.yaml ./ \
+# local_path_modules/ holds the tools/compat facades the pruned lockfile points at.
+RUN cp -r /app/dist/apps/ml-api/package.json /app/dist/apps/ml-api/pnpm-lock.yaml /app/dist/apps/ml-api/pnpm-workspace.yaml \
+      /app/dist/apps/ml-api/local_path_modules ./ \
  && pnpm install --prod --frozen-lockfile --ignore-scripts --config.node-linker=hoisted \
       --config.trust-policy=no-downgrade --config.block-exotic-subdeps=true --config.strict-dep-builds=true
 

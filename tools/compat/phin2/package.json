@@ -1,0 +1,8 @@
+{
+  "name": "phin2-compat",
+  "version": "2.999.0",
+  "private": true,
+  "description": "Dependency-free phin 2 callback/promise API over Node's built-in fetch. Used by @jimp/core via pnpm-workspace.yaml overrides.",
+  "main": "index.js",
+  "license": "MIT"
+}

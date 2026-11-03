@@ -1,0 +1,8 @@
+{
+  "name": "file-type16-compat",
+  "version": "16.999.0",
+  "private": true,
+  "description": "Dependency-free file-type 16 fromBuffer/fromFile for the image formats jimp 0.16 decodes. Used by @jimp/core via pnpm-workspace.yaml overrides.",
+  "main": "index.js",
+  "license": "MIT"
+}
