@@ -355,7 +355,7 @@ importers:
         version: 0.4.6(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       node-html-parser:
         specifier: ^9.0.4
-        version: 9.0.4
+        version: 9.0.6
       nodejs-file-downloader:
         specifier: ^4.13.0
         version: 4.13.0(debug@4.4.3(supports-color@8.1.1))(supports-color@8.1.1)
@@ -11661,8 +11661,8 @@ packages:
     resolution: {integrity: sha512-s+w+rBWnpTMwSFbaE0UXsRlg7hU4FjekKU4eyAih5T8nJuNZT1nNsskXpxmeqSK9UzkBl6UgRlnKc8hz8IEqOw==}
     hasBin: true
 
-  node-html-parser@9.0.4:
-    resolution: {integrity: sha512-reUSrZkF1rO7hEYe5mJwtbVcQ6mB5QrViCZH6Wv+iz3er/PA9Q50gol15dMLQRDfdli4VzqPMPR24HNRFgVKFw==}
+  node-html-parser@9.0.6:
+    resolution: {integrity: sha512-q3ETJ2gU+VlERyYbiJ5JQ6+mMVV1Bc6mZQ7MdJ30moq+h3oN0kQGj3rWDORaSX1SOLSkPbY/bN+sBzDlliVOBA==}
 
   node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
@@ -29066,7 +29066,7 @@ snapshots:
       detect-libc: 2.0.3
     optional: true
 
-  node-html-parser@9.0.4:
+  node-html-parser@9.0.6:
     dependencies:
       css-select: 5.1.0
       entities: 8.1.0
