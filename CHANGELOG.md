@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.57](https://github.com/abbasvalliani/safekids/compare/1.3.56...1.3.57) (2026-11-04)
+
+### Dependencies
+
+* chore(deps): update dependency fast-glob to v3.3.3 (#327) ([82bba11](https://github.com/abbasvalliani/safekids/commit/82bba1145215309f1f57d44d832a63741f7cc9d0))
+* chore(deps): update dependency tar-fs@>=3 <3.1.1 to v3.1.3 (#328) ([c84ef1a](https://github.com/abbasvalliani/safekids/commit/c84ef1a8fbc1648feabdb1f33cf0745ca728230b))
+* chore(deps): update dependency tldts to v7.4.19 (#329) ([13362ec](https://github.com/abbasvalliani/safekids/commit/13362ec34d3b3bc4b2b676274b75fd0a32a2edd0))
+* fix(deps): update dependency @sequelize/mysql to v7.0.0-alpha.48 (#337) ([02da954](https://github.com/abbasvalliani/safekids/commit/02da954c51c4718464cbc2cfc02dc0e0a47069c4))
+* chore(deps): update pnpm to v11.28.10 (#333) ([e92c412](https://github.com/abbasvalliani/safekids/commit/e92c412a5f15c2b066e3cd33b54d29fdb21aca94))
+* chore(deps): update dependency webpack to v5.112.2 (#331) ([278e297](https://github.com/abbasvalliani/safekids/commit/278e297238a66e831841b1a647655e7417cbc264))
+
 ## 1.3.56 (2026-11-03)
 
 ### Bug Fixes
