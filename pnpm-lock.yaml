@@ -203,8 +203,8 @@ importers:
         specifier: ^8.47.0
         version: 8.47.0
       '@sequelize/mysql':
-        specifier: 7.0.0-alpha.43
-        version: 7.0.0-alpha.43(@types/node@24.19.2)(supports-color@8.1.1)
+        specifier: 7.0.0-alpha.48
+        version: 7.0.0-alpha.48(@types/node@24.19.2)(supports-color@8.1.1)
       '@stripe/react-stripe-js':
         specifier: ^3.1.1
         version: 3.1.1(@stripe/stripe-js@5.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
@@ -5429,16 +5429,16 @@ packages:
     resolution: {integrity: sha512-319N90McVpupQ6vws4+tfCy/03AdtsU0MurIE4+W5cubHME08HtiEWlfacvAxX+yuKFhvdsO4K4BB/dj54ideg==}
     engines: {node: '>=8'}
 
-  '@sequelize/core@7.0.0-alpha.43':
-    resolution: {integrity: sha512-j3lZvUQPDNEb01kroSazprTHcQ1Y1t+LW6miKhmQ8O4+i7HY1WerO+co6TBcjunssTjJi+VyYXYlLQ0emc2k3w==}
-    engines: {node: '>=18.0.0'}
+  '@sequelize/core@7.0.0-alpha.48':
+    resolution: {integrity: sha512-jRqJlgPo/H6qKpQY8ws+ULebRVtcvo/DDVBgf49Cn1Yd41xk+yZx3izuI9gLlZQQ75B/PRIbcP9WrHWAD8tJkg==}
+    engines: {node: '>=18.20.8'}
 
-  '@sequelize/mysql@7.0.0-alpha.43':
-    resolution: {integrity: sha512-68ca5Q13hGXcrkffZTnnUiGIq42ZY8rGIJk6kmbS7FhOTRzWYJndfZ915FF64Y0vcHrjzxukr7kInJ4v2ZbGYg==}
+  '@sequelize/mysql@7.0.0-alpha.48':
+    resolution: {integrity: sha512-8R4B5Lmv3Y6MFsLcLdBcDVQQbzwOVNIAVBHUCB/oEPa1jbZxrkBZQebshPGys8aJMhGx2SpDk84tOwgci8m+eQ==}
 
-  '@sequelize/utils@7.0.0-alpha.43':
-    resolution: {integrity: sha512-ex1iVNuqc7db1Il8VGkF4DWDkn7OpEsB4FGvS3OWz8g7blqvlO6T3fP4c+qmOxOrmdzDPWayh43U3xr/F4q3qQ==}
-    engines: {node: '>=18.0.0'}
+  '@sequelize/utils@7.0.0-alpha.48':
+    resolution: {integrity: sha512-6s7YIDIRULddXuvdm4h6hbZtS6hXkqRzRzeG3WlzICmpY50ju0EC/4Ho3Ek4pYy7gl0IAs4HSmuOrmoUciT6Ng==}
+    engines: {node: '>=18.20.8'}
 
   '@simple-libs/child-process-utils@2.0.0':
     resolution: {integrity: sha512-dvNoRKLijXnD0XoJAz94pbNuB5GQgDr55UhpSPhffDkTT0Cmcqh9jSCOtwfT2d4H6MI9E7c4SgtMuJXZ6F3c6A==}
@@ -5953,6 +5953,9 @@ packages:
 
   '@types/lodash@4.17.13':
     resolution: {integrity: sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg==}
+
+  '@types/lodash@4.17.27':
+    resolution: {integrity: sha512-VenMRv/eKNrspX9v3H4dbmjsrnCOYdYBG3kxXKk3dG6X+urBGcj2Prww3xw1U5K4FV/mE4h5GbWd0szEKf+9ew==}
 
   '@types/luxon@3.7.6':
     resolution: {integrity: sha512-6KSjliQAXK8ZLgFQO4B7iE4Rpf/B3rItzCFuXezBY/XIAGxOdLd7vRNK9/StRPwiS/yJsVbB7HKpW46B8tcEuQ==}
@@ -6863,9 +6866,9 @@ packages:
     resolution: {integrity: sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==}
     engines: {node: '>=12'}
 
-  ansis@3.5.1:
-    resolution: {integrity: sha512-sfej1OZ6XF7964SpnVmj7bIUnN+P3YbnxXiRYxQgjuuWW9uH+a8OVtxX2ToRQoSBBKvdYApgAcDmm2JEh1xr3w==}
-    engines: {node: '>=16'}
+  ansis@3.17.0:
+    resolution: {integrity: sha512-0qWUglt9JEqLFr3w1I1pbrChn1grhaiAR2ocX1PP/flRmxgtwTzPFFFnfIlD6aMOLQZgSuCRlidD70lvx8yhzg==}
+    engines: {node: '>=14'}
 
   ansis@4.4.0:
     resolution: {integrity: sha512-9k3v7xcHwgdO/DruxGIg4HtjvlAZlcnsX/mzqUb1t3NkYnl9kK2UJ+Gq0io+vQf7iT//BD/HB/NBkUR1LWxoeA==}
@@ -9845,8 +9848,8 @@ packages:
     resolution: {integrity: sha512-6I/HUDeYFfuNCVS3td055BaXBwKYuzw7K3ExVMStBowKo9oOAMJIXIHvdyR3iboTCp1b+1i5DSkIZTcwIktuDw==}
     engines: {'0': node >= 0.4.0}
 
-  inflection@3.0.0:
-    resolution: {integrity: sha512-1zEJU1l19SgJlmwqsEyFTbScw/tkMHFenUo//Y0i+XEP83gDFdMvPizAD/WGcE+l1ku12PcTVHQhO6g5E0UCMw==}
+  inflection@3.0.2:
+    resolution: {integrity: sha512-+Bg3+kg+J6JUWn8J6bzFmOWkTQ6L/NHfDRSYU+EVvuKHDxUDHAXgqixHfVlzuBQaPOTac8hn43aPhMNk6rMe3g==}
     engines: {node: '>=18.0.0'}
 
   inflight@1.0.6:
@@ -13441,6 +13444,9 @@ packages:
   retry-as-promised@7.0.4:
     resolution: {integrity: sha512-XgmCoxKWkDofwH8WddD0w85ZfqYz+ZHlr5yo+3YUCfycWawU56T5ckWXsScsj5B8tqUcIG67DxXByo3VUgiAdA==}
 
+  retry-as-promised@7.1.1:
+    resolution: {integrity: sha512-hMD7odLOt3LkTjcif8aRZqi/hybjpLNgSk5oF5FCowfCjok6LukpN2bDX7R5wDmbgBQFn7YoBxSagmtXHaJYJw==}
+
   retry-request@9.1.0:
     resolution: {integrity: sha512-FILyVbis+DTo3KRbtKceqpj1595wIF+XQFW/+AVOBdCQmxwNDgcNXXr2FNM0Ej2qD7zVXbJGfH7lo4jB0wwhKA==}
     engines: {node: '>=22'}
@@ -13815,8 +13821,8 @@ packages:
     resolution: {integrity: sha512-G9c0qlIWQSK29pR/5U2JF5dDQeqqHRragoyahj/Nx4KOOQ3CPPfzxnfqFPCSB7x5UgjOgnZ61nSxz+fjDpRlJg==}
     engines: {node: '>= 10.0.0'}
 
-  sequelize-pool@8.0.0:
-    resolution: {integrity: sha512-xY04c5ctp6lKE4ZoSVo7YJHN5FHVhoYMoH2Z8jWIJG26c9kJSkIjql5HgD9XG5cwJbYMF0Ko2Fhgws20HC90Ug==}
+  sequelize-pool@8.0.1:
+    resolution: {integrity: sha512-SewZFUa5/OYHml+bD7l1c6lGn6TQCZFir7T5mIn0ruEBvadN5lZ9T7hTn+u/clvsu2h1OzBWgklYTi98NUnRBg==}
     engines: {node: '>= 10.0.0'}
 
   sequelize-typescript@2.1.6:
@@ -14821,10 +14827,6 @@ packages:
   type-fest@2.19.0:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
-
-  type-fest@4.31.0:
-    resolution: {integrity: sha512-yCxltHW07Nkhv/1F6wWBr8kz+5BGMfP+RbRSYFnegVb0qV/UMT0G0ElBloPVerqn4M2ZV80Ir1FtCcYv1cT6vQ==}
-    engines: {node: '>=16'}
 
   type-fest@4.41.0:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
@@ -20884,34 +20886,34 @@ snapshots:
     dependencies:
       '@sentry/types': 7.114.0
 
-  '@sequelize/core@7.0.0-alpha.43(supports-color@8.1.1)':
+  '@sequelize/core@7.0.0-alpha.48(supports-color@8.1.1)':
     dependencies:
-      '@sequelize/utils': 7.0.0-alpha.43
+      '@sequelize/utils': 7.0.0-alpha.48
       '@types/debug': 4.1.12
-      '@types/validator': 13.12.2
-      ansis: 3.5.1
+      '@types/validator': 13.15.10
+      ansis: 3.17.0
       bnf-parser: 3.1.6
-      dayjs: 1.11.13
-      debug: 4.4.0(supports-color@8.1.1)
+      dayjs: 1.11.23
+      debug: 4.4.3(supports-color@8.1.1)
       dottie: 2.0.7
       fast-glob: 3.3.3
-      inflection: 3.0.0
+      inflection: 3.0.2
       lodash: 4.18.1
-      retry-as-promised: 7.0.4
-      semver: 7.6.3
-      sequelize-pool: 8.0.0
+      retry-as-promised: 7.1.1
+      semver: 7.8.5
+      sequelize-pool: 8.0.1
       toposort-class: 1.0.1
-      type-fest: 4.31.0
+      type-fest: 4.41.0
       uuid: 11.1.1
       validator: 13.15.35
     transitivePeerDependencies:
       - supports-color
 
-  '@sequelize/mysql@7.0.0-alpha.43(@types/node@24.19.2)(supports-color@8.1.1)':
+  '@sequelize/mysql@7.0.0-alpha.48(@types/node@24.19.2)(supports-color@8.1.1)':
     dependencies:
-      '@sequelize/core': 7.0.0-alpha.43(supports-color@8.1.1)
-      '@sequelize/utils': 7.0.0-alpha.43
-      dayjs: 1.11.13
+      '@sequelize/core': 7.0.0-alpha.48(supports-color@8.1.1)
+      '@sequelize/utils': 7.0.0-alpha.48
+      dayjs: 1.11.23
       lodash: 4.18.1
       mysql2: 3.24.6(@types/node@24.19.2)
       wkx: 0.5.0
@@ -20919,9 +20921,9 @@ snapshots:
       - '@types/node'
       - supports-color
 
-  '@sequelize/utils@7.0.0-alpha.43':
+  '@sequelize/utils@7.0.0-alpha.48':
     dependencies:
-      '@types/lodash': 4.17.13
+      '@types/lodash': 4.17.27
       lodash: 4.18.1
 
   '@simple-libs/child-process-utils@2.0.0':
@@ -21446,6 +21448,8 @@ snapshots:
       '@types/lodash': 4.17.13
 
   '@types/lodash@4.17.13': {}
+
+  '@types/lodash@4.17.27': {}
 
   '@types/luxon@3.7.6': {}
 
@@ -22771,7 +22775,7 @@ snapshots:
 
   ansi-styles@6.2.3: {}
 
-  ansis@3.5.1: {}
+  ansis@3.17.0: {}
 
   ansis@4.4.0: {}
 
@@ -26516,7 +26520,7 @@ snapshots:
 
   inflection@1.13.4: {}
 
-  inflection@3.0.0: {}
+  inflection@3.0.2: {}
 
   inflight@1.0.6:
     dependencies:
@@ -30764,6 +30768,8 @@ snapshots:
 
   retry-as-promised@7.0.4: {}
 
+  retry-as-promised@7.1.1: {}
+
   retry-request@9.1.0:
     dependencies:
       extend: 3.0.2
@@ -31191,7 +31197,7 @@ snapshots:
 
   sequelize-pool@7.1.0: {}
 
-  sequelize-pool@8.0.0: {}
+  sequelize-pool@8.0.1: {}
 
   sequelize-typescript@2.1.6(@types/node@24.19.2)(@types/validator@13.15.10)(reflect-metadata@0.2.2)(sequelize@6.37.8(mysql2@3.24.6(@types/node@24.19.2))(pg-hstore@2.3.4)(supports-color@8.1.1)):
     dependencies:
@@ -32268,8 +32274,6 @@ snapshots:
   type-fest@0.8.1: {}
 
   type-fest@2.19.0: {}
-
-  type-fest@4.31.0: {}
 
   type-fest@4.41.0: {}
 
