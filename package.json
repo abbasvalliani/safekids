@@ -302,7 +302,7 @@
     "vite-plugin-node": "8.0.0",
     "vite-plugin-static-copy": "4.1.1",
     "vitest": "5.0.5",
-    "webpack": "5.112.0",
+    "webpack": "5.112.2",
     "webpack-merge": "6.0.1"
   },
   "packageManager": "pnpm@11.28.6"
