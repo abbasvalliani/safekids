@@ -381,7 +381,7 @@ importers:
         version: 1.30.0
       openai:
         specifier: ^7.38.0
-        version: 7.39.0(@aws-sdk/credential-provider-node@3.972.91)(@smithy/signature-v4@5.7.5)(undici@7.30.1)(ws@8.22.0)(zod@4.6.7)
+        version: 7.39.0(@aws-sdk/credential-provider-node@3.972.91)(@smithy/signature-v4@5.7.5)(undici@7.30.1)(ws@8.22.1)(zod@4.6.7)
       passport-headerapikey:
         specifier: ^1.2.2
         version: 1.2.2
@@ -546,7 +546,7 @@ importers:
         version: 5.0.0(winston@3.19.0)
       ws:
         specifier: ^8.18.0
-        version: 8.22.0
+        version: 8.22.1
       yup:
         specifier: ^1.7.1
         version: 1.7.1
@@ -15295,10 +15295,6 @@ packages:
     resolution: {integrity: sha512-LnL6Z3GGDPht/AigwRh2dvL9PQPFQ8skEpVrWZXLWBYmqcaojHNN0onvHzie6rq7EWKrrBfPYqNEzTJgiwEQDQ==}
     engines: {node: '>=6'}
 
-  webpack-sources@3.2.3:
-    resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
-    engines: {node: '>=10.13.0'}
-
   webpack-sources@3.6.0:
     resolution: {integrity: sha512-EIMmPVvNI0CYXyRPp34F2Qk7W37/BZVZIofS6LAUnrNjCVahS+hO4mxwFJDjQjODTGZDtVzLYoN2+1dYkhk9qA==}
     engines: {node: '>=10.13.0'}
@@ -15494,8 +15490,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.22.0:
-    resolution: {integrity: sha512-Ydggc987+RO0AnWtZ/7Wq9FtNvcrL1b/RO0ud9mWjUPgDrsAAwQSF51sm2hm1XofbU/4jkpGEsLFsZZxU+1DOg==}
+  ws@8.22.1:
+    resolution: {integrity: sha512-oyL6OPYme/CmiFvNuGzeoxCJ4nOrZE2O1FwM9MWM1AsGri6nLXB2pg+lNA8aLeXMSav0J6eIVS1j6vUPzUtK9g==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -27385,7 +27381,7 @@ snapshots:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.2.0
-      ws: 8.22.0
+      ws: 8.22.1
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -27686,7 +27682,7 @@ snapshots:
 
   license-webpack-plugin@4.0.2(webpack@5.112.2):
     dependencies:
-      webpack-sources: 3.2.3
+      webpack-sources: 3.6.0
     optionalDependencies:
       webpack: 5.112.2(@swc/core@1.16.18(@swc/helpers@0.5.23))(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.25.12)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(uglify-js@3.19.3)(webpack-cli@7.2.3)
 
@@ -28933,12 +28929,12 @@ snapshots:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  openai@7.39.0(@aws-sdk/credential-provider-node@3.972.91)(@smithy/signature-v4@5.7.5)(undici@7.30.1)(ws@8.22.0)(zod@4.6.7):
+  openai@7.39.0(@aws-sdk/credential-provider-node@3.972.91)(@smithy/signature-v4@5.7.5)(undici@7.30.1)(ws@8.22.1)(zod@4.6.7):
     optionalDependencies:
       '@aws-sdk/credential-provider-node': 3.972.91
       '@smithy/signature-v4': 5.7.5
       undici: 7.30.1
-      ws: 8.22.0
+      ws: 8.22.1
       zod: 4.6.7
 
   opener@1.5.2: {}
@@ -32699,7 +32695,7 @@ snapshots:
       sockjs: 0.3.24
       spdy: 4.0.2(supports-color@8.1.1)
       webpack-dev-middleware: 7.4.5(webpack@5.112.2)
-      ws: 8.22.0
+      ws: 8.22.1
     optionalDependencies:
       webpack: 5.112.2(@swc/core@1.16.18(@swc/helpers@0.5.23))(cssnano@7.1.9(postcss@8.5.32))(csso@5.0.5)(esbuild@0.25.12)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(uglify-js@3.19.3)(webpack-cli@7.2.3)
       webpack-cli: 7.2.3(js-yaml@4.3.2)(json5@2.2.3)(webpack-dev-server@5.2.7)(webpack@5.112.2)
@@ -32722,8 +32718,6 @@ snapshots:
       wildcard: 2.0.1
 
   webpack-node-externals@3.0.0: {}
-
-  webpack-sources@3.2.3: {}
 
   webpack-sources@3.6.0: {}
 
@@ -32957,7 +32951,7 @@ snapshots:
 
   ws@8.21.0: {}
 
-  ws@8.22.0: {}
+  ws@8.22.1: {}
 
   wsl-utils@1.0.1:
     dependencies:
