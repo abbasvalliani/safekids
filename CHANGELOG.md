@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.58](https://github.com/abbasvalliani/safekids/compare/1.3.57...1.3.58) (2026-11-05)
+
+### Dependencies
+
+* chore(deps): update dependency vite to v8.3.5 (#330) ([23e854c](https://github.com/abbasvalliani/safekids/commit/23e854cf61a32900f6634034da3acf0cb296af8e))
+* chore(deps): update dependency minimatch@>=4 <11.0.1 to v11.0.4 (#342) ([30c5c15](https://github.com/abbasvalliani/safekids/commit/30c5c1523281208588740892c9abb16d97fa4238))
+* chore(deps): update dependency ws to v8.22.1 (#332) ([34b8999](https://github.com/abbasvalliani/safekids/commit/34b8999b26c6dbe1f99560499807392198c638f7))
+* chore(deps): update swc monorepo (#334) ([6c917a4](https://github.com/abbasvalliani/safekids/commit/6c917a40d9079e73b6e766f19a71059d2c2f96a1))
+* fix(deps): update dependency @nestjs/cache-manager to v12.0.2 (#335) ([c3a51bf](https://github.com/abbasvalliani/safekids/commit/c3a51bfc8a81ab13b27bbe55257725832984db1a))
+* fix(deps): update dependency @nestjs/swagger to v12.0.5 (#336) ([95ed85d](https://github.com/abbasvalliani/safekids/commit/95ed85d34446a460b9569b951b394cb4de21d671))
+
 ## [1.3.57](https://github.com/abbasvalliani/safekids/compare/1.3.56...1.3.57) (2026-11-04)
 
 ### Dependencies
