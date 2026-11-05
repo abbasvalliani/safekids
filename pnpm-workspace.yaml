@@ -77,7 +77,7 @@ overrides:
   # minimatch < 11.0.1 (GHSA-g3hv-75wg-m249, globparts DoS), every major line.
   # >= 4 consumers (nx, eslint, typescript-eslint, @swc/cli, glob 14, filelist)
   # use named exports; v3 consumers get the callable facade below.
-  'minimatch@>=4 <11.0.1': 11.0.3
+  'minimatch@>=4 <11.0.1': 11.0.4
   # Consumers whose patched dependency changed its export/call style get a small
   # facade (tools/compat/*, installed as a copy via file:) over the patched
   # release. The Dockerfiles COPY tools/compat before `pnpm install`.
