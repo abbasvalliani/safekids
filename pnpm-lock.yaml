@@ -9826,8 +9826,8 @@ packages:
   image-size1-compat@file:tools/compat/image-size1:
     resolution: {directory: tools/compat/image-size1, type: directory}
 
-  image-size@2.0.3:
-    resolution: {integrity: sha512-9BJAtVCBth+76NwqnEfWr3PiRnYhbquk6K/USuQ1GQajz5NgLzO7tNsnoNjHfO7LuftgkBf+CCH6j28hjMbIYQ==}
+  image-size@2.0.4:
+    resolution: {integrity: sha512-QRUkFFsRV/6fuESxb9Vkq+a0LkSrgKXuc2NEqfikiXxxN/G3tjWt5EVUlMaImRBZRZK/jRBEbYvpPYZL8t08Zw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -26442,9 +26442,9 @@ snapshots:
 
   image-size1-compat@file:tools/compat/image-size1:
     dependencies:
-      image-size-v2: image-size@2.0.3
+      image-size-v2: image-size@2.0.4
 
-  image-size@2.0.3: {}
+  image-size@2.0.4: {}
 
   immediate@3.0.6: {}
 
