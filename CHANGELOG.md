@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.59](https://github.com/abbasvalliani/safekids/compare/1.3.58...1.3.59) (2026-11-06)
+
+### Dependencies
+
+* fix(deps): update dependency formik-mui to v5.0.0-alpha.1 (#338) ([06169c7](https://github.com/abbasvalliani/safekids/commit/06169c7d5e87aaf0f2e4104bf6524cd5a0935ec2))
+* chore(deps): update dependency fastify@>=5 <5.12.6 to v5.12.8 (#352) ([178bac2](https://github.com/abbasvalliani/safekids/commit/178bac2b92511616bfe588cc6cc054b9731d8ccd))
+* chore(deps): update tailwindcss monorepo to v4.3.4 (#353) ([4f226ba](https://github.com/abbasvalliani/safekids/commit/4f226ba32f5a95ec541d7b4a10916ba9ec217d77))
+* fix(deps): update dependency @nestjs/mapped-types to v12.0.1 (#354) ([cf1c74a](https://github.com/abbasvalliani/safekids/commit/cf1c74af6fca1a172b52c7372458269c2084e07d))
+* fix(deps): update dependency image-size-v2 to v2.0.4 (#339) ([dcbe9b6](https://github.com/abbasvalliani/safekids/commit/dcbe9b69004ae973c192a2af1a10b544fd8021e3))
+* fix(deps): update dependency minimatch to v11.0.4 (#343) ([7bb2f74](https://github.com/abbasvalliani/safekids/commit/7bb2f7488065ffd928621ab611a7eaba5cc5013d))
+
 ## [1.3.58](https://github.com/abbasvalliani/safekids/compare/1.3.57...1.3.58) (2026-11-05)
 
 ### Dependencies
