@@ -28223,7 +28223,7 @@ snapshots:
 
   minimatch3-compat@file:tools/compat/minimatch3:
     dependencies:
-      minimatch: 11.0.3
+      minimatch: 11.0.4
 
   minimatch@11.0.3:
     dependencies:
