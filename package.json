@@ -118,7 +118,7 @@
     "dotenv": "^18.0.8",
     "express": "^5.3.0",
     "formik": "^2.4.6",
-    "formik-mui": "5.0.0-alpha.0",
+    "formik-mui": "5.0.0-alpha.1",
     "framer-motion": "^11.15.0",
     "google-auth-library": "^11.3.1",
     "google-gax": "^6.12.1",
