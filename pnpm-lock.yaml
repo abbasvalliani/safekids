@@ -57,7 +57,7 @@ overrides:
   uuid@>=7 <11.1.1: 11.1.1
   redux-toolkit>lodash: 4.18.1
   '@nestjs/swagger>js-yaml': 5.4.1
-  fastify@>=5 <5.12.6: 5.12.7
+  fastify@>=5 <5.12.6: 5.12.8
   puppeteer-core>ws: 8.21.0
   yaml@>=2 <2.8.3: 2.8.3
   glob@>=9 <14.0.2: 14.0.3
@@ -171,7 +171,7 @@ importers:
         version: 12.0.2(@nestjs/common@12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.3)
       '@nestjs/serve-static':
         specifier: 12.0.0
-        version: 12.0.0(@nestjs/common@12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.3)(express@5.3.0(supports-color@8.1.1))(fastify@5.12.7)
+        version: 12.0.0(@nestjs/common@12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.3)(express@5.3.0(supports-color@8.1.1))(fastify@5.12.8)
       '@nestjs/swagger':
         specifier: 12.0.5
         version: 12.0.5(@nestjs/common@12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.3)(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(typescript@6.0.3)
@@ -604,13 +604,13 @@ importers:
         version: 23.3.0(@babel/traverse@7.29.10(supports-color@8.1.1))(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/cli@0.8.2(@swc/core@1.16.21(@swc/helpers@0.5.23))(chokidar@4.0.3)(supports-color@8.1.1))(@swc/core@1.16.21(@swc/helpers@0.5.23))(nx@23.3.0(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.23)))(supports-color@8.1.1)
       '@nx/nest':
         specifier: 23.3.0
-        version: 23.3.0(fd9df928cd51165b7d956df1c13ae3d5)
+        version: 23.3.0(6d534669697d97dceee9e37de12310f6)
       '@nx/next':
         specifier: 23.3.0
         version: 23.3.0(af734e08ac94f174c12ce8bbfee9a3bf)
       '@nx/node':
         specifier: 23.3.0
-        version: 23.3.0(fec84977bf47be84056b2f70c2beefd2)
+        version: 23.3.0(7cd87163764570e9d3e9521d6a786327)
       '@nx/react':
         specifier: 23.3.0
         version: 23.3.0(6afd84a51e41aabe24a7f9dea6386037)
@@ -3874,7 +3874,7 @@ packages:
       '@nestjs/common': ^12.0.0
       '@nestjs/core': ^12.0.0
       express: ^5.0.1
-      fastify: 5.12.7
+      fastify: 5.12.8
     peerDependenciesMeta:
       '@fastify/static':
         optional: true
@@ -4188,7 +4188,7 @@ packages:
     resolution: {integrity: sha512-T4taAV1wojWvku9uKfEMJ2EvoJJmfXBwGF8Xt0e7MfGst/imKOfsvvMC1m6isNnKa3x5uFdNjfDznPsgYbO/Sg==}
     peerDependencies:
       express: '>=4.0.0 <6.0.0'
-      fastify: 5.12.7
+      fastify: 5.12.8
       koa: 2.16.4
     peerDependenciesMeta:
       express:
@@ -9024,8 +9024,8 @@ packages:
   fastify-plugin@6.0.1:
     resolution: {integrity: sha512-4wW4RxSmvPXLrh5mgQEiu43qU3bw44N2ss4FTkTkQIbprUhE+/s43QX0j/ttcztdWK7PEkHqVthdc5GdEGDvjA==}
 
-  fastify@5.12.7:
-    resolution: {integrity: sha512-v4pEPsTRPuqlDIYiQFB+BHjVN4SdHX9u0ABk0ZDUKbbdY1vsNryUd1j4Z+jQEZajvYIVk047Kimva9/AJ79GYw==}
+  fastify@5.12.8:
+    resolution: {integrity: sha512-moP8exb2sCHLUbJkwp+I6C0padhy4D8lp0SdmzY7HhSdZuqm7O/u3o2aq7u8okaQ//33QDzj3G/u+FsSdB8Qzw==}
 
   fastq@1.18.0:
     resolution: {integrity: sha512-QKHXPW0hD8g4UET03SdOdunzSouc9N4AuHdsX8XNcTsuz+yYFILVNIX4l9yHABMhiEI9Db0JTTIpu0wB+Y1QQw==}
@@ -19171,7 +19171,7 @@ snapshots:
       '@nestjs/common': 12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1)
       '@nestjs/core': 12.1.3(@nestjs/common@12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/platform-express@12.1.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       fast-querystring: 1.1.2
-      fastify: 5.12.7
+      fastify: 5.12.8
       find-my-way: 9.9.0
       light-my-request: 6.6.0
       path-to-regexp: 8.4.2
@@ -19222,14 +19222,14 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@nestjs/serve-static@12.0.0(@nestjs/common@12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.3)(express@5.3.0(supports-color@8.1.1))(fastify@5.12.7)':
+  '@nestjs/serve-static@12.0.0(@nestjs/common@12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.3)(express@5.3.0(supports-color@8.1.1))(fastify@5.12.8)':
     dependencies:
       '@nestjs/common': 12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1)
       '@nestjs/core': 12.1.3(@nestjs/common@12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/platform-express@12.1.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       path-to-regexp: 8.4.2
     optionalDependencies:
       express: 5.3.0(supports-color@8.1.1)
-      fastify: 5.12.7
+      fastify: 5.12.8
 
   '@nestjs/swagger@12.0.5(@nestjs/common@12.1.3(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)(supports-color@8.1.1))(@nestjs/core@12.1.3)(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(typescript@6.0.3)':
     dependencies:
@@ -19549,13 +19549,13 @@ snapshots:
       - nx
       - supports-color
 
-  '@nx/nest@23.3.0(fd9df928cd51165b7d956df1c13ae3d5)':
+  '@nx/nest@23.3.0(6d534669697d97dceee9e37de12310f6)':
     dependencies:
       '@nestjs/schematics': 11.1.0(chokidar@4.0.3)(prettier@3.9.10)(typescript@6.0.3)
       '@nx/devkit': 23.3.0(nx@23.3.0(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.23)))
       '@nx/eslint': 23.3.0(@babel/traverse@7.29.10(supports-color@8.1.1))(@nx/jest@23.3.0(8bdfda69cea7edbfe1673d2422e5eea3))(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/cli@0.8.2(@swc/core@1.16.21(@swc/helpers@0.5.23))(chokidar@4.0.3)(supports-color@8.1.1))(@swc/core@1.16.21(@swc/helpers@0.5.23))(@zkochan/js-yaml@0.0.7)(eslint@10.13.0(jiti@2.7.0)(supports-color@8.1.1))(nx@23.3.0(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.23)))(supports-color@8.1.1)
       '@nx/js': 23.3.0(@babel/traverse@7.29.10(supports-color@8.1.1))(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/cli@0.8.2(@swc/core@1.16.21(@swc/helpers@0.5.23))(chokidar@4.0.3)(supports-color@8.1.1))(@swc/core@1.16.21(@swc/helpers@0.5.23))(nx@23.3.0(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.23)))(supports-color@8.1.1)
-      '@nx/node': 23.3.0(fec84977bf47be84056b2f70c2beefd2)
+      '@nx/node': 23.3.0(7cd87163764570e9d3e9521d6a786327)
       semver: 7.8.5
       tslib: 2.8.1
     optionalDependencies:
@@ -19632,7 +19632,7 @@ snapshots:
       - vitest
       - webpack
 
-  '@nx/node@23.3.0(fec84977bf47be84056b2f70c2beefd2)':
+  '@nx/node@23.3.0(7cd87163764570e9d3e9521d6a786327)':
     dependencies:
       '@nx/devkit': 23.3.0(nx@23.3.0(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.23)))
       '@nx/docker': 23.3.0(nx@23.3.0(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.23))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.23)))
@@ -19645,7 +19645,7 @@ snapshots:
       tslib: 2.8.1
     optionalDependencies:
       express: 5.3.0(supports-color@8.1.1)
-      fastify: 5.12.7
+      fastify: 5.12.8
       koa: 2.16.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - '@babel/traverse'
@@ -25514,7 +25514,7 @@ snapshots:
 
   fastify-plugin@6.0.1: {}
 
-  fastify@5.12.7:
+  fastify@5.12.8:
     dependencies:
       '@fastify/ajv-compiler': 4.0.7
       '@fastify/error': 4.2.1
