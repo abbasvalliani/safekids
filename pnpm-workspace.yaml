@@ -84,7 +84,7 @@ overrides:
   'minimatch@<4': file:./tools/compat/minimatch3
   # image-size <= 2.0.2 (GHSA-w3rx-r6r6-pgpr, GHSA-5p2g-fcmc-qvqq): less >= 4.7
   # dropped image-size (probe-image-size); 4.8.1 is the newest @nx/webpack allows.
-  '@nx/webpack>less': 4.8.1
+  '@nx/webpack>less': 4.9.1
   'metro>image-size': file:./tools/compat/image-size1
   # file-type 13 - 21.3.0 (GHSA-5v7r-6r5c-r473) and phin < 3.7.1
   # (GHSA-x565-32qp-m3vf) via jimp 0.16 (@andreekeberg/imagedata, vision-js-node,
