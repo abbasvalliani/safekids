@@ -297,7 +297,7 @@ importers:
         version: 11.15.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       google-auth-library:
         specifier: ^11.3.1
-        version: 11.3.2(supports-color@8.1.1)
+        version: 11.3.3(supports-color@8.1.1)
       google-gax:
         specifier: ^6.12.1
         version: 6.12.1(supports-color@8.1.1)
@@ -9498,8 +9498,8 @@ packages:
     resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}
     engines: {node: '>= 0.4'}
 
-  google-auth-library@11.3.2:
-    resolution: {integrity: sha512-rbm+5boOZzFvDFg2tvCGkgHtG+RrmDqCDi6voK+ILpoCDqGxxc5pcMH6WZzCQXGNqQqZcYJl5WNvb159rkriuA==}
+  google-auth-library@11.3.3:
+    resolution: {integrity: sha512-VxjQ5+zHeR4RcRi001qnT/6KRKy2CIjQ5I7/wFErvRqr0+setlRqjDOAzvjzWEzyvsWswZE6WMQJtS8OpeTqAQ==}
     engines: {node: '>=22'}
 
   google-gax@6.12.1:
@@ -26013,7 +26013,7 @@ snapshots:
       define-properties: 1.2.1
       gopd: 1.2.0
 
-  google-auth-library@11.3.2(supports-color@8.1.1):
+  google-auth-library@11.3.3(supports-color@8.1.1):
     dependencies:
       base64-js: 1.5.1
       ecdsa-sig-formatter: 1.0.11
@@ -26030,7 +26030,7 @@ snapshots:
       '@grpc/proto-loader': 0.8.1
       '@opentelemetry/api': 1.9.1
       duplexify: 4.1.3
-      google-auth-library: 11.3.2(supports-color@8.1.1)
+      google-auth-library: 11.3.3(supports-color@8.1.1)
       google-logging-utils: 2.1.0
       node-fetch: 3.3.2
       object-hash: 3.0.0
@@ -26048,7 +26048,7 @@ snapshots:
     dependencies:
       extend: 3.0.2
       gaxios: 8.3.1(supports-color@8.1.1)
-      google-auth-library: 11.3.2(supports-color@8.1.1)
+      google-auth-library: 11.3.3(supports-color@8.1.1)
       google-logging-utils: 2.1.0
       qs: 6.16.2
       url-template: 2.0.8
@@ -26057,7 +26057,7 @@ snapshots:
 
   googleapis@186.0.0(supports-color@8.1.1):
     dependencies:
-      google-auth-library: 11.3.2(supports-color@8.1.1)
+      google-auth-library: 11.3.3(supports-color@8.1.1)
       googleapis-common: 9.3.1(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
