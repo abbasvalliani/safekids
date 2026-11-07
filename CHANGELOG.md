@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.60](https://github.com/abbasvalliani/safekids/compare/1.3.59...1.3.60) (2026-11-07)
+
+### Dependencies
+
+* chore(deps): update dependency node-forge@>=1 <1.4.1 to v1.4.3 (#358) ([f3f314d](https://github.com/abbasvalliani/safekids/commit/f3f314d58238fd7ce0b4859796ef2cdeb18e3b69))
+* chore(deps): update dependency @swc/helpers to v0.5.24 (#359) ([e491168](https://github.com/abbasvalliani/safekids/commit/e491168189e8de34dfa4c829e85047d440189100))
+* chore(deps): update dependency google-auth-library to v11.3.3 (#360) ([3976c32](https://github.com/abbasvalliani/safekids/commit/3976c3247a49ff68b3613312a234b018749d5602))
+* fix(deps): update dependency nx-cloud to v19.1.5 (#340) ([e82d612](https://github.com/abbasvalliani/safekids/commit/e82d6125f2de713902f48116c7ab786a35170c8a))
+* fix(deps): update nextjs monorepo to v16.4.5 (#345) ([886e32e](https://github.com/abbasvalliani/safekids/commit/886e32ec5ce6ac1172a83925cef4c815e11d31d0))
+* fix(deps): update nx monorepo to v23.3.1 (#346) ([baf464f](https://github.com/abbasvalliani/safekids/commit/baf464f1b5bd9d14ef3aa89072c2289ae9ad1dcb))
+
 ## [1.3.59](https://github.com/abbasvalliani/safekids/compare/1.3.58...1.3.59) (2026-11-06)
 
 ### Dependencies
