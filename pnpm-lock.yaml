@@ -45,7 +45,7 @@ overrides:
   express@4>qs: 6.16.2
   svgo@>=3 <3.3.5: 3.3.5
   tar-fs@>=3 <3.1.1: 3.1.3
-  '@module-federation/dts-plugin>ws': 8.21.0
+  '@module-federation/dts-plugin>ws': 8.22.1
   yaml@>=1 <1.10.3: 1.10.3
   sbd>sanitize-html: 2.18.1
   body-parser@>=2 <2.4.0: 2.4.0
