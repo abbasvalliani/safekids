@@ -34,7 +34,7 @@
     "abstract-logging": "^2.0.1"
   },
   "devDependencies": {
-    "@types/sbd": "^1.0.5"
+    "@types/sbd": "1.0.5"
   },
   "sideEffects": false,
   "generators": "./plugin/generators.json",
