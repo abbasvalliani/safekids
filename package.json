@@ -214,7 +214,7 @@
     "@eslint/eslintrc": "3.3.7",
     "@eslint/js": "10.0.1",
     "@jest/globals": "30.5.2",
-    "@jnxplus/nx-gradle": "1.16.1",
+    "@jnxplus/nx-gradle": "1.22.0",
     "@laynezh/vite-plugin-lib-assets": "2.2.0",
     "@nestjs/schematics": "12.0.7",
     "@nestjs/testing": "12.1.3",
