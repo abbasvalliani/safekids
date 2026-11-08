@@ -208,7 +208,7 @@
   },
   "devDependencies": {
     "@aws-sdk/client-sqs": "3.1152.0",
-    "@babel/core": "7.29.7",
+    "@babel/core": "7.29.13",
     "@babel/plugin-transform-export-namespace-from": "7.29.7",
     "@babel/plugin-transform-modules-commonjs": "7.29.7",
     "@eslint/eslintrc": "3.3.7",
