@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.61](https://github.com/abbasvalliani/safekids/compare/1.3.60...1.3.61) (2026-11-08)
+
+### Dependencies
+
+* fix(deps): update react-router monorepo to v7.18.5 (#347) ([c84ff12](https://github.com/abbasvalliani/safekids/commit/c84ff1242a6084f7a9ca11d3112519c8be96c3d0))
+* chore(deps): update babel monorepo to v7.29.13 (#365) ([5482243](https://github.com/abbasvalliani/safekids/commit/5482243c4fbbcced658268f357f5654f5fafdbac))
+* chore(deps): update dependency eslint-plugin-cypress to v7.0.3 (#366) ([d042cc5](https://github.com/abbasvalliani/safekids/commit/d042cc5a5af3fe86490c36df125665b7b4029ba7))
+* chore(deps): update dependency vite to v8.3.6 (#367) ([a9b3d3d](https://github.com/abbasvalliani/safekids/commit/a9b3d3dce48513b40a64d918e859a6ebabce2b34))
+* chore(deps): update pnpm to v11.28.11 (#368) ([3746754](https://github.com/abbasvalliani/safekids/commit/3746754c5ef92eee99256a4bc818f387972815a1))
+* chore(deps): update dependency undici@>=7 <7.30.1 to v7.30.2 (#369) ([cfb6bfa](https://github.com/abbasvalliani/safekids/commit/cfb6bfa7e2fd634bcbbf94c961b16bee8251e36b))
+
 ## [1.3.60](https://github.com/abbasvalliani/safekids/compare/1.3.59...1.3.60) (2026-11-07)
 
 ### Dependencies
