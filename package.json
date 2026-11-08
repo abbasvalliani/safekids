@@ -170,7 +170,7 @@
     "react-pin-field": "^3.1.5",
     "react-redux": "^9.2.0",
     "react-router": "^7.14.2",
-    "react-router-dom": "7.18.4",
+    "react-router-dom": "7.18.5",
     "react-slick": "0.31.0",
     "react-week-picker": "^1.1.4",
     "react-window": "^1.8.11",
