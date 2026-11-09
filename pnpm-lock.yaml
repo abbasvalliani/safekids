@@ -573,8 +573,8 @@ importers:
         specifier: 30.5.2
         version: 30.5.2(supports-color@8.1.1)
       '@jnxplus/nx-gradle':
-        specifier: 1.16.1
-        version: 1.16.1(@nx/devkit@23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24))))(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24)))
+        specifier: 1.22.0
+        version: 1.22.0(@nx/devkit@23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24))))(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24)))
       '@laynezh/vite-plugin-lib-assets':
         specifier: 2.2.0
         version: 2.2.0(vite@8.3.6(@types/node@24.19.2)(esbuild@0.25.12)(jiti@2.7.0)(less@4.8.1(supports-color@8.1.1))(sass-embedded@1.107.0)(sass@1.107.0)(stylus@0.64.0(supports-color@8.1.1))(terser@5.51.2)(yaml@2.8.3))
@@ -3136,13 +3136,13 @@ packages:
   '@jimp/utils@0.16.13':
     resolution: {integrity: sha512-VyCpkZzFTHXtKgVO35iKN0sYR10psGpV6SkcSeV4oF7eSYlR8Bl6aQLCzVeFjvESF7mxTmIiI3/XrMobVrtxDA==}
 
-  '@jnxplus/common@1.16.1':
-    resolution: {integrity: sha512-hekLc5hisdC3h5bHV+dRGpCCMArIxkRM0agb4nGvwvRemvffYU5kAU7Zvc98sPTh+t81+j1OFh+xmFvjaMVEQw==}
+  '@jnxplus/common@1.22.0':
+    resolution: {integrity: sha512-RsVrOtiwZ/5d9hJYjeoBNvhph49kFntXhGVzpKooYFKtaieVM6eLSMEzcKfYFNYcjfnqrbVTQD79aGZY+KUhPw==}
     peerDependencies:
       '@nx/devkit': '>= 19'
 
-  '@jnxplus/nx-gradle@1.16.1':
-    resolution: {integrity: sha512-TJQlMlFJ/WLTu89pZgZKkfdmWDdi4P2Rdnuv2EObby4vJUUDiofWK9zKst7849Z/tCrzuL6BqPIJwXo2eDt0jQ==}
+  '@jnxplus/nx-gradle@1.22.0':
+    resolution: {integrity: sha512-Ld4e1AATM6wzXAq8w4Q2hFFyTLg9+Bbk8o6Nkk9oX7q4/JiVjJnicj7Jn975htbeqFsj1gqI9QU0u/NOj6TizQ==}
     peerDependencies:
       '@nx/devkit': '>= 19'
       nx: '>= 19'
@@ -18422,14 +18422,14 @@ snapshots:
       '@babel/runtime': 7.29.13
       regenerator-runtime: 0.13.11
 
-  '@jnxplus/common@1.16.1(@nx/devkit@23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24))))':
+  '@jnxplus/common@1.22.0(@nx/devkit@23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24))))':
     dependencies:
       '@nx/devkit': 23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24)))
       tslib: 2.8.1
 
-  '@jnxplus/nx-gradle@1.16.1(@nx/devkit@23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24))))(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24)))':
+  '@jnxplus/nx-gradle@1.22.0(@nx/devkit@23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24))))(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24)))':
     dependencies:
-      '@jnxplus/common': 1.16.1(@nx/devkit@23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24))))
+      '@jnxplus/common': 1.22.0(@nx/devkit@23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24))))
       '@nx/devkit': 23.3.1(nx@23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24)))
       nx: 23.3.1(@swc-node/register@1.12.1(@swc/core@1.16.21(@swc/helpers@0.5.24))(@swc/types@0.1.28)(supports-color@8.1.1)(typescript@6.0.3))(@swc/core@1.16.21(@swc/helpers@0.5.24))
       smol-toml: 1.9.1
