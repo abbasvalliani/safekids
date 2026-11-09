@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.62](https://github.com/abbasvalliani/safekids/compare/1.3.61...1.3.62) (2026-11-09)
+
+### Dependencies
+
+* chore(deps): update dependency @jnxplus/nx-gradle to v1.22.0 (#350) ([7c50c6c](https://github.com/abbasvalliani/safekids/commit/7c50c6cc2f43f91b1692626d18a973e5999bef50))
+* chore(deps): update dependency @swc/core to v1.16.22 (#371) ([1cf7355](https://github.com/abbasvalliani/safekids/commit/1cf735584797db54d6f918fa1ebc21e41329b72c))
+* chore(deps): update dependency glob@>=9 <14.0.2 to v14.0.4 (#372) ([eafce3d](https://github.com/abbasvalliani/safekids/commit/eafce3d7f1467cc54cc05c77cd04e626cca7309c))
+* chore(deps): update dependency minimatch@>=4 <11.0.1 to v11.0.5 (#373) ([0b62763](https://github.com/abbasvalliani/safekids/commit/0b62763edb3bee48a055fbeee3853e811897e0c2))
+* chore(deps): update dependency node-html-parser to v9.0.7 (#374) ([8252075](https://github.com/abbasvalliani/safekids/commit/8252075fa625592531fcf4229d1661de2cb4b2d9))
+* fix(deps): update dependency minimatch to v11.0.5 (#375) ([b934ed1](https://github.com/abbasvalliani/safekids/commit/b934ed1e55d2eda17ddbaf7aba8f770f848ed8b2))
+
 ## [1.3.61](https://github.com/abbasvalliani/safekids/compare/1.3.60...1.3.61) (2026-11-08)
 
 ### Dependencies
