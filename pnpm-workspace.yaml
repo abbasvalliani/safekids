@@ -73,7 +73,7 @@ overrides:
   # Dependabot batch 2026-11-03: clear the open alerts without removing code.
   # glob 9.0.0-14.0.1 (GHSA-3g3m-2fjr-6pw4, AbortSignal bypass): jest 30,
   # test-exclude 7, stylus, sucrase use the named glob/globSync API, unchanged in 14.
-  'glob@>=9 <14.0.2': 14.0.3
+  'glob@>=9 <14.0.2': 14.0.4
   # minimatch < 11.0.1 (GHSA-g3hv-75wg-m249, globparts DoS), every major line.
   # >= 4 consumers (nx, eslint, typescript-eslint, @swc/cli, glob 14, filelist)
   # use named exports; v3 consumers get the callable facade below.
