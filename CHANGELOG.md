@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.63](https://github.com/abbasvalliani/safekids/compare/1.3.62...1.3.63) (2026-11-10)
+
+### Dependencies
+
+* fix(deps): update dependency @nestjs/bullmq to v12.0.1 (#376) ([297d100](https://github.com/abbasvalliani/safekids/commit/297d10006c8309f860abe920d309c87234e47f43))
+* chore(deps): update tailwindcss monorepo to v4.3.5 (#377) ([2fc9245](https://github.com/abbasvalliani/safekids/commit/2fc9245c8e57a4f58718b63f85dfd18b7b55e8d2))
+* fix(deps): update dependency @nestjs/cache-manager to v12.0.4 (#378) ([deb2add](https://github.com/abbasvalliani/safekids/commit/deb2addd5ee36209a97d27afa8a200711d387df5))
+* fix(deps): update dependency @nestjs/event-emitter to v12.0.2 (#379) ([699f574](https://github.com/abbasvalliani/safekids/commit/699f5743008aa0145be22e3a02d5587b7f3811d3))
+* fix(deps): update dependency @nestjs/jwt to v12.0.4 (#380) ([ad6d29f](https://github.com/abbasvalliani/safekids/commit/ad6d29f9c53271c33aa4f7f9f032a0043244a047))
+* fix(deps): update dependency @nestjs/schedule to v12.0.3 (#381) ([0c5fe07](https://github.com/abbasvalliani/safekids/commit/0c5fe0762ffe494beb872d822075a064bb70dc20))
+
 ## [1.3.62](https://github.com/abbasvalliani/safekids/compare/1.3.61...1.3.62) (2026-11-09)
 
 ### Dependencies
