@@ -43,7 +43,7 @@ overrides:
   'express@4>qs': 6.16.2
   'svgo@>=3 <3.3.5': 3.3.5
   'tar-fs@>=3 <3.1.1': 3.1.3
-  '@module-federation/dts-plugin>ws': 8.21.0
+  '@module-federation/dts-plugin>ws': 8.22.1
   'yaml@>=1 <1.10.3': 1.10.3
   # sbd pins an old sanitize-html; the latest needs ESM-only htmlparser2 12,
   # which jest 30 loads through require(esm) on Node >= 24.9.
