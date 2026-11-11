@@ -252,7 +252,7 @@
     "@types/ws": "8.18.2",
     "@typescript-eslint/eslint-plugin": "8.71.2",
     "@typescript-eslint/parser": "8.71.2",
-    "@vitejs/plugin-react": "6.1.2",
+    "@vitejs/plugin-react": "6.2.1",
     "@vitejs/plugin-react-swc": "4.3.3",
     "@vitest/coverage-v8": "5.0.5",
     "@vitest/ui": "5.0.5",
