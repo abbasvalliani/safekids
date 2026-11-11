@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.64](https://github.com/abbasvalliani/safekids/compare/1.3.63...1.3.64) (2026-11-11)
+
+### Dependencies
+
+* chore(deps): update dependency @rollup/plugin-sucrase to v5.1.0 (#361) ([1129626](https://github.com/abbasvalliani/safekids/commit/11296263abc09d66e918669d32609350fe857c43))
+* chore(deps): update dependency @types/ws to v8.18.2 (#382) ([3251ea1](https://github.com/abbasvalliani/safekids/commit/3251ea1c7f2fafe5f4557cb90ea86e209d3144f5))
+* chore(deps): update dependency @vitejs/plugin-react to v6.2.1 (#384) ([8d40adb](https://github.com/abbasvalliani/safekids/commit/8d40adbb5428ec0f72043feb616351269344adb1))
+
 ## [1.3.63](https://github.com/abbasvalliani/safekids/compare/1.3.62...1.3.63) (2026-11-10)
 
 ### Dependencies
