@@ -241,7 +241,7 @@
     "@swc/core": "1.16.22",
     "@tailwindcss/postcss": "4.3.5",
     "@testing-library/react": "16.3.3",
-    "@types/chrome": "0.0.287",
+    "@types/chrome": "0.3.7",
     "@types/jest": "30.0.0",
     "@types/multer": "2.3.0",
     "@types/node": "24.19.2",
