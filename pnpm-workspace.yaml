@@ -66,7 +66,7 @@ overrides:
   # lodash 3, which has no patched 3.x; nothing in the repo imports it.
   'redux-toolkit>lodash': 4.18.1
   # Parents that pin an exact vulnerable version.
-  '@nestjs/swagger>js-yaml': 5.4.1
+  '@nestjs/swagger>js-yaml': 5.5.0
   'fastify@>=5 <5.12.6': 5.12.8
   'puppeteer-core>ws': 8.21.0
   'yaml@>=2 <2.8.3': 2.8.3
